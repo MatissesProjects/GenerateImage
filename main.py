@@ -58,8 +58,10 @@ def main():
 
     textToRiffWith = title[len(allowedStart):]
     data1 = {"discordId":matisseId,"discordUsername":"matisse","targetPicture":targetLocalImage,"prompt":textToRiffWith,"id":random.randint(1000,9999), "accessToken": DISCORD_TOKEN}
+    print("starting request to backend")
     response1 = requests.post('https://deepnarrationapi.matissetec.dev/startSimilarImages', headers=headers, json=data1)
     imageLocation = response1.text
+    print("response from backend", imageLocation)
 
     if len(imageLocation) > 300:
         close_with_error(issue, "Error generating image, the response was wrong")
