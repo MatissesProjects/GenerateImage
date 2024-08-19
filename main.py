@@ -57,7 +57,7 @@ def main():
         return
 
     textToRiffWith = title[len(allowedStart):]
-    data1 = '{"discordId":"'+matisseId+'","discordUsername":"matisse","targetPicture":"'+targetLocalImage+'","prompt":"'+textToRiffWith+'","id":'+str(random.randint(1e4, 9e4))+', "accessToken": "'+DISCORD_TOKEN+'"}'
+    data1 = '{"discordId":"'+matisseId+'","discordUsername":"matisse","targetPicture":"'+targetLocalImage+'","prompt":"'+textToRiffWith+'","id":'+str(random.randint(1000,9999))+', "accessToken": "'+DISCORD_TOKEN+'"}'
     response1 = requests.post('https://deepnarrationapi.matissetec.dev/startSimilarImages', headers=headers, data=data1)
     imageLocation = response1.text
 
