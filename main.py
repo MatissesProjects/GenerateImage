@@ -61,6 +61,10 @@ def main():
     response1 = requests.post('https://deepnarrationapi.matissetec.dev/startSimilarImages', headers=headers, json=data1)
     imageLocation = response1.text
 
+    if len(imageLocation) > 300:
+        close_with_error(issue, "Error generating image, the response was wrong")
+        return
+
     readme = render_readme(imageLocation)
     # issue.create_comment(readme)
     with open("README.md", "w+") as f:
