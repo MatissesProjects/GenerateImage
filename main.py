@@ -31,7 +31,9 @@ def close_with_error(issue, msg):
 
 def render_readme(imageLocation):
     lines = [
-                "# Current Generated Image",
+                "# GenerateImage",
+                "A test to see if we can generate images using git issues.",
+                "## Current Generated Image",
                 f"[<img src='{imageLocation}'>]({imageLocation})",
                 "The images takes around 30s to generate, please be patient.",
             ]
