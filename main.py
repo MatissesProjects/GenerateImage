@@ -2,6 +2,7 @@ import github
 import os
 import requests
 import random
+import time
 
 ISSUE_NUMBER = int(os.getenv("ISSUE_NUMBER"))
 GITHUB_REPO = os.getenv("GITHUB_REPOSITORY")
@@ -78,7 +79,9 @@ def main():
     with open("currentImageURL.txt", "w+") as f:
         targetLocalImage = f.write(imageLocation)
 
-    issue.create_comment(f"Your photo is here! {imageLocation}")
+    time.sleep(10)
+
+    issue.create_comment(f"Your photo is here! ![new image]({imageLocation}) if the image doesnt populate refresh in a few seconds")
     issue.edit(state="closed")
 
 if __name__ == "__main__":
