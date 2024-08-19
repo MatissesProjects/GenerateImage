@@ -75,7 +75,7 @@ def main():
         f.write(readme)
 
     with open("currentImageURL.txt", "w+") as f:
-        targetLocalImage = f.read(imageLocation)
+        targetLocalImage = f.write(imageLocation)
 
     issue.create_comment(f"Your photo is here! {imageLocation}")
     issue.edit(state="closed")
