@@ -43,7 +43,7 @@ def main():
     client = github.Github(GITHUB_TOKEN)
     repo = client.get_repo(GITHUB_REPO)
     issue = repo.get_issue(number=ISSUE_NUMBER)
-    matisseId = 630649313860780043 # matisse's discord id, not sensitive info
+    matisseId = "630649313860780043" # matisse's discord id, not sensitive info
     targetLocalImage = "https://static-cdn.jtvnw.net/jtv_user_pictures/db94532a-3367-4819-a2e2-03f2cbeefdc1-profile_image-300x300.png"
 
     title = issue.title
