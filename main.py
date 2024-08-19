@@ -44,7 +44,9 @@ def main():
     repo = client.get_repo(GITHUB_REPO)
     issue = repo.get_issue(number=ISSUE_NUMBER)
     matisseId = "630649313860780043" # matisse's discord id, not sensitive info
-    targetLocalImage = "https://static-cdn.jtvnw.net/jtv_user_pictures/db94532a-3367-4819-a2e2-03f2cbeefdc1-profile_image-300x300.png"
+
+    with open("currentImageURL.txt", "r+") as f:
+        targetLocalImage = f.read()
 
     title = issue.title
     allowedStart = "Transform:"
@@ -71,6 +73,9 @@ def main():
     # issue.create_comment(readme)
     with open("README.md", "w+") as f:
         f.write(readme)
+
+    with open("currentImageURL.txt", "w+") as f:
+        targetLocalImage = f.read(imageLocation)
 
     issue.create_comment(f"Your photo is here! {imageLocation}")
     issue.edit(state="closed")
