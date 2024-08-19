@@ -1,6 +1,6 @@
 import github
 import os
-import requests
+import httpx
 import random
 
 ISSUE_NUMBER = int(os.getenv("ISSUE_NUMBER"))
@@ -59,9 +59,10 @@ def main():
     textToRiffWith = title[len(allowedStart):]
     data1 = {"discordId":matisseId,"discordUsername":"matisse","targetPicture":targetLocalImage,"prompt":textToRiffWith,"id":random.randint(1000,9999), "accessToken": DISCORD_TOKEN}
     print("starting request to backend")
-    response1 = requests.post('https://deepnarrationapi.matissetec.dev/startSimilarImages', headers=headers, json=data1)
-    imageLocation = response1.text
-    print("response from backend", imageLocation)
+    with httpx.Client(headers=headers) as client:
+        response1 = client.post('https://deepnarrationapi.matissetec.dev/startSimilarImages', headers=headers, json=data1)
+        imageLocation = response1.text
+        print("response from backend", imageLocation)
 
     if len(imageLocation) > 300:
         close_with_error(issue, "Error generating image, the response was wrong")
