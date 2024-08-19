@@ -1,6 +1,6 @@
 # GenerateImage
 Click the image below to generate a new image.
 ## Current Generated Image
-[<img src='https://fileserver.matissetec.dev/output/similarImages/630649313860780043/8896292689/8896292689/png'>](https://github.com/MatissesProjects/GenerateImage/issues/new?title=Transform: )
+[<img src='https://fileserver.matissetec.dev/output/similarImages/630649313860780043/6389252291/6389252291/png'>](https://github.com/MatissesProjects/GenerateImage/issues/new?title=Transform: )
 
 The images takes around 30s to generate, please be patient.
