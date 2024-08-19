@@ -35,7 +35,7 @@ def render_readme(imageLocation):
                 "# GenerateImage",
                 "Click the image below to generate a new image.",
                 "## Current Generated Image",
-                f"[<img src='{imageLocation}'>](https://github.com/{GITHUB_REPO}/issues/new?title=Transform: &body=No need to modify the body, just add your transformation to the photo in the title)",
+                f"[<img src='{imageLocation}'>](https://github.com/{GITHUB_REPO}/issues/new?title=Transform:%20&body=No%20need%20to%20modify%20the%20body,%20just%20add%20your%20transformation%20to%20the%20photo%20in%20the%20title)",
                 "",
                 "The images takes around 30s to generate, please be patient.",
             ]
