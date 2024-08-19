@@ -31,8 +31,8 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           REPOSITORY_OWNER: ${{ github.repository_owner }}
           DISCORD_TOKEN: ${{ secrets.DISCORD_TOKEN }}
-        # pip install -r requirements.txt
         run: |
+          pip install -r requirements.txt
           python main.py
 
       # Create new commit with the changed files and push it to GitHub
