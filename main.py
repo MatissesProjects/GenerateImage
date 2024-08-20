@@ -3,6 +3,7 @@ import os
 import requests
 import random
 import time
+from better_profanity import profanity
 
 ISSUE_NUMBER = int(os.getenv("ISSUE_NUMBER"))
 GITHUB_REPO = os.getenv("GITHUB_REPOSITORY")
@@ -67,6 +68,11 @@ def main():
 
     if len(title) == len(allowedStart):
         close_with_error(issue, "Input must contain a string to transform")
+        return
+    
+    profanity.load_censor_words()
+    if profanity.contains_profanity(title):
+        close_with_error(issue, "Profanity is not allowed")
         return
 
     textToRiffWith = title[len(allowedStart):]
