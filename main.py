@@ -88,9 +88,9 @@ def main():
     with open("currentImageURL.txt", "w+") as f:
         targetLocalImage = f.write(imageLocation)
 
-    time.sleep(10)
+    time.sleep(5)
 
-    issue.create_comment(f"Your photo is here! ![new image]({imageLocation}) if the image doesnt populate refresh in a few seconds")
+    issue.create_comment(f"Your photo is here! \n![new image]({imageLocation}) \n\nif the image doesnt populate refresh in a few seconds")
     issue.edit(state="closed")
 
 if __name__ == "__main__":
