@@ -16,6 +16,12 @@ body:
         - Dog
         - Building
         - Tree
+        - Flower
+        - Book
+        - Car
+        - Boat
+        - Ocean
+        - Desert
     validations:
       required: true
 
@@ -35,3 +41,22 @@ body:
           required: false
         - label: Clouds
           required: false
+        - label: Rain
+          required: false
+        - label: Sun
+          required: false
+        - label: Foggy
+          required: false
+        - label: Snow
+          required: false
+        - label: Sand
+          required: false
+        - label: Hail
+          required: false
+        - label: Rainbow
+          required: false
+        - label: Moon
+          required: false
+        - label: Stars
+          required: false
+        

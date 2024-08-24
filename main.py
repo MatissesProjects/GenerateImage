@@ -28,8 +28,8 @@ headers = {
     'user-agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36',
 }
 matisseId = "630649313860780043" # matisse's discord id, not sensitive info
-allowedListDropDown = ["Dog", "Cat", "Building", "Tree"]
-allowedListMultiple = ["Grass", "Blue sky", "Clouds"]
+allowedListDropDown = ["Dog", "Cat", "Building", "Tree", "Flower", "Book", "Car", "Boat", "Ocean", "Desert"]
+allowedListMultiple = ["Grass", "Blue sky", "Clouds", "Rain", "Sun", "Foggy", "Snow", "Sand", "Hail", "Rainbow", "Moon", "Stars"]
 
 def close_with_error(issue, msg):
     issue.create_comment(f"ERROR: {msg}")
