@@ -92,7 +92,7 @@ def transformFunction(issue):
 
 def parseImageString(input_string):
     # Extract the item under "Choose one"
-    choose_one_match = re.search(r'### Choose one\n(.+)', input_string)
+    choose_one_match = re.search(r'### Choose one\n+(.+)', input_string)
     choose_one = choose_one_match.group(1).strip() if choose_one_match else None
 
     # Extract the items under "Choose multiple" that have an [X]
@@ -104,6 +104,7 @@ def parseImageString(input_string):
 
 def createImageFunction(issue):
     issueBody = issue.body
+    print(issueBody)
     newImagePrompt = parseImageString(issueBody)
     print(newImagePrompt)
     data1 = {"discordId":matisseId,"discordUsername":"matisse","prompt":newImagePrompt,"id":random.randint(1000,9999), "accessToken": DISCORD_TOKEN}
