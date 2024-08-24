@@ -42,7 +42,7 @@ def render_readme(imageLocation, gifLocation):
                 "",
                 "## How to use",
                 "<ol>",
-                "  <li>You can transform the image below or create a new image</li>",
+                "  <li>You can transform the image below or create a new image, or take the current image and make it into a gif</li>",
                 "  <ol type='A'>",
                 "      <li>To transform the image",
                 "        <ul>",
@@ -58,6 +58,11 @@ def render_readme(imageLocation, gifLocation):
                 "          <li>Submit the issue</li>",
                 "        </ul>",
                 "      </li>",
+                "      <li>To create a gif from the current image",
+                "        <ul>",
+                "          <li>Select the link <a href='https://github.com/MatissesProjects/GenerateImage/issues/new?title=ImageToGif:%20&body=No%20need%20to%20modify%20the%20body%20or%20the%20title)</li>",
+                "        </ul>",
+                "      </li>",
                 "    </ol>",
                 "    <li>Wait for the new image to be generated, around 30 seconds</li>",
                 "</ol>",
@@ -66,7 +71,7 @@ def render_readme(imageLocation, gifLocation):
                 f"[<img src='{imageLocation}'>](https://github.com/{GITHUB_REPO}/issues/new?title=Transform:%20&body=No%20need%20to%20modify%20the%20body,%20just%20add%20your%20transformation%20to%20the%20photo%20in%20the%20title)",
                 "",
                 "## Current Generated Gif",
-                f"[<img src='{gifLocation}'>]({gifLocation})",
+                f"<img src='{gifLocation}' width='512' height='512' alt='gif'>",
                 "",
                 "## Want faster results?",
                 "Try the page these APIs is based on: [Maitisse](https://deepnarration.matissetec.dev/)",
@@ -176,12 +181,16 @@ def main():
     
     print("response from backend: ", imageLocation, gifLocation)
 
+    currentImageNew = False
+    currentGifNew = False
     if imageLocation == "":
         with open("currentImageURL.txt", "r+") as f:
             imageLocation = f.read()
+            currentGifNew = True
     if gifLocation == "":
         with open("currentGifURL.txt", "r+") as f:
             gifLocation = f.read()
+            currentImageNew = True
 
     readme = render_readme(imageLocation, gifLocation)
     # issue.create_comment(readme)
@@ -195,7 +204,11 @@ def main():
 
     time.sleep(5)
 
-    issue.create_comment(f"Your photo is here! \n![new image]({imageLocation}) \n\nif the image doesnt populate refresh in a few seconds")
+    if currentImageNew:
+        issue.create_comment(f"Your photo is here! \n![new image]({imageLocation}) \n\nif the image doesnt populate refresh in a few seconds")
+    if currentGifNew:
+        time.sleep(10)
+        issue.create_comment(f"Your gif is here! \n![new gif]({gifLocation}) \n\nif the gif doesnt populate refresh in a few seconds")
     issue.edit(state="closed")
 
 if __name__ == "__main__":
