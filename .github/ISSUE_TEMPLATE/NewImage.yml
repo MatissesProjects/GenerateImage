@@ -15,6 +15,7 @@ body:
         - Cat
         - Dog
         - Building
+        - Tree
     validations:
       required: true
 

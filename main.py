@@ -28,6 +28,8 @@ headers = {
     'user-agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36',
 }
 matisseId = "630649313860780043" # matisse's discord id, not sensitive info
+allowedListDropDown = ["Dog", "Cat", "Building", "Tree"]
+allowedListMultiple = ["Grass", "Blue sky", "Clouds"]
 
 def close_with_error(issue, msg):
     issue.create_comment(f"ERROR: {msg}")
@@ -98,30 +100,31 @@ def transformFunction(issue):
     
     return imageLocation
 
-# validate that items are within the allowed list
-def validateItems(items, allowed_items):
-    for item in items:
-        if item not in allowed_items:
-            return False
-    return True
+def inAllowedList(word, allowedList):
+    return word in allowedList
 
-def parseImageString(input_string):
+def parseImageString(issue):
+    issueBody = issue.body
     # Extract the item under "Choose one"
-    choose_one_match = re.search(r'### Choose one\n+(.+)', input_string)
+    choose_one_match = re.search(r'### Choose one\n+(.+)', issueBody)
     choose_one = choose_one_match.group(1).strip() if choose_one_match else None
+    choose_one = list(filter(lambda x: inAllowedList(x, allowedListDropDown), choose_one))
+    if choose_one is "":
+        close_with_error(issue, "Used a choice that is not in the allowed list")
 
     # Extract the items under "Choose multiple" that have an [X]
-    choose_multiple_matches = re.findall(r'- \[X\] (.+)', input_string)
-    # using validateItems filter all the items that are not in the allowed list
-    # choose_multiple_matches = [item for item in choose_multiple_matches if validateItems(item.split(", "), ["item1", "item2", "item3"])]
+    choose_multiple_matches = re.findall(r'- \[X\] (.+)', issueBody)
+    choiceLength = len(choose_multiple_matches)
+    # filter choose_multiple_matches to only allowed list of words
+    choose_multiple_matches = list(filter(lambda x: inAllowedList(x, allowedListMultiple), choose_multiple_matches))
+    if choiceLength != len(choose_multiple_matches):
+        close_with_error(issue, "Used a choice that is not in the allowed list")
     # Construct the result string
     result = f"{choose_one}, {', '.join(choose_multiple_matches)}"
     return result
 
 def createImageFunction(issue):
-    issueBody = issue.body
-    print(issueBody)
-    newImagePrompt = parseImageString(issueBody)
+    newImagePrompt = parseImageString(issue)
     print(newImagePrompt)
     data1 = {"discordId":matisseId,"discordUsername":"matisse","prompt":newImagePrompt,"id":random.randint(1000,9999), "accessToken": DISCORD_TOKEN}
     print("starting request to backend")
