@@ -60,7 +60,7 @@ def render_readme(imageLocation, gifLocation):
                 "      </li>",
                 "      <li>To create a gif from the current image</li>",
                 "        <ul>",
-                "          <li>Select the link <a href='https://github.com/MatissesProjects/GenerateImage/issues/new?title=ImageToGif:%20&body=No%20need%20to%20modify%20the%20body%20or%20the%20title')></a></li>",
+                "          <li>Select the link <a href='https://github.com/MatissesProjects/GenerateImage/issues/new?title=ImageToGif:%20&body=No%20need%20to%20modify%20the%20body%20or%20the%20title')>Create gif from current image</a></li>",
                 "        </ul>",
                 "      </li>",
                 "    </ol>",
