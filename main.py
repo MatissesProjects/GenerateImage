@@ -108,9 +108,10 @@ def parseImageString(issue):
     # Extract the item under "Choose one"
     choose_one_match = re.search(r'### Choose one\n+(.+)', issueBody)
     choose_one = choose_one_match.group(1).strip() if choose_one_match else None
-    choose_one = list(filter(lambda x: inAllowedList(x, allowedListDropDown), choose_one))
-    if choose_one is "":
+    choose_one = choose_one if inAllowedList(choose_one, allowedListDropDown) else ""
+    if choose_one == "":
         close_with_error(issue, "Used a choice that is not in the allowed list")
+        return
 
     # Extract the items under "Choose multiple" that have an [X]
     choose_multiple_matches = re.findall(r'- \[X\] (.+)', issueBody)
@@ -119,6 +120,7 @@ def parseImageString(issue):
     choose_multiple_matches = list(filter(lambda x: inAllowedList(x, allowedListMultiple), choose_multiple_matches))
     if choiceLength != len(choose_multiple_matches):
         close_with_error(issue, "Used a choice that is not in the allowed list")
+        return
     # Construct the result string
     result = f"{choose_one}, {', '.join(choose_multiple_matches)}"
     return result
