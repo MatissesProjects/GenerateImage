@@ -21,7 +21,7 @@ Click the image below to generate a new image.
       </li>
       <li>To create a gif from the current image</li>
         <ul>
-          <li>Select the link <a href='https://github.com/MatissesProjects/GenerateImage/issues/new?title=ImageToGif:%20&body=No%20need%20to%20modify%20the%20body%20or%20the%20title')></a></li>
+          <li>Select the link <a href='https://github.com/MatissesProjects/GenerateImage/issues/new?title=ImageToGif:%20&body=No%20need%20to%20modify%20the%20body%20or%20the%20title')>Create gif from current image</a></li>
         </ul>
       </li>
     </ol>
@@ -29,7 +29,7 @@ Click the image below to generate a new image.
 </ol>
 
 ## Current Generated Image
-[<img src='https://fileserver.matissetec.dev/output/createImage/630649313860780043/8853548234/8853548234/png'>](https://github.com/MatissesProjects/GenerateImage/issues/new?title=Transform:%20&body=No%20need%20to%20modify%20the%20body,%20just%20add%20your%20transformation%20to%20the%20photo%20in%20the%20title)
+[<img src='https://fileserver.matissetec.dev/output/similarImages/630649313860780043/8955399143/8955399143/png'>](https://github.com/MatissesProjects/GenerateImage/issues/new?title=Transform:%20&body=No%20need%20to%20modify%20the%20body,%20just%20add%20your%20transformation%20to%20the%20photo%20in%20the%20title)
 
 ## Current Generated Gif
 <img src='https://fileserver.matissetec.dev/output/backgroundExtenderGif/630649313860780043/6785311268/apiOut/gif' width='512' height='512' alt='gif'>
