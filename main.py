@@ -99,10 +99,12 @@ def transformFunction(issue):
     return imageLocation
 
 def createImageFunction(issue):
+    issueBody = issue.body
+    print(issueBody)
     newImagePrompt = ""
     data1 = {"discordId":matisseId,"discordUsername":"matisse","prompt":newImagePrompt,"id":random.randint(1000,9999), "accessToken": DISCORD_TOKEN}
     print("starting request to backend")
-    response1 = requests.post('https://deepnarrationapi.matissetec.dev/startSimilarImages', headers=headers, json=data1)
+    response1 = requests.post('https://deepnarrationapi.matissetec.dev/startCreateImage', headers=headers, json=data1)
     imageLocation = response1.text
 
     if len(imageLocation) > 300:
