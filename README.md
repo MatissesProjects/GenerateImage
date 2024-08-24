@@ -3,7 +3,7 @@ Click the image below to generate a new image.
 
 ## How to use
 <ol>
-  <li>You can transform the image below or create a new image</li>
+  <li>You can transform the image below or create a new image, or take the current image and make it into a gif</li>
   <ol type='A'>
       <li>To transform the image
         <ul>
@@ -19,6 +19,11 @@ Click the image below to generate a new image.
           <li>Submit the issue</li>
         </ul>
       </li>
+      <li>To create a gif from the current image
+        <ul>
+          <li>Select the link <a href='https://github.com/MatissesProjects/GenerateImage/issues/new?title=ImageToGif:%20&body=No%20need%20to%20modify%20the%20body%20or%20the%20title)</li>
+        </ul>
+      </li>
     </ol>
     <li>Wait for the new image to be generated, around 30 seconds</li>
 </ol>
@@ -27,7 +32,7 @@ Click the image below to generate a new image.
 [<img src='https://fileserver.matissetec.dev/output/createImage/630649313860780043/8091383089/8091383089/png'>](https://github.com/MatissesProjects/GenerateImage/issues/new?title=Transform:%20&body=No%20need%20to%20modify%20the%20body,%20just%20add%20your%20transformation%20to%20the%20photo%20in%20the%20title)
 
 ## Current Generated Gif
-[<img src='https://fileserver.matissetec.dev/output/backgroundExtenderGif/630649313860780043/6249002094/apiOut_00003/gif'>](https://fileserver.matissetec.dev/output/backgroundExtenderGif/630649313860780043/6249002094/apiOut_00003/gif)
+<img src='https://fileserver.matissetec.dev/output/backgroundExtenderGif/630649313860780043/7001727830/apiOut/gif' width='512' height='512' alt='gif'>
 
 ## Want faster results?
 Try the page these APIs is based on: [Maitisse](https://deepnarration.matissetec.dev/)
