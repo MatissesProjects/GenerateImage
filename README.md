@@ -12,16 +12,16 @@ Click the image below to generate a new image.
           <li>Submit the issue</li>
         </ul>
       </li>
-      <li>To create a new image
+      <li>To create a new image</li>
         <ul>
           <li>Select the link <a href='https://github.com/MatissesProjects/GenerateImage/issues/new?title=CreateImage:%20Create%20New%20Image&template=NewImage.yml'>New image request form</a></li>
           <li>Follow the issue creation steps</li>
           <li>Submit the issue</li>
         </ul>
       </li>
-      <li>To create a gif from the current image
+      <li>To create a gif from the current image</li>
         <ul>
-          <li>Select the link <a href='https://github.com/MatissesProjects/GenerateImage/issues/new?title=ImageToGif:%20&body=No%20need%20to%20modify%20the%20body%20or%20the%20title)</li>
+          <li>Select the link <a href='https://github.com/MatissesProjects/GenerateImage/issues/new?title=ImageToGif:%20&body=No%20need%20to%20modify%20the%20body%20or%20the%20title')></a></li>
         </ul>
       </li>
     </ol>
@@ -29,7 +29,7 @@ Click the image below to generate a new image.
 </ol>
 
 ## Current Generated Image
-[<img src='https://fileserver.matissetec.dev/output/createImage/630649313860780043/8091383089/8091383089/png'>](https://github.com/MatissesProjects/GenerateImage/issues/new?title=Transform:%20&body=No%20need%20to%20modify%20the%20body,%20just%20add%20your%20transformation%20to%20the%20photo%20in%20the%20title)
+[<img src='https://fileserver.matissetec.dev/output/createImage/630649313860780043/8346596895/8346596895/png'>](https://github.com/MatissesProjects/GenerateImage/issues/new?title=Transform:%20&body=No%20need%20to%20modify%20the%20body,%20just%20add%20your%20transformation%20to%20the%20photo%20in%20the%20title)
 
 ## Current Generated Gif
 <img src='https://fileserver.matissetec.dev/output/backgroundExtenderGif/630649313860780043/8582520726/apiOut/gif' width='512' height='512' alt='gif'>
