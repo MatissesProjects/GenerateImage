@@ -5,6 +5,7 @@ import random
 import time
 import re
 from better_profanity import profanity
+from langdetect import detect
 
 ISSUE_NUMBER = int(os.getenv("ISSUE_NUMBER"))
 GITHUB_REPO = os.getenv("GITHUB_REPOSITORY")
@@ -169,6 +170,9 @@ def main():
     issue = repo.get_issue(number=ISSUE_NUMBER)
     imageLocation = ""
     gifLocation = ""
+    if detect(issue.title + ' ' + issue.body) != 'en':
+        close_with_error(issue, "Only english is supported")
+        return
     if "Transform" in issue.title:
         imageLocation = transformFunction(issue)
     elif "CreateImage" in issue.title:
