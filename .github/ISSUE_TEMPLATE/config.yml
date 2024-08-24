@@ -1,0 +1,39 @@
+name: Issue Form
+description: A form to select options
+labels: ["bug", "enhancement"]
+
+body:
+  - type: markdown
+    attributes:
+      value: |
+        ### Please select only one of the following:
+
+  - type: dropdown
+    id: single-selection
+    attributes:
+      label: Choose one
+      description: Replace the 'space' with an 'x' in the desired item
+      options:
+        - Cat
+        - Dog
+        - Building
+    validations:
+      required: true
+
+  - type: markdown
+    attributes:
+      value: |
+        ### You can select as many of these as you want:
+
+  - type: checkboxes
+    id: multi-selection
+    attributes:
+      label: Choose multiple
+      description: Select any that apply
+      options:
+        - label: Grass
+          required: false
+        - label: Blue sky
+          required: false
+        - label: Clouds
+          required: false

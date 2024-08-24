@@ -26,6 +26,7 @@ headers = {
     'sec-fetch-site': 'same-site',
     'user-agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36',
 }
+matisseId = "630649313860780043" # matisse's discord id, not sensitive info
 
 def close_with_error(issue, msg):
     issue.create_comment(f"ERROR: {msg}")
@@ -51,12 +52,7 @@ def render_readme(imageLocation):
             ]
     return "\n".join(lines)
 
-def main():
-    client = github.Github(GITHUB_TOKEN)
-    repo = client.get_repo(GITHUB_REPO)
-    issue = repo.get_issue(number=ISSUE_NUMBER)
-    matisseId = "630649313860780043" # matisse's discord id, not sensitive info
-
+def transformFunction(issue):
     with open("currentImageURL.txt", "r+") as f:
         targetLocalImage = f.read()
 
@@ -80,11 +76,10 @@ def main():
     print("starting request to backend")
     response1 = requests.post('https://deepnarrationapi.matissetec.dev/startSimilarImages', headers=headers, json=data1)
     imageLocation = response1.text
-    print("response from backend", imageLocation)
-
     if len(imageLocation) > 300:
         close_with_error(issue, "Error generating image, the response was wrong")
         return
+    print("response from backend", imageLocation)
 
     readme = render_readme(imageLocation)
     # issue.create_comment(readme)
@@ -94,6 +89,33 @@ def main():
     with open("currentImageURL.txt", "w+") as f:
         targetLocalImage = f.write(imageLocation)
 
+    return imageLocation
+
+def createImageFunction(issue):
+    newImagePrompt = ""
+    data1 = {"discordId":matisseId,"discordUsername":"matisse","prompt":newImagePrompt,"id":random.randint(1000,9999), "accessToken": DISCORD_TOKEN}
+    print("starting request to backend")
+    response1 = requests.post('https://deepnarrationapi.matissetec.dev/startSimilarImages', headers=headers, json=data1)
+    imageLocation = response1.text
+
+    if len(imageLocation) > 300:
+        close_with_error(issue, "Error generating image, the response was wrong")
+        return
+    
+    print("response from backend", imageLocation)
+
+    return imageLocation
+
+def main():
+    client = github.Github(GITHUB_TOKEN)
+    repo = client.get_repo(GITHUB_REPO)
+    issue = repo.get_issue(number=ISSUE_NUMBER)
+    imageLocation = ""
+    if "Transform" in issue.title:
+        imageLocation = transformFunction(issue)
+    elif "CreateImage" in issue.title:
+        imageLocation = createImageFunction(issue)
+    
     time.sleep(5)
 
     issue.create_comment(f"Your photo is here! \n![new image]({imageLocation}) \n\nif the image doesnt populate refresh in a few seconds")
