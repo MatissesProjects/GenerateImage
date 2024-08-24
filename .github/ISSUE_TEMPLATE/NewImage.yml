@@ -1,6 +1,5 @@
 name: Issue Form
 description: A form to select options
-labels: ["bug", "enhancement"]
 
 body:
   - type: markdown
