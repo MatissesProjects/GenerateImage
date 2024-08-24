@@ -35,7 +35,7 @@ def close_with_error(issue, msg):
     issue.create_comment(f"ERROR: {msg}")
     issue.edit(state="closed", labels=["Invalid"])
 
-def render_readme(imageLocation):
+def render_readme(imageLocation, gifLocation):
     lines = [
                 "# GenerateImage",
                 "Click the image below to generate a new image.",
@@ -64,6 +64,9 @@ def render_readme(imageLocation):
                 "",
                 "## Current Generated Image",
                 f"[<img src='{imageLocation}'>](https://github.com/{GITHUB_REPO}/issues/new?title=Transform:%20&body=No%20need%20to%20modify%20the%20body,%20just%20add%20your%20transformation%20to%20the%20photo%20in%20the%20title)",
+                "",
+                "## Current Generated Gif",
+                f"[<img src='{gifLocation}'>]({gifLocation})",
                 "",
                 "## Want faster results?",
                 "Try the page these APIs is based on: [Maitisse](https://deepnarration.matissetec.dev/)",
@@ -143,28 +146,52 @@ def createImageFunction(issue):
 
     return imageLocation
 
+def imageToGif(issue):
+    with open("currentImageURL.txt", "r+") as f:
+        targetLocalImage = f.read()
+    data1 = {"discordId":matisseId,"targetPicture":targetLocalImage,"discordUsername":"matisse","id":random.randint(1000,9999), "width":128,"height":128, "accessToken": DISCORD_TOKEN}
+    response1 = requests.post('https://deepnarrationapi.matissetec.dev/startBackgroundExtenderGif', headers=headers, json=data1)
+    gifLocation = response1.text
+    if len(gifLocation) > 300:
+        close_with_error(issue, "Error generating image, the response was wrong")
+        return
+    print("response from backend", gifLocation)
+    return gifLocation
+
 def main():
     client = github.Github(GITHUB_TOKEN)
     repo = client.get_repo(GITHUB_REPO)
     issue = repo.get_issue(number=ISSUE_NUMBER)
     imageLocation = ""
+    gifLocation = ""
     if "Transform" in issue.title:
         imageLocation = transformFunction(issue)
     elif "CreateImage" in issue.title:
         imageLocation = createImageFunction(issue)
+    elif "ImageToGif" in issue.title:
+        gifLocation = imageToGif(issue)
 
-    if imageLocation is None:
+    if imageLocation is None and gifLocation is None:
         return
     
-    print("response from backend", imageLocation)
+    print("response from backend: ", imageLocation, gifLocation)
 
-    readme = render_readme(imageLocation)
+    if imageLocation == "":
+        with open("currentImageURL.txt", "r+") as f:
+            imageLocation = f.read()
+    if gifLocation == "":
+        with open("currentGifURL.txt", "r+") as f:
+            gifLocation = f.read()
+
+    readme = render_readme(imageLocation, gifLocation)
     # issue.create_comment(readme)
     with open("README.md", "w+") as f:
         f.write(readme)
 
     with open("currentImageURL.txt", "w+") as f:
         f.write(imageLocation)
+    with open("currentGifURL.txt", "w+") as f:
+        f.write(gifLocation)
 
     time.sleep(5)
 
