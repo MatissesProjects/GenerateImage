@@ -90,6 +90,13 @@ def transformFunction(issue):
     
     return imageLocation
 
+# validate that items are within the allowed list
+def validateItems(items, allowed_items):
+    for item in items:
+        if item not in allowed_items:
+            return False
+    return True
+
 def parseImageString(input_string):
     # Extract the item under "Choose one"
     choose_one_match = re.search(r'### Choose one\n+(.+)', input_string)
@@ -97,9 +104,10 @@ def parseImageString(input_string):
 
     # Extract the items under "Choose multiple" that have an [X]
     choose_multiple_matches = re.findall(r'- \[X\] (.+)', input_string)
-    
+    # using validateItems filter all the items that are not in the allowed list
+    # choose_multiple_matches = [item for item in choose_multiple_matches if validateItems(item.split(", "), ["item1", "item2", "item3"])]
     # Construct the result string
-    result = f"{choose_one}{', '.join(choose_multiple_matches)}"
+    result = f"{choose_one}, {', '.join(choose_multiple_matches)}"
     return result
 
 def createImageFunction(issue):
