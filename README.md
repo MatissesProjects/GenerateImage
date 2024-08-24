@@ -5,6 +5,9 @@ Click the image below to generate a new image.
 
 The images takes around 30s to generate, please be patient.
 
+## Want to start with a new image
+[test here](https://github.com/MatissesProjects/GenerateImage/issues/new?title=Create%20New%20Image&template=NewImage.yml)
+
 ## How to use
 1. Click the image above
 2. Add your transformation to the title
