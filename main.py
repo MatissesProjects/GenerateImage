@@ -127,6 +127,8 @@ def parseImageString(issue):
 
 def createImageFunction(issue):
     newImagePrompt = parseImageString(issue)
+    if newImagePrompt is None:
+        return
     print(newImagePrompt)
     data1 = {"discordId":matisseId,"discordUsername":"matisse","prompt":newImagePrompt,"id":random.randint(1000,9999), "accessToken": DISCORD_TOKEN}
     print("starting request to backend")
@@ -150,6 +152,9 @@ def main():
         imageLocation = transformFunction(issue)
     elif "CreateImage" in issue.title:
         imageLocation = createImageFunction(issue)
+
+    if imageLocation is None:
+        return
     
     print("response from backend", imageLocation)
 
