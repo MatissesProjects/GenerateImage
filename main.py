@@ -3,6 +3,7 @@ import os
 import requests
 import random
 import time
+import re
 from better_profanity import profanity
 
 ISSUE_NUMBER = int(os.getenv("ISSUE_NUMBER"))
@@ -86,22 +87,25 @@ def transformFunction(issue):
     if len(imageLocation) > 300:
         close_with_error(issue, "Error generating image, the response was wrong")
         return
-    print("response from backend", imageLocation)
-
-    readme = render_readme(imageLocation)
-    # issue.create_comment(readme)
-    with open("README.md", "w+") as f:
-        f.write(readme)
-
-    with open("currentImageURL.txt", "w+") as f:
-        targetLocalImage = f.write(imageLocation)
-
+    
     return imageLocation
+
+def parseImageString(input_string):
+    # Extract the item under "Choose one"
+    choose_one_match = re.search(r'### Choose one\n(.+)', input_string)
+    choose_one = choose_one_match.group(1).strip() if choose_one_match else None
+
+    # Extract the items under "Choose multiple" that have an [X]
+    choose_multiple_matches = re.findall(r'- \[X\] (.+)', input_string)
+    
+    # Construct the result string
+    result = f"{choose_one}{', '.join(choose_multiple_matches)}"
+    return result
 
 def createImageFunction(issue):
     issueBody = issue.body
-    print(issueBody)
-    newImagePrompt = ""
+    newImagePrompt = parseImageString(issueBody)
+    print(newImagePrompt)
     data1 = {"discordId":matisseId,"discordUsername":"matisse","prompt":newImagePrompt,"id":random.randint(1000,9999), "accessToken": DISCORD_TOKEN}
     print("starting request to backend")
     response1 = requests.post('https://deepnarrationapi.matissetec.dev/startCreateImage', headers=headers, json=data1)
@@ -125,6 +129,16 @@ def main():
     elif "CreateImage" in issue.title:
         imageLocation = createImageFunction(issue)
     
+    print("response from backend", imageLocation)
+
+    readme = render_readme(imageLocation)
+    # issue.create_comment(readme)
+    with open("README.md", "w+") as f:
+        f.write(readme)
+
+    with open("currentImageURL.txt", "w+") as f:
+        f.write(imageLocation)
+
     time.sleep(5)
 
     issue.create_comment(f"Your photo is here! \n![new image]({imageLocation}) \n\nif the image doesnt populate refresh in a few seconds")
