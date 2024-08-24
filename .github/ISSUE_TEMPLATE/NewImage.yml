@@ -1,5 +1,5 @@
-name: Issue Form
-description: A form to select options
+name: Create New Image
+description: A form to select the options available for a new image creation
 
 body:
   - type: markdown
@@ -11,7 +11,6 @@ body:
     id: single-selection
     attributes:
       label: Choose one
-      description: Replace the 'space' with an 'x' in the desired item
       options:
         - Cat
         - Dog
@@ -28,7 +27,6 @@ body:
     id: multi-selection
     attributes:
       label: Choose multiple
-      description: Select any that apply
       options:
         - label: Grass
           required: false
