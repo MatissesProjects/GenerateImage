@@ -205,13 +205,15 @@ def main():
         f.write(imageLocation)
     with open("currentGifURL.txt", "w+") as f:
         f.write(gifLocation)
+    if currentGifNew:
+        issue.create_comment(f"The creation of gifs is a bit longer probably about 50 second, maybe less!")
 
     time.sleep(5)
 
     if currentImageNew:
         issue.create_comment(f"Your photo is here! \n![new image]({imageLocation}) \n\nif the image doesnt populate refresh in a few seconds")
     if currentGifNew:
-        time.sleep(10)
+        time.sleep(25)
         issue.create_comment(f"Your gif is here! \n![new gif]({gifLocation}) \n\nif the gif doesnt populate refresh in a few seconds")
     issue.edit(state="closed")
 
