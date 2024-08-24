@@ -52,7 +52,7 @@ def render_readme(imageLocation):
                 f"[<img src='{imageLocation}'>](https://github.com/{GITHUB_REPO}/issues/new?title=Transform:%20&body=No%20need%20to%20modify%20the%20body,%20just%20add%20your%20transformation%20to%20the%20photo%20in%20the%20title)",
                 "",
                 "## Want to start with a new image",
-                "[New image request form](https://github.com/MatissesProjects/GenerateImage/issues/new?title=Create%20New%20Image&template=NewImage.yml)",
+                "[New image request form](https://github.com/MatissesProjects/GenerateImage/issues/new?title=CreateImage:%20Create%20New%20Image&template=NewImage.yml)",
                 "",
                 "## Want faster results?",
                 "Try the page this api is based on: [DeepNarration](https://deepnarration.matissetec.dev/)",
