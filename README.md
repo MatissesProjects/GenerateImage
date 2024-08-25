@@ -30,7 +30,7 @@ Click the image below to generate a new image.
 </ol>
 
 ## Current Generated Image
-[<img src='https://fileserver.matissetec.dev/output/createImage/630649313860780043/7771373908/7771373908/png'>](https://github.com/MatissesProjects/GenerateImage/issues/new?title=Transform:%20&body=No%20need%20to%20modify%20the%20body,%20just%20add%20your%20transformation%20to%20the%20photo%20in%20the%20title)
+[<img src='https://fileserver.matissetec.dev/output/similarImages/630649313860780043/8732488933/8732488933/png'>](https://github.com/MatissesProjects/GenerateImage/issues/new?title=Transform:%20&body=No%20need%20to%20modify%20the%20body,%20just%20add%20your%20transformation%20to%20the%20photo%20in%20the%20title)
 
 ## Current Generated Gif
 <img src='https://fileserver.matissetec.dev/output/backgroundExtenderGif/630649313860780043/6491803684/apiOut/gif' width='512' height='512' alt='gif'>
