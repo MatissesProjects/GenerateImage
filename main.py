@@ -170,7 +170,9 @@ def main():
     issue = repo.get_issue(number=ISSUE_NUMBER)
     imageLocation = ""
     gifLocation = ""
-    if detect(issue.title.replace("Transform", "").replace("CreateImage", "").replace("ImageToGif", "")) != 'en':
+    checkLang = issue.title.replace("Transform", "").replace("CreateImage", "").replace("ImageToGif", "")
+    print(checkLang)
+    if detect(checkLang) != 'en':
         close_with_error(issue, "Only english is supported")
         return
     if "Transform" in issue.title:
