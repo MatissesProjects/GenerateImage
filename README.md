@@ -3,7 +3,10 @@ Click the image below to generate a new image.
 
 ## How to use
 <ol>
-  <li>You can transform the image below or create a new image, or take the current image and make it into a gif</li>
+  <li>You can transform the image below</li>
+  <li>Create a new image</li>
+  <li>Take the current image and make it into a gif</li>
+  <li>Take the current gif and remove the background</li>
   <ol type='A'>
       <li>To transform the image
         <ul>
@@ -14,14 +17,21 @@ Click the image below to generate a new image.
       </li>
       <li>To create a new image</li>
         <ul>
-          <li>Select the link <a href='https://github.com/MatissesProjects/GenerateImage/issues/new?title=CreateImage:%20Create%20New%20Image&template=NewImage.yml'>New image request form</a></li>
+          <li>Select the link <a href='https://github.com/MatissesProjects/GenerateImage/issues/new?title=CreateImage%20Create%20New%20Image&template=NewImage.yml'>New image request form</a></li>
           <li>Follow the issue creation steps</li>
           <li>Submit the issue</li>
         </ul>
       </li>
       <li>To create a gif from the current image</li>
         <ul>
-          <li>Select the link <a href='https://github.com/MatissesProjects/GenerateImage/issues/new?title=ImageToGif:%20&body=No%20need%20to%20modify%20the%20body%20or%20the%20title')>Create gif from current image</a></li>
+          <li>Select the link <a href='https://github.com/MatissesProjects/GenerateImage/issues/new?title=ImageToGif&body=No%20need%20to%20modify%20the%20body%20or%20the%20title')>Create gif from current image</a></li>
+          <li>Submit the issue</li>
+        </ul>
+      </li>
+      <li>To create a background removed gif from the current gif</li>
+        <ul>
+          <li>Select the link <a href='https://github.com/MatissesProjects/GenerateImage/issues/new?title=GifBackgroundRemoval&body=No%20need%20to%20modify%20the%20body%20or%20the%20title')>Create a background removed gif from current gif</a></li>
+          <li>Submit the issue</li>
         </ul>
       </li>
     </ol>
@@ -33,6 +43,9 @@ Click the image below to generate a new image.
 
 ## Current Generated Gif
 <img src='https://fileserver.matissetec.dev/output/backgroundExtenderGif/630649313860780043/8567380422/apiOut/gif' width='512' height='512' alt='gif'>
+
+## Current Generated Background Removed Gif
+<img src='' width='512' height='512' alt='gif'>
 
 ## Want faster results?
 Try the page these APIs is based on: [Maitisse](https://deepnarration.matissetec.dev/)
