@@ -35,14 +35,17 @@ def close_with_error(issue, msg):
     issue.create_comment(f"ERROR: {msg}")
     issue.edit(state="closed", labels=["Invalid"])
 
-def render_readme(imageLocation, gifLocation):
+def render_readme(imageLocation, gifLocation, bgrmGifLocation):
     lines = [
                 "# GenerateImage",
                 "Click the image below to generate a new image.",
                 "",
                 "## How to use",
                 "<ol>",
-                "  <li>You can transform the image below or create a new image, or take the current image and make it into a gif</li>",
+                "  <li>You can transform the image below</li>",
+                "  <li>Create a new image</li>",
+                "  <li>Take the current image and make it into a gif</li>",
+                "  <li>Take the current gif and remove the background</li>",
                 "  <ol type='A'>",
                 "      <li>To transform the image",
                 "        <ul>",
@@ -53,14 +56,21 @@ def render_readme(imageLocation, gifLocation):
                 "      </li>",
                 "      <li>To create a new image</li>",
                 "        <ul>",
-                "          <li>Select the link <a href='https://github.com/MatissesProjects/GenerateImage/issues/new?title=CreateImage:%20Create%20New%20Image&template=NewImage.yml'>New image request form</a></li>",
+                "          <li>Select the link <a href='https://github.com/MatissesProjects/GenerateImage/issues/new?title=CreateImage%20Create%20New%20Image&template=NewImage.yml'>New image request form</a></li>",
                 "          <li>Follow the issue creation steps</li>",
                 "          <li>Submit the issue</li>",
                 "        </ul>",
                 "      </li>",
                 "      <li>To create a gif from the current image</li>",
                 "        <ul>",
-                "          <li>Select the link <a href='https://github.com/MatissesProjects/GenerateImage/issues/new?title=ImageToGif:%20&body=No%20need%20to%20modify%20the%20body%20or%20the%20title')>Create gif from current image</a></li>",
+                "          <li>Select the link <a href='https://github.com/MatissesProjects/GenerateImage/issues/new?title=ImageToGif&body=No%20need%20to%20modify%20the%20body%20or%20the%20title')>Create gif from current image</a></li>",
+                "          <li>Submit the issue</li>",
+                "        </ul>",
+                "      </li>",
+                "      <li>To create a background removed gif from the current gif</li>",
+                "        <ul>",
+                "          <li>Select the link <a href='https://github.com/MatissesProjects/GenerateImage/issues/new?title=GifBackgroundRemoval&body=No%20need%20to%20modify%20the%20body%20or%20the%20title')>Create a background removed gif from current gif</a></li>",
+                "          <li>Submit the issue</li>",
                 "        </ul>",
                 "      </li>",
                 "    </ol>",
@@ -72,6 +82,9 @@ def render_readme(imageLocation, gifLocation):
                 "",
                 "## Current Generated Gif",
                 f"<img src='{gifLocation}' width='512' height='512' alt='gif'>",
+                "",
+                "## Current Generated Background Removed Gif",
+                f"<img src='{bgrmGifLocation}' width='512' height='512' alt='gif'>",
                 "",
                 "## Want faster results?",
                 "Try the page these APIs is based on: [Maitisse](https://deepnarration.matissetec.dev/)",
@@ -170,6 +183,17 @@ def detectLanguageEnglish(text):
             return False
     return True
 
+def gifBackgroundRemoval(issue):
+    with open("currentGifURL.txt", "r+") as f:
+        targetLocalGif = f.read()
+    data1 = {"discordId":matisseId,"videoUrl":targetLocalGif,"discordUsername":"matisse","id":random.randint(1000,9999), "accessToken": DISCORD_TOKEN}
+    response1 = requests.post('https://deepnarrationapi.matissetec.dev/startVideoBackgroundRemoval', headers=headers, json=data1)
+    bgrmGifLocation = response1.text
+    if len(bgrmGifLocation) > 300:
+        close_with_error(issue, "Error generating image, the response was wrong")
+        return
+    print("response from backend", bgrmGifLocation)
+    return bgrmGifLocation
 
 def main():
     client = github.Github(GITHUB_TOKEN)
@@ -177,36 +201,50 @@ def main():
     issue = repo.get_issue(number=ISSUE_NUMBER)
     imageLocation = ""
     gifLocation = ""
-    print("original title: ", issue.title)
-    checkLang = issue.title.replace("Transform", "").replace("CreateImage", "").replace("ImageToGif", "")
+    gifBgrmLocation = ""
+    checkLang = issue.title + " " + issue.body
     print(checkLang)
     if len(checkLang) < 2 or not detectLanguageEnglish(checkLang):
         close_with_error(issue, "Only english is supported")
         return
-    if "Transform" in issue.title:
-        imageLocation = transformFunction(issue)
-    elif "CreateImage" in issue.title:
-        imageLocation = createImageFunction(issue)
-    elif "ImageToGif" in issue.title:
-        gifLocation = imageToGif(issue)
+    match(issue.title):
+        case "Transform":
+            imageLocation = transformFunction(issue)
+        case "CreateImage":
+            imageLocation = createImageFunction(issue)
+        case "ImageToGif":
+            gifLocation = imageToGif(issue)
+        case "GifBackgroundRemoval":
+            gifBgrmLocation = gifBackgroundRemoval(issue)
 
-    if imageLocation is None and gifLocation is None:
+    if imageLocation is None and gifLocation is None and gifBgrmLocation is None:
         return
     
-    print("response from backend: ", imageLocation, gifLocation)
+    print("response from backend: ", imageLocation, gifLocation, gifBgrmLocation)
 
     currentImageNew = False
     currentGifNew = False
-    if imageLocation == "":
+    currentBgrmNew = False
+    if imageLocation == "" and gifLocation == "":
         with open("currentImageURL.txt", "r+") as f:
             imageLocation = f.read()
-            currentGifNew = True
-    if gifLocation == "":
         with open("currentGifURL.txt", "r+") as f:
             gifLocation = f.read()
-            currentImageNew = True
+        currentBgrmNew = True
+    if imageLocation == "" and gifBgrmLocation == "":
+        currentGifNew = True
+        with open("currentImageURL.txt", "r+") as f:
+            imageLocation = f.read()
+        with open("currentBgrmGifURL.txt", "r+") as f:
+            gifBgrmLocation = f.read()
+    if gifLocation == "" and gifBgrmLocation == "":
+        with open("currentGifURL.txt", "r+") as f:
+            gifLocation = f.read()
+        with open("currentBgrmGifURL.txt", "r+") as f:
+            gifBgrmLocation = f.read()
+        currentImageNew = True
 
-    readme = render_readme(imageLocation, gifLocation)
+    readme = render_readme(imageLocation, gifLocation, gifBgrmLocation)
     # issue.create_comment(readme)
     with open("README.md", "w+") as f:
         f.write(readme)
@@ -215,16 +253,23 @@ def main():
         f.write(imageLocation)
     with open("currentGifURL.txt", "w+") as f:
         f.write(gifLocation)
+    with open("currentBgrmGifURL.txt", "w+") as f:
+        f.write(gifBgrmLocation)
     if currentGifNew:
         issue.create_comment(f"The creation of gifs is a bit longer probably about 50 second, maybe less!")
+    if currentBgrmNew:
+        issue.create_comment(f"The creation of gifs is a bit longer probably about 40 second, maybe less!")
 
-    time.sleep(5)
+    time.sleep(10)
 
     if currentImageNew:
         issue.create_comment(f"Your photo is here! \n![new image]({imageLocation}) \n\nif the image doesnt populate refresh in a few seconds")
     if currentGifNew:
         time.sleep(25)
         issue.create_comment(f"Your gif is here! \n![new gif]({gifLocation}) \n\nif the gif doesnt populate refresh in a few seconds")
+    if currentBgrmNew:
+        time.sleep(20)
+        issue.create_comment(f"Your background removed gif is here! \n![new gif]({gifBgrmLocation}) \n\nif the gif doesnt populate refresh in a few seconds")
     issue.edit(state="closed")
 
 if __name__ == "__main__":
