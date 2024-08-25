@@ -202,7 +202,7 @@ def main():
     imageLocation = ""
     gifLocation = ""
     gifBgrmLocation = ""
-    checkLang = issue.title + " " + issue.body
+    checkLang = issue.title
     print(checkLang)
     if len(checkLang) < 2 or not detectLanguageEnglish(checkLang):
         close_with_error(issue, "Only english is supported")
