@@ -5,7 +5,6 @@ import random
 import time
 import re
 from better_profanity import profanity
-from langdetect import detect
 
 ISSUE_NUMBER = int(os.getenv("ISSUE_NUMBER"))
 GITHUB_REPO = os.getenv("GITHUB_REPOSITORY")
@@ -164,6 +163,13 @@ def imageToGif(issue):
     print("response from backend", gifLocation)
     return gifLocation
 
+def detectLanguageNotEnglish(text):
+    for letter in text:
+        # if the letter is not in the english alphabet return false
+        if not (65 <= ord(letter) <= 90 or 97 <= ord(letter) <= 122):
+            return False
+    return True
+
 def main():
     client = github.Github(GITHUB_TOKEN)
     repo = client.get_repo(GITHUB_REPO)
@@ -172,7 +178,7 @@ def main():
     gifLocation = ""
     checkLang = issue.title.replace("Transform", "").replace("CreateImage", "").replace("ImageToGif", "")
     print(checkLang)
-    if detect(checkLang) != 'en':
+    if len(checkLang) < 2 or detectLanguageNotEnglish(checkLang) != 'en':
         close_with_error(issue, "Only english is supported")
         return
     if "Transform" in issue.title:
