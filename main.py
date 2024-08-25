@@ -165,10 +165,11 @@ def imageToGif(issue):
 
 def detectLanguageNotEnglish(text):
     for letter in text:
-        # if the letter is not in the english alphabet return false
-        if not (65 <= ord(letter) <= 90 or 97 <= ord(letter) <= 122):
+        # If the letter is not alphabetic or a space, return False
+        if ord(letter) > 128:
             return False
     return True
+
 
 def main():
     client = github.Github(GITHUB_TOKEN)
