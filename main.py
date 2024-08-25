@@ -163,7 +163,7 @@ def imageToGif(issue):
     print("response from backend", gifLocation)
     return gifLocation
 
-def detectLanguageNotEnglish(text):
+def detectLanguageEnglish(text):
     for letter in text:
         # If the letter is not alphabetic or a space, return False
         if ord(letter) > 128:
@@ -180,7 +180,7 @@ def main():
     print("original title: ", issue.title)
     checkLang = issue.title.replace("Transform", "").replace("CreateImage", "").replace("ImageToGif", "")
     print(checkLang)
-    if len(checkLang) < 2 or detectLanguageNotEnglish(checkLang) != 'en':
+    if len(checkLang) < 2 or not detectLanguageEnglish(checkLang):
         close_with_error(issue, "Only english is supported")
         return
     if "Transform" in issue.title:
