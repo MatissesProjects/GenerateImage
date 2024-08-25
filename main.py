@@ -207,19 +207,18 @@ def main():
     if len(checkLang) < 2 or not detectLanguageEnglish(checkLang):
         close_with_error(issue, "Only english is supported")
         return
-    match issue.title:
-        case "Transform":
-            print("starting Transform")
-            imageLocation = transformFunction(issue)
-        case "CreateImage":
-            print("starting CreateImage")
-            imageLocation = createImageFunction(issue)
-        case "ImageToGif":
-            print("starting ImageToGif")
-            gifLocation = imageToGif(issue)
-        case "GifBackgroundRemoval":
-            print("starting GifBackgroundRemoval")
-            gifBgrmLocation = gifBackgroundRemoval(issue)
+    if "Transform" in issue.title:
+        print("starting Transform")
+        imageLocation = transformFunction(issue)
+    elif "CreateImage" in issue.title:
+        print("starting CreateImage")
+        imageLocation = createImageFunction(issue)
+    elif "ImageToGif" in issue.title:
+        print("starting ImageToGif")
+        gifLocation = imageToGif(issue)
+    elif "GifBackgroundRemoval" in issue.title:
+        print("starting GifBackgroundRemoval")
+        gifBgrmLocation = gifBackgroundRemoval(issue)
 
     if imageLocation is None and gifLocation is None and gifBgrmLocation is None:
         return
