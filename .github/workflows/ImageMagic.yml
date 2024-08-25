@@ -11,7 +11,8 @@ jobs:
     if: |
       startsWith(github.event.issue.title, 'Transform') ||
       startsWith(github.event.issue.title, 'CreateImage') ||
-      startsWith(github.event.issue.title, 'ImageToGif')
+      startsWith(github.event.issue.title, 'ImageToGif') ||
+      startsWith(github.event.issue.title, 'GifBackgroundRemoval')
 
     permissions:
       contents: write
