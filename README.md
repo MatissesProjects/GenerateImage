@@ -33,7 +33,7 @@ Click the image below to generate a new image.
 [<img src='https://fileserver.matissetec.dev/output/similarImages/630649313860780043/8120572534/8120572534/png'>](https://github.com/MatissesProjects/GenerateImage/issues/new?title=Transform:%20&body=No%20need%20to%20modify%20the%20body,%20just%20add%20your%20transformation%20to%20the%20photo%20in%20the%20title)
 
 ## Current Generated Gif
-<img src='https://fileserver.matissetec.dev/output/backgroundExtenderGif/630649313860780043/8490863515/apiOut/gif' width='512' height='512' alt='gif'>
+<img src='https://fileserver.matissetec.dev/output/backgroundExtenderGif/630649313860780043/6908783908/apiOut/gif' width='512' height='512' alt='gif'>
 
 ## Current Generated Background Removed Gif
 <img src='https://fileserver.matissetec.dev/output/videoBackgroundRemoval/630649313860780043/6159454900/apiOut/gif' width='512' height='512' alt='gif'>
