@@ -25,8 +25,9 @@ Click the image below to generate a new image.
     <ul>
       <li>Select the link <a href='https://github.com/MatissesProjects/GenerateImage/issues/new?title=GifBackgroundRemoval%20Dont%20modify%20the%20title&body=No%20need%20to%20modify%20the%20body%20or%20the%20title'>Create a background removed gif from current gif</a></li>
       <li>Submit the issue</li>
+      <li>As a bonus, if I am streaming this will show up on the stream</li>
     </ul>
-  <li>Wait for the new image to be generated, around 30 seconds</li>
+  <li>Wait for the new image to be generated, around 30-50 seconds</li>
 </ol>
 
 ## Current Generated Image
@@ -36,7 +37,7 @@ Click the image below to generate a new image.
 <img src='https://fileserver.matissetec.dev/output/backgroundExtenderGif/630649313860780043/6790066308/apiOut/gif' width='512' height='512' alt='gif'>
 
 ## Current Generated Background Removed Gif
-<img src='https://fileserver.matissetec.dev/output/videoBackgroundRemoval/630649313860780043/8561850582/apiOut/gif' width='512' height='512' alt='gif'>
+<img src='https://fileserver.matissetec.dev/output/videoBackgroundRemoval/630649313860780043/6699084120/apiOut/gif' width='512' height='512' alt='gif'>
 
 ## Want faster results?
 Try the page these APIs are based on: [Maitisse](https://deepnarration.matissetec.dev/)
