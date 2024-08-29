@@ -20,8 +20,6 @@ body:
         - Book
         - Car
         - Boat
-        - Ocean
-        - Desert
     validations:
       required: true
 
@@ -58,5 +56,11 @@ body:
         - label: Moon
           required: false
         - label: Stars
+          required: false
+        - label: Mountains
+          required: false
+        - label: Ocean
+          required: false
+        - label: Desert
           required: false
         
