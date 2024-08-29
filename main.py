@@ -10,6 +10,7 @@ ISSUE_NUMBER = int(os.getenv("ISSUE_NUMBER"))
 GITHUB_REPO = os.getenv("GITHUB_REPOSITORY")
 GITHUB_TOKEN = os.getenv("GITHUB_TOKEN")
 DISCORD_TOKEN = os.getenv("DISCORD_TOKEN")
+DISALLOWED_WORDS = os.getenv("DISALLOWED_WORDS").split(", ")
 headers = {
     'authority': 'deepnarrationapi.matissetec.dev',
     'accept': '/',
@@ -99,7 +100,8 @@ def transformFunction(issue):
         return
     
     profanity.load_censor_words()
-    if profanity.contains_profanity(title):
+    profanity.add_censor_words(DISALLOWED_WORDS)
+    if profanity.contains_profanity(title.lower()):
         close_with_error(issue, "Profanity is not allowed")
         return
 

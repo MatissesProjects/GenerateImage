@@ -35,6 +35,7 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           REPOSITORY_OWNER: ${{ github.repository_owner }}
           DISCORD_TOKEN: ${{ secrets.DISCORD_TOKEN }}
+          DISALLOWED_WORDS: ${{ vars.DISALLOWED_WORDS }}
         run: |
           pip install -r requirements.txt
           python main.py
