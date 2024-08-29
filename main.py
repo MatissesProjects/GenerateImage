@@ -33,6 +33,7 @@ allowedListDropDown = ["Dog", "Cat", "Building", "Tree", "Flower", "Book", "Car"
 allowedListMultiple = ["Grass", "Blue sky", "Clouds", "Rain", "Sun", "Foggy", "Snow", "Sand", "Hail", "Rainbow", "Moon", "Stars"]
 
 def close_with_error(issue, msg):
+    print(f"We are closing the issue with the following error: {msg} label: Invalid")
     issue.create_comment(f"ERROR: {msg}")
     issue.edit(state="closed", labels=["Invalid"])
 
