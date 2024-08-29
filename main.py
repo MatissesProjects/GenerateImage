@@ -215,7 +215,7 @@ def main():
         print("starting GifBackgroundRemoval")
         gifBgrmLocation = gifBackgroundRemoval(issue)
 
-    if imageLocation is None and gifLocation is None and gifBgrmLocation is None:
+    if imageLocation is None or gifLocation is None or gifBgrmLocation is None:
         return
     
     print("response from backend: ", imageLocation, gifLocation, gifBgrmLocation)
