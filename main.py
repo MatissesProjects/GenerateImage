@@ -257,7 +257,7 @@ def main():
     if currentGifNew:
         issue.create_comment(f"The creation of gifs is a bit longer probably about 50 second, maybe less!")
     if currentBgrmNew:
-        issue.create_comment(f"The creation of gifs is a bit longer probably about 40 second, maybe less!\nThis is based on the image [<img src='{gifLocation}'>]('{gifLocation}')")
+        issue.create_comment(f"The creation of gifs is a bit longer probably about 40 second, maybe less!\nThis is based on the image\n[<img src='{gifLocation}'>]('{gifLocation}')")
     time.sleep(10)
 
     if currentImageNew:
