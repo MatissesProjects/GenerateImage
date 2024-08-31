@@ -37,7 +37,7 @@ Click the image below to generate a new image.
 <img src='https://fileserver.matissetec.dev/output/backgroundExtenderGif/630649313860780043/8944661504/apiOut/gif' width='512' height='512' alt='gif'>
 
 ## Current Generated Background Removed Gif
-<img src='https://fileserver.matissetec.dev/output/videoBackgroundRemoval/630649313860780043/6784609578/apiOut/gif' width='512' height='512' alt='gif'>
+<img src='https://fileserver.matissetec.dev/output/videoBackgroundRemoval/630649313860780043/6164655057/apiOut/gif' width='512' height='512' alt='gif'>
 
 ## Want faster results?
 Try the page these APIs are based on: [Maitisse](https://deepnarration.matissetec.dev/)
