@@ -254,10 +254,12 @@ def main():
         f.write(gifLocation)
     with open("currentBgrmGifURL.txt", "w+") as f:
         f.write(gifBgrmLocation)
+    if currentImageNew:
+        issue.create_comment(f"The creation of images is about 30 second, if the image come back blank refresh in a few seconds")
     if currentGifNew:
-        issue.create_comment(f"The creation of gifs is a bit longer probably about 50 second, maybe less!")
+        issue.create_comment(f"The creation of gifs is about 50 second, if the image come back blank refresh in a few seconds")
     if currentBgrmNew:
-        issue.create_comment(f"The creation of gifs is a bit longer probably about 40 second, maybe less!\nThis is based on the image\n[<img src='{gifLocation}'>]('{gifLocation}')")
+        issue.create_comment(f"The creation of background removed gifs about 40 second, if the image come back blank refresh in a few seconds\nThis is based on the image\n[<img src='{gifLocation}'>]('{gifLocation}')")
     time.sleep(10)
 
     if currentImageNew:
