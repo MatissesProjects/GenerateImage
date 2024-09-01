@@ -1,0 +1,34 @@
+name: Update Game
+
+on:
+  schedule:
+    - cron: '0 0 * * 0' # every Sunday at 00:00
+  workflow_dispatch:
+
+jobs:
+  update:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v3
+
+      - name: Update game
+        run: |
+          echo "Updating game..."
+          # Add your update script here
+          echo "Game updated!"
+      
+      - name: Modify Workflows
+        run: |
+          echo "Modifying workflows..."
+          # Add your workflow modification script here
+          # sed -i 's/old_value/new_value/' .github/workflows/other-workflow.yml
+          echo "Workflows modified!"
+
+      - name: Commit changes
+        run: |
+          git config --global user.name "github-actions[bot]"
+          git config --global user.email "github-actions[bot]@users.noreply.github.com"
+          git add .
+          git commit -m "Creating new game setup"
+          git push
