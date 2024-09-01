@@ -9,7 +9,7 @@ body:
   - type: checkboxes
     id: multi-selection
     attributes:
-      label: Choose multiple
+      label: Choose any you want to delete
       options:
         - label: easy
           required: false
