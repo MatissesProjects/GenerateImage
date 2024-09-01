@@ -17,19 +17,21 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v4
 
-      - name: Generate Word Lists
+      - name: Generate Word Lists with Difficulty-Based Probability
         env:
           WORD_LIST: ${{ vars.WORD_LIST }}
         run: |
-          echo $WORD_LIST
-          # Shuffle the words and pick different lengths for each difficulty
-          easy_WORD_LIST=$(echo "${WORD_LIST}" | tr ',' '\n' | shuf | head -n 10 | tr '\n' ',' | sed 's/,$//')
-          medium_WORD_LIST=$(echo "${easy_WORD_LIST}" | tr ',' '\n' | shuf | head -n 7 | tr '\n' ',' | sed 's/,$//')
-          hard_WORD_LIST=$(echo "${easy_WORD_LIST}" | tr ',' '\n' | shuf | head -n 5 | tr '\n' ',' | sed 's/,$//')
+          # Function to filter words based on probability for a specific difficulty
+          select_words() {
+            difficulty_index=$1
+            word_count=$2
+            echo "$WORD_LIST" | tr ',' '\n' | awk -F':' -v idx=$difficulty_index '{if (rand() < $(idx+1)) print $1}' | shuf | head -n $word_count | tr '\n' ',' | sed 's/,$//'
+          }
 
-          echo "EASY_WORD_LIST=$easy_WORD_LIST"
-          echo "MEDIUM_WORD_LIST=$medium_WORD_LIST"
-          echo "HARD_WORD_LIST=$hard_WORD_LIST"
+          # Generate lists for each difficulty level
+          easy_WORD_LIST=$(select_words 1 10)
+          medium_WORD_LIST=$(select_words 2 7)
+          hard_WORD_LIST=$(select_words 3 5)
 
           # Create the YAML files for each difficulty
           for difficulty in easy medium hard; do
