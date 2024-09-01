@@ -11,23 +11,23 @@ body:
     attributes:
       label: Choose multiple
       options:
-        - label: Cottage
+        - label: Square
           required: false
-        - label: Colosseum
+        - label: Tower
           required: false
-        - label: Prairie
+        - label: Statue
           required: false
-        - label: Iceberg
+        - label: Rainforest
           required: false
-        - label: Terrace
+        - label: Wave
           required: false
-        - label: Jungle
+        - label: Tunnel
           required: false
-        - label: Lane
+        - label: Beach
           required: false
-        - label: Bridge
+        - label: Orchard
           required: false
-        - label: Aqueduct
+        - label: Fountain
           required: false
-        - label: Labyrinth
+        - label: Rainbow
           required: false

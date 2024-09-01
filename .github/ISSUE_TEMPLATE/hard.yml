@@ -11,13 +11,13 @@ body:
     attributes:
       label: Choose multiple
       options:
-        - label: Lane
+        - label: Savannah
           required: false
-        - label: Jungle
+        - label: Tundra
           required: false
-        - label: Labyrinth
+        - label: Reef
           required: false
-        - label: Aqueduct
+        - label: Boulevard
           required: false
-        - label: Prairie
+        - label: Temple
           required: false

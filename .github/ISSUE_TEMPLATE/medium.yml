@@ -11,17 +11,17 @@ body:
     attributes:
       label: Choose multiple
       options:
+        - label: Patio
+          required: false
+        - label: Swamp
+          required: false
+        - label: Arena
+          required: false
         - label: Lane
           required: false
-        - label: Jungle
+        - label: Tower
           required: false
-        - label: Terrace
+        - label: Lift
           required: false
-        - label: Bridge
-          required: false
-        - label: Iceberg
-          required: false
-        - label: Prairie
-          required: false
-        - label: Colosseum
+        - label: Road
           required: false
