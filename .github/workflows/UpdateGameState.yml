@@ -16,12 +16,12 @@ jobs:
     steps:
       - name: Checkout repository
         uses: actions/checkout@v3
-      
+
       - name: Delete Workflow Options
         run: |
           echo "Modifying workflows..."
-          # remove all options from the workflow file
-          sed -i '/options:/,/^\s*-/d' .github/ISSUE_TEMPLATE/easy.yml
+          # Remove all options from the workflow file
+          sed -i '/options:/,/^    attributes:/d' .github/ISSUE_TEMPLATE/easy.yml
           echo "Workflows modified!"
 
       - name: Add New Options
@@ -30,9 +30,9 @@ jobs:
         run: |
           # Convert comma-delimited list into YAML formatted options
           NEW_OPTIONS=$(echo "${CURRENT_WORD_LIST}" | awk -F, '{for(i=1;i<=NF;i++) printf "      - label: %s\n        required: false\n", $i}')
-          
+
           # Insert the new options after "id: multi-selection"
-          awk -v new_options="$NEW_OPTIONS" '/id: multi-selection/ {print; print "    options:"; print new_options; next}1' .github/ISSUE_TEMPLATE/easy.yml > temp.yml
+          awk -v new_options="$NEW_OPTIONS" '/id: multi-selection/ {print; print "    attributes:"; print "      label: Choose multiple"; print "    options:"; print new_options; next}1' .github/ISSUE_TEMPLATE/easy.yml > temp.yml
           mv temp.yml .github/ISSUE_TEMPLATE/easy.yml
 
       - name: Commit changes
