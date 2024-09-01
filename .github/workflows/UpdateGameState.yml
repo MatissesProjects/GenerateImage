@@ -15,7 +15,7 @@ jobs:
 
     steps:
       - name: Checkout repository
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
 
       - name: Delete Workflow Options
         run: |
@@ -31,8 +31,18 @@ jobs:
           # Convert comma-delimited list into YAML formatted options
           NEW_OPTIONS=$(echo "${CURRENT_WORD_LIST}" | awk -F, '{for(i=1;i<=NF;i++) printf "      - label: %s\n        required: false\n", $i}')
 
-          # Insert the new options after "id: multi-selection"
-          awk -v new_options="$NEW_OPTIONS" '/id: multi-selection/ {print; print "    attributes:"; print "      label: Choose multiple"; next} /attributes:/ {print "    options:"; print new_options; next} 1' .github/ISSUE_TEMPLATE/easy.yml > temp.yml
+          # Insert the new options in the correct location
+          awk -v new_options="$NEW_OPTIONS" '
+            /id: multi-selection/ {
+                print;
+                print "    attributes:";
+                print "      label: Choose multiple";
+                print "    options:";
+                print new_options;
+                next
+            }
+            {print}
+          ' .github/ISSUE_TEMPLATE/easy.yml > temp.yml
           mv temp.yml .github/ISSUE_TEMPLATE/easy.yml
 
       - name: Commit changes
