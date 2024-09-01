@@ -4,7 +4,7 @@ Your goal is to take a picture and transform it into another image based on a sp
 # To Play
 You can select from multiple different levels to play this game
 
-[Easy](https://github.com/MatissesProjects/GenerateImage/issues/new?title=CreateImage%20Dont%20modify%20the%20title%20just%20use%20the%20form&template=easy.yml)
+[Easy](https://github.com/MatissesProjects/GenerateImage/issues/new?title=Transform%20Dont%20modify%20the%20title%20just%20use%20the%20form&template=easy.yml)
 
 Medium
 
