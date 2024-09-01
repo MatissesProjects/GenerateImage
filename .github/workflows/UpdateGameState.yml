@@ -23,8 +23,10 @@ jobs:
         env:
           CURRENT_WORD_LIST: ${{ vars.CURRENT_WORD_LIST }}
         run: |
-          # Convert comma-delimited list into YAML formatted options and add to the workflow file
+          # Convert comma-delimited list into YAML formatted options
           NEW_OPTIONS=$(echo "${CURRENT_WORD_LIST}" | awk -F, '{for(i=1;i<=NF;i++) printf "      - label: %s\n        required: false\n", $i}')
+          echo "${NEW_OPTIONS}"
+          # Add the new options into the workflow file
           sed -i "/id: multi-selection/a\\
           \    options:\n${NEW_OPTIONS}" .github/workflows/easy.yml
 
