@@ -91,7 +91,7 @@ def transformFunction(issue):
         targetLocalImage = f.read()
 
     title = issue.title
-    allowedStart = "Transform:"
+    allowedStart = "Transform"
     if allowedStart not in title:
         close_with_error(issue, "Invalid input format, include Transform:")
         return
