@@ -6,24 +6,27 @@ on:
   workflow_dispatch:
 
 jobs:
-  update:
+  UpdateGame:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout repository
         uses: actions/checkout@v3
-
-      - name: Update game
-        run: |
-          echo "Updating game..."
-          # Add your update script here
-          echo "Game updated!"
       
-      - name: Modify Workflows
+      - name: Delete Workflow Options
         run: |
           echo "Modifying workflows..."
-          # Add your workflow modification script here
-          # sed -i 's/old_value/new_value/' .github/workflows/other-workflow.yml
+          # remove all options from the workflow file
+          sed -i '/options:/,/^\s*-/d' .github/workflows/easy.yml
           echo "Workflows modified!"
+
+      - name: Add New Options
+        env:
+          CURRENT_WORD_LIST: ${{ vars.CURRENT_WORD_LIST }}
+        run: |
+          # Convert comma-delimited list into YAML formatted options and add to the workflow file
+          NEW_OPTIONS=$(echo "${CURRENT_WORD_LIST}" | awk -F, '{for(i=1;i<=NF;i++) printf "      - label: %s\n        required: false\n", $i}')
+          sed -i "/id: multi-selection/a\\
+          \    options:\n${NEW_OPTIONS}" .github/workflows/easy.yml
 
       - name: Commit changes
         run: |
