@@ -107,6 +107,7 @@ def transformFunction(issue):
         return
 
     textToRiffWith = title[len(allowedStart):]
+    print(f"text we are trying to use: {textToRiffWith}")
     data1 = {"discordId":matisseId,"discordUsername":"matisse","targetPicture":targetLocalImage,"prompt":textToRiffWith,"id":random.randint(1000,9999), "accessToken": DISCORD_TOKEN}
     print("starting request to backend")
     response1 = requests.post('https://deepnarrationapi.matissetec.dev/startSimilarImages', headers=headers, json=data1)
