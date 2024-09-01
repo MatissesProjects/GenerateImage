@@ -10,14 +10,14 @@ body:
     id: multi-selection
     attributes:
       label: Choose multiple
-    options:
-      - label: Balloon
-        required: false
-      - label:  Cloud
-        required: false
-      - label:  Tree
-        required: false
-      - label:  River
-        required: false
-      - label:  Mountain
-        required: false
+      options:
+        - label: Balloon
+          required: false
+        - label:  Cloud
+          required: false
+        - label:  Tree
+          required: false
+        - label:  River
+          required: false
+        - label:  Mountain
+          required: false
