@@ -21,5 +21,3 @@ body:
         required: false
       - label:  Mountain
         required: false
-    attributes:
-      label: Choose multiple
