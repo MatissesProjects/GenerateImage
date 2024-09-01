@@ -24,8 +24,8 @@ jobs:
           echo $WORD_LIST
           # Shuffle the words and pick different lengths for each difficulty
           easy_WORD_LIST=$(echo "${WORD_LIST}" | tr ',' '\n' | shuf | head -n 10 | tr '\n' ',' | sed 's/,$//')
-          medium_WORD_LIST=$(echo "${WORD_LIST}" | tr ',' '\n' | shuf | head -n 7 | tr '\n' ',' | sed 's/,$//')
-          hard_WORD_LIST=$(echo "${WORD_LIST}" | tr ',' '\n' | shuf | head -n 5 | tr '\n' ',' | sed 's/,$//')
+          medium_WORD_LIST=$(echo "${easy_WORD_LIST}" | tr ',' '\n' | shuf | head -n 7 | tr '\n' ',' | sed 's/,$//')
+          hard_WORD_LIST=$(echo "${easy_WORD_LIST}" | tr ',' '\n' | shuf | head -n 5 | tr '\n' ',' | sed 's/,$//')
 
           echo "EASY_WORD_LIST=$easy_WORD_LIST"
           echo "MEDIUM_WORD_LIST=$medium_WORD_LIST"
