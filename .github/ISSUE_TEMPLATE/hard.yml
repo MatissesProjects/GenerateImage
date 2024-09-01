@@ -13,11 +13,11 @@ body:
       options:
         - label: Lane
           required: false
-        - label: Veranda
+        - label: Jungle
           required: false
-        - label: Parkway
+        - label: Labyrinth
           required: false
-        - label: Terrace
+        - label: Aqueduct
           required: false
-        - label: Causeway
+        - label: Prairie
           required: false

@@ -11,17 +11,17 @@ body:
     attributes:
       label: Choose multiple
       options:
-        - label: Archipelago
+        - label: Lane
           required: false
-        - label: Palace
+        - label: Jungle
           required: false
-        - label: Savannah
+        - label: Terrace
           required: false
-        - label: Grotto
+        - label: Bridge
           required: false
-        - label: Alcove
+        - label: Iceberg
           required: false
-        - label: Forest
+        - label: Prairie
           required: false
-        - label: Island
+        - label: Colosseum
           required: false
