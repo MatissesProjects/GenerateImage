@@ -1,6 +1,6 @@
 name: Create New Image
 description: A form to select the options available for a new image creation
-
+title: "CreateImage"
 body:
   - type: markdown
     attributes:

@@ -1,5 +1,6 @@
 name: Transform the image (medium)
 description: A form to select the options available for transforming your current image.
+title: "Transform medium"
 
 body:
   - type: markdown

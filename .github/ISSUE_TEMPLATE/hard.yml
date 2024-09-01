@@ -1,5 +1,6 @@
 name: Transform the image (hard)
 description: A form to select the options available for transforming your current image.
+title: "Transform hard"
 
 body:
   - type: markdown
