@@ -14,8 +14,8 @@ body:
         - label: This
           required: false
         - label:  is
-            required: false
+          required: false
         - label:  a
-            required: false
+          required: false
         - label:  test
-            required: false
+          required: false
