@@ -28,11 +28,10 @@ Click the image below to generate a new image.
       <li>As a bonus, if I am streaming this will show up on the stream</li>
     </ul>
   <li>Wait for the new image to be generated, around 30-50 seconds</li>
-  <li>Optional, <a href='https://github.com/MatissesProjects/GenerateImage/tree/main/PlayGame'>play the game!</a></li>
 </ol>
 
 ## Current Generated Image
-[<img src='https://fileserver.matissetec.dev/output/createImage/630649313860780043/7196854146/7196854146/png'>](https://github.com/MatissesProjects/GenerateImage/issues/new?title=Transform:%20&body=No%20need%20to%20modify%20the%20body,%20just%20add%20your%20transformation%20to%20the%20photo%20in%20the%20title)
+[<img src='https://fileserver.matissetec.dev/output/similarImages/630649313860780043/7912631031/7912631031/png'>](https://github.com/MatissesProjects/GenerateImage/issues/new?title=Transform:%20&body=No%20need%20to%20modify%20the%20body,%20just%20add%20your%20transformation%20to%20the%20photo%20in%20the%20title)
 
 ## Current Generated Gif
 <img src='https://fileserver.matissetec.dev/output/backgroundExtenderGif/630649313860780043/6321413974/apiOut/gif' width='512' height='512' alt='gif'>
