@@ -34,8 +34,8 @@ jobs:
           # Create the YAML files for each difficulty
           for difficulty in easy medium hard; do
             WORDS_VAR="${difficulty}_WORD_LIST"
-            awk -v options="${!WORDS_VAR}" 'BEGIN {
-              print "name: Transform the image (${difficulty})";
+            awk -v options="${!WORDS_VAR}" -v difficulty="$difficulty" 'BEGIN {
+              print "name: Transform the image (" difficulty ")";
               print "description: A form to select the options available for transforming your current image.";
               print "";
               print "body:";
