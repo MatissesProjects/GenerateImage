@@ -1,0 +1,19 @@
+name: Delete this entry
+description: A place to choose which of your files to delete
+
+body:
+  - type: markdown
+    attributes:
+      value: |
+        ### You can select as many of these as you want:
+  - type: checkboxes
+    id: multi-selection
+    attributes:
+      label: Choose multiple
+      options:
+        - label: easy
+          required: false
+        - label: medium
+          required: false
+        - label: hard
+          required: false
