@@ -13,9 +13,11 @@ body:
       options:
         - label: This
           required: false
-        - label:  is
+      - label:  is
           required: false
-        - label:  a
+      - label:  a
           required: false
-        - label:  test
+      - label:  test
           required: false
+    attributes:
+      label: Choose multiple
