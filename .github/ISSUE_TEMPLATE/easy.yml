@@ -11,11 +11,11 @@ body:
     attributes:
       label: Choose multiple
       options:
-        - label: This
+        - label: Dogs
           required: false
-        - label: is
+        - label: are
           required: false
-        - label: a
+        - label: the
           required: false
-        - label: test
+        - label: best
           required: false
