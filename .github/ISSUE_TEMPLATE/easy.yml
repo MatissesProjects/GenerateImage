@@ -13,11 +13,9 @@ body:
       options:
         - label: This
           required: false
-      - label:  is
-          required: false
-      - label:  a
-          required: false
-      - label:  test
-          required: false
-    attributes:
-      label: Choose multiple
+        - label:  is
+            required: false
+        - label:  a
+            required: false
+        - label:  test
+            required: false
