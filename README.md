@@ -28,7 +28,7 @@ Click the image below to generate a new image.
       <li>As a bonus, if I am streaming this will show up on the stream</li>
     </ul>
   <li>Wait for the new image to be generated, around 30-50 seconds</li>
-  <li>Optional, <a href='https://github.com/MatissesProjects/GenerateImage/tree/main/PlayGame!'>play the game</a></li>
+  <li>Optional, <a href='https://github.com/MatissesProjects/GenerateImage/tree/main/PlayGame'>play the game!</a></li>
 </ol>
 
 ## Current Generated Image
