@@ -19,5 +19,3 @@ body:
           required: false
         - label:  test
           required: false
-    attributes:
-      label: Choose multiple
