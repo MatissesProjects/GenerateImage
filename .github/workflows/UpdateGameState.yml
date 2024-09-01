@@ -32,7 +32,7 @@ jobs:
           NEW_OPTIONS=$(echo "${CURRENT_WORD_LIST}" | awk -F, '{for(i=1;i<=NF;i++) printf "      - label: %s\n        required: false\n", $i}')
 
           # Insert the new options in the correct location
-          awk -v new_options="$NEW_OPTIONS" '
+          awk -v new_options="  $NEW_OPTIONS" '
             /id: multi-selection/ {
                 print;
                 print "    attributes:";
