@@ -10,14 +10,14 @@ body:
     id: multi-selection
     attributes:
       label: Choose multiple
-    options:
+      options:
         - label: This
-        required: false
-      - label:  is
-        required: false
-      - label:  a
-        required: false
-      - label:  test
-        required: false
+          required: false
+        - label:  is
+          required: false
+        - label:  a
+          required: false
+        - label:  test
+          required: false
     attributes:
       label: Choose multiple
