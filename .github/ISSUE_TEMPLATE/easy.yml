@@ -11,3 +11,23 @@ body:
     attributes:
       label: Choose multiple
       options:
+        - label: interesting
+          required: false
+        - label: data
+          required: false
+        - label: works
+          required: false
+        - label: this
+          required: false
+        - label: we
+          required: false
+        - label: if
+          required: false
+        - label: more
+          required: false
+        - label: see
+          required: false
+        - label: so
+          required: false
+        - label: for
+          required: false
