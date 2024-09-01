@@ -11,17 +11,17 @@ body:
     attributes:
       label: Choose multiple
       options:
-        - label: can
+        - label: Archipelago
           required: false
-        - label: works
+        - label: Palace
           required: false
-        - label: so
+        - label: Savannah
           required: false
-        - label: we
+        - label: Grotto
           required: false
-        - label: interesting
+        - label: Alcove
           required: false
-        - label: for
+        - label: Forest
           required: false
-        - label: it
+        - label: Island
           required: false
