@@ -6,9 +6,9 @@ You can select from multiple different levels to play this game
 
 [Easy](https://github.com/MatissesProjects/GenerateImage/issues/new?title=Transform%20Dont%20modify%20the%20title%20just%20use%20the%20form&template=easy.yml)
 
-Medium
+[Medium](https://github.com/MatissesProjects/GenerateImage/issues/new?title=Transform%20Dont%20modify%20the%20title%20just%20use%20the%20form&template=medium.yml)
 
-Hard
+[Hard](https://github.com/MatissesProjects/GenerateImage/issues/new?title=Transform%20Dont%20modify%20the%20title%20just%20use%20the%20form&template=hard.yml)
 
 You can only have a single entry in each mode
 
