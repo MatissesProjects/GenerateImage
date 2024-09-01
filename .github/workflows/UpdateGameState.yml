@@ -35,7 +35,7 @@ jobs:
           for difficulty in easy medium hard; do
             WORDS_VAR="${difficulty}_WORD_LIST"
             awk -v options="${!WORDS_VAR}" 'BEGIN {
-              print "name: Transform the image (" difficulty ")";
+              print "name: Transform the image (${difficulty})";
               print "description: A form to select the options available for transforming your current image.";
               print "";
               print "body:";
