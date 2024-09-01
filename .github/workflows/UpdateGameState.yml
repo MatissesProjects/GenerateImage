@@ -17,37 +17,45 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v4
 
-      - name: Create Workflow File with awk
+      - name: Generate Word Lists
         env:
-          CURRENT_WORD_LIST: ${{ vars.CURRENT_WORD_LIST }}
+          WORD_LIST: ${{ vars.WORD_LIST }}
         run: |
-          # Create the entire YAML file using awk
-          awk -v options="${CURRENT_WORD_LIST}" 'BEGIN {
-            print "name: Transform the image";
-            print "description: A form to select the options available for transforming your current image.";
-            print "";
-            print "body:";
-            print "  - type: markdown";
-            print "    attributes:";
-            print "      value: |";
-            print "        ### You can select as many of these as you want:";
-            print "  - type: checkboxes";
-            print "    id: multi-selection";
-            print "    attributes:";
-            print "      label: Choose multiple";
-            print "      options:";
-            split(options, opts, ",");
-            for (i in opts) {
-              gsub(/^[ \t]+|[ \t]+$/, "", opts[i]);
-              print "        - label: " opts[i];
-              print "          required: false";
-            }
-          }' > .github/ISSUE_TEMPLATE/easy.yml
+          # Shuffle the words and pick different lengths for each difficulty
+          EASY_WORD_LIST=$(echo "${WORD_LIST}" | tr ',' '\n' | shuf | head -n 10 | tr '\n' ',' | sed 's/,$//')
+          MEDIUM_WORD_LIST=$(echo "${WORD_LIST}" | tr ',' '\n' | shuf | head -n 7 | tr '\n' ',' | sed 's/,$//')
+          HARD_WORD_LIST=$(echo "${WORD_LIST}" | tr ',' '\n' | shuf | head -n 5 | tr '\n' ',' | sed 's/,$//')
+
+          # Create the YAML files for each difficulty
+          for difficulty in easy medium hard; do
+            WORDS_VAR="${difficulty}_WORD_LIST"
+            awk -v options="${!WORDS_VAR}" 'BEGIN {
+              print "name: Transform the image (" difficulty ")";
+              print "description: A form to select the options available for transforming your current image.";
+              print "";
+              print "body:";
+              print "  - type: markdown";
+              print "    attributes:";
+              print "      value: |";
+              print "        ### You can select as many of these as you want:";
+              print "  - type: checkboxes";
+              print "    id: multi-selection";
+              print "    attributes:";
+              print "      label: Choose multiple";
+              print "      options:";
+              split(options, opts, ",");
+              for (i in opts) {
+                gsub(/^[ \t]+|[ \t]+$/, "", opts[i]);
+                print "        - label: " opts[i];
+                print "          required: false";
+              }
+            }' difficulty="$difficulty" > .github/ISSUE_TEMPLATE/${difficulty,,}.yml
+          done
 
       - name: Commit changes
         run: |
           git config --global user.name "github-actions[bot]"
           git config --global user.email "github-actions[bot]@users.noreply.github.com"
-          git add .github/ISSUE_TEMPLATE/easy.yml
-          git commit -m "Creating new game setup"
+          git add .github/ISSUE_TEMPLATE/*.yml
+          git commit -m "Creating new game setup for all difficulties"
           git push
