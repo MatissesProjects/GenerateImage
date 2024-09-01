@@ -27,6 +27,10 @@ jobs:
           MEDIUM_WORD_LIST=$(echo "${WORD_LIST}" | tr ',' '\n' | shuf | head -n 7 | tr '\n' ',' | sed 's/,$//')
           HARD_WORD_LIST=$(echo "${WORD_LIST}" | tr ',' '\n' | shuf | head -n 5 | tr '\n' ',' | sed 's/,$//')
 
+          echo "EASY_WORD_LIST=$EASY_WORD_LIST"
+          echo "MEDIUM_WORD_LIST=$MEDIUM_WORD_LIST"
+          echo "HARD_WORD_LIST=$HARD_WORD_LIST"
+
           # Create the YAML files for each difficulty
           for difficulty in easy medium hard; do
             WORDS_VAR="${difficulty}_WORD_LIST"
