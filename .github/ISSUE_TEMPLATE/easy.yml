@@ -3,7 +3,17 @@ description: A form to select the options available for transforming your curren
 
 body:
   - type: markdown
-    attributes:
+    options:
+      - label: Balloon
+        required: false
+      - label:  Cloud
+        required: false
+      - label:  Tree
+        required: false
+      - label:  River
+        required: false
+      - label:  Mountain
+        required: false
       value: |
         ### You can select as many of these as you want:
   - type: checkboxes
@@ -21,5 +31,5 @@ body:
         required: false
       - label:  Mountain
         required: false
-    attributes:
+      label: Choose multiple
       label: Choose multiple
