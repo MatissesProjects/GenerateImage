@@ -17,30 +17,33 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v4
 
-      - name: Create Workflow File
+      - name: Create Workflow File with awk
         env:
           CURRENT_WORD_LIST: ${{ vars.CURRENT_WORD_LIST }}
         run: |
-          # Convert comma-delimited list into YAML formatted options
-          NEW_OPTIONS=$(echo "${CURRENT_WORD_LIST}" | awk -F, '{for(i=1;i<=NF;i++) printf "        - label: %s\n          required: false\n", $i}')
+          # Create the entire YAML file using awk
+          awk -v options="${CURRENT_WORD_LIST}" 'BEGIN {
+            print "name: Transform the image";
+            print "description: A form to select the options available for transforming your current image.";
+            print "";
+            print "body:";
+            print "  - type: markdown";
+            print "    attributes:";
+            print "      value: |";
+            print "        ### You can select as many of these as you want:";
+            print "  - type: checkboxes";
+            print "    id: multi-selection";
+            print "    attributes:";
+            print "      label: Choose multiple";
+            print "      options:";
+            split(options, opts, ",");
+            for (i in opts) {
+              gsub(/^[ \t]+|[ \t]+$/, "", opts[i]);
+              print "        - label: " opts[i];
+              print "          required: false";
+            }
+          }' > .github/ISSUE_TEMPLATE/easy.yml
 
-          # Create the entire YAML file
-          cat <<EOF > .github/ISSUE_TEMPLATE/easy.yml
-name: Transform the image
-description: A form to select the options available for transforming your current image.
-
-body:
-  - type: markdown
-    attributes:
-      value: |
-        ### You can select as many of these as you want:
-  - type: checkboxes
-    id: multi-selection
-    attributes:
-      label: Choose multiple
-      options:
-        $NEW_OPTIONS
-        EOF
       - name: Commit changes
         run: |
           git config --global user.name "github-actions[bot]"
