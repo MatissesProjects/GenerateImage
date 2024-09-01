@@ -21,6 +21,7 @@ jobs:
         env:
           WORD_LIST: ${{ vars.WORD_LIST }}
         run: |
+          echo $WORD_LIST
           # Shuffle the words and pick different lengths for each difficulty
           EASY_WORD_LIST=$(echo "${WORD_LIST}" | tr ',' '\n' | shuf | head -n 10 | tr '\n' ',' | sed 's/,$//')
           MEDIUM_WORD_LIST=$(echo "${WORD_LIST}" | tr ',' '\n' | shuf | head -n 7 | tr '\n' ',' | sed 's/,$//')
