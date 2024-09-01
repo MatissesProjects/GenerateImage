@@ -16,7 +16,7 @@ jobs:
         run: |
           echo "Modifying workflows..."
           # remove all options from the workflow file
-          sed -i '/options:/,/^\s*-/d' .github/workflows/easy.yml
+          sed -i '/options:/,/^\s*-/d' .github/ISSUE_TEMPLATE/easy.yml
           echo "Workflows modified!"
 
       - name: Add New Options
