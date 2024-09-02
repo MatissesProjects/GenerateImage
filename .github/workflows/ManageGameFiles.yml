@@ -32,8 +32,8 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           REPOSITORY_OWNER: ${{ github.repository_owner }}
         run: |
-          pip install -r requirements.txt
-          python manageGameState.py
+          pip install -r ./PlayGame/requirements.txt
+          python ./PlayGame/manageGameState.py
 
       # Create new commit with the changed files and push it to GitHub
       # - name: Commit and push changes
