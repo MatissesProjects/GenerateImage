@@ -9,7 +9,8 @@ jobs:
     name: Manage Game Files
     runs-on: ubuntu-latest
     if: |
-      startsWith(github.event.issue.title, 'DeleteEntry')
+      startsWith(github.event.issue.title, 'DeleteEntry') ||
+      startsWith(github.event.issue.title, 'Game')
 
     permissions:
       contents: write
