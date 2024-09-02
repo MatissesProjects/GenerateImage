@@ -26,14 +26,14 @@ jobs:
           architecture: "x64"
 
       # Use pip to install the dependencies and then run the script
-      - name: Start image transform
+      - name: Manage game state
         env:
           ISSUE_NUMBER: ${{ github.event.issue.number }}
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           REPOSITORY_OWNER: ${{ github.repository_owner }}
         run: |
           pip install -r requirements.txt
-          python PlayGame/manageGameState.py
+          python ./PlayGame/manageGameState.py
 
       # Create new commit with the changed files and push it to GitHub
       # - name: Commit and push changes

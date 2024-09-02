@@ -1,5 +1,6 @@
 import github
 import os
+import json
 
 ISSUE_NUMBER = int(os.getenv("ISSUE_NUMBER"))
 GITHUB_REPO = os.getenv("GITHUB_REPOSITORY")
@@ -15,7 +16,7 @@ def main():
 
     
     with open("./PlayGame/currentEntries.json", "r+") as f:
-        jsonData = f.readlines()
+        jsonData = json.load(f)
     
     print(jsonData)
     issue.edit(state="close")
