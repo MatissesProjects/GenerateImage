@@ -39,7 +39,7 @@ def main():
             for userData in jsonData[level]:
                 if userData[0] == user:
                     jsonData[level].remove(userData)
-
+        print(jsonData)
         try:
             with open("./PlayGame/currentEntries.json", "w") as f:
                 json.dump(jsonData, f, indent=4)
