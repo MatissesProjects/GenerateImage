@@ -38,7 +38,7 @@ jobs:
             WORDS_VAR="${difficulty}_WORD_LIST"
             awk -v options="${!WORDS_VAR}" -v difficulty="$difficulty" 'BEGIN {
               print "name: Transform the image (" difficulty ")";
-              print "title: 'Transform " difficulty "' - do not change the title just fill out the form";
+              print "title: Transform " difficulty " - do not change the title just fill out the form";
               print "description: A form to select the options available for transforming your current image.";
               print "";
               print "body:";
