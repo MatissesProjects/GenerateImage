@@ -31,14 +31,12 @@ def main():
         with open("./PlayGame/currentEntries.json", "r+") as f:
             jsonData = json.load(f)
             for level in removeThese:
-                if user in jsonData[level]:
-                    # remove the user from the list if in the list
-                    jsonData[level].remove(user)
+                for userObject in jsonData[level]:
+                    if user in userObject[0]:
+                        jsonData[level].remove(userObject)
         print(f"jsonData: {jsonData}")
         with open("./PlayGame/currentEntries.json", "w") as f:
             f.write(json.dumps(jsonData))
-    # with open("./PlayGame/currentEntries.json", "r+") as f:
-    #     jsonData = json.load(f)
     
     print(jsonData)
     print(user in jsonData)
