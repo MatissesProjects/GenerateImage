@@ -217,6 +217,9 @@ def main():
     elif "GifBackgroundRemoval" in issue.title:
         print("starting GifBackgroundRemoval")
         gifBgrmLocation = gifBackgroundRemoval(issue)
+    elif "Game" in issue.title:
+        print("starting game")
+        issue.create_comment("Testing the game response")
 
     if imageLocation is None or gifLocation is None or gifBgrmLocation is None:
         return
