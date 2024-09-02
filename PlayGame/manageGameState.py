@@ -35,15 +35,10 @@ def main():
         except json.JSONDecodeError:
             print("Error: JSON file is not valid.")
             return
-
         for level in removeThese:
-            if level in jsonData:
-                original_length = len(jsonData[level])
-                jsonData[level] = [entry for entry in jsonData[level] if user not in entry[0]]
-                removed_count = original_length - len(jsonData[level])
-                print(f"Removed {removed_count} entries from {level}.")
-            else:
-                print(f"Level '{level}' not found in JSON data.")
+            for userData in jsonData[level]:
+                if userData[0] == user:
+                    jsonData[level].remove(userData)
 
         try:
             with open("./PlayGame/currentEntries.json", "w") as f:
