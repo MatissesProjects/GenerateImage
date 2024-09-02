@@ -1,5 +1,5 @@
 name: Transform the image (easy)
-title: Transform easy - do not change the title just fill out the form
+title: Game easy - do not change the title just fill out the form
 description: A form to select the options available for transforming your current image.
 
 body:
@@ -12,23 +12,23 @@ body:
     attributes:
       label: Choose multiple
       options:
-        - label: Bridge
+        - label: Monument
           required: false
-        - label: Factory
+        - label: Star
           required: false
-        - label: Fireplace
+        - label: Savannah
           required: false
-        - label: Crosswalk
+        - label: Square
           required: false
-        - label: Butterfly
+        - label: Tree
           required: false
-        - label: Amusement Park
+        - label: Meadow
           required: false
-        - label: Plain
+        - label: Lagoon
           required: false
-        - label: Pagoda
+        - label: Jungle
           required: false
-        - label: Tunnel
+        - label: Alley
           required: false
-        - label: Thoroughfare
+        - label: Volcano
           required: false

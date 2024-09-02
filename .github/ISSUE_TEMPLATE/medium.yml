@@ -1,5 +1,5 @@
 name: Transform the image (medium)
-title: Transform medium - do not change the title just fill out the form
+title: Game medium - do not change the title just fill out the form
 description: A form to select the options available for transforming your current image.
 
 body:
@@ -12,17 +12,17 @@ body:
     attributes:
       label: Choose multiple
       options:
-        - label: Tundra
+        - label: Savannah
           required: false
-        - label: Gulf
+        - label: Street
           required: false
-        - label: Rainbow
+        - label: Volcano
           required: false
-        - label: Mosque
+        - label: Cityscape
           required: false
-        - label: Thoroughfare
+        - label: Orchard
           required: false
-        - label: Pier
+        - label: Labyrinth
           required: false
-        - label: Tree
+        - label: Porch
           required: false
