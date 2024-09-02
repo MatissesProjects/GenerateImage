@@ -1,12 +1,12 @@
-name: ImageMagic
+name: Manage Game Files
 
 on:
   issues:
     types: [opened]
 
 jobs:
-  imageMagic:
-    name: Image Magic
+  ManageGameFiles:
+    name: Manage Game Files
     runs-on: ubuntu-latest
     if: |
       startsWith(github.event.issue.title, 'DeleteEntry')
