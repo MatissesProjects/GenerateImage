@@ -144,6 +144,20 @@ def parseImageString(issue):
     result = f"{choose_one}, {', '.join(choose_multiple_matches)}"
     return result
 
+def parseGameString(issue):
+    issueBody = issue.body
+    # Extract the items under "Choose multiple" that have an [X]
+    choose_multiple_matches = re.findall(r'- \[X\] (.+)', issueBody)
+    # choiceLength = len(choose_multiple_matches)
+    # filter choose_multiple_matches to only allowed list of words
+    # choose_multiple_matches = list(filter(lambda x: inAllowedList(x, allowedListMultiple), choose_multiple_matches))
+    # if choiceLength != len(choose_multiple_matches):
+        # close_with_error(issue, "Used a choice that is not in the allowed list")
+        # return
+    # Construct the result string
+    result = f"{', '.join(choose_multiple_matches)}"
+    return result
+
 def createImageFunction(issue):
     newImagePrompt = parseImageString(issue)
     if newImagePrompt is None:
@@ -219,7 +233,9 @@ def main():
         gifBgrmLocation = gifBackgroundRemoval(issue)
     elif "Game" in issue.title[:4]:
         print("starting game")
-        issue.create_comment("Testing the game response")
+        newImagePrompt = parseGameString(issue)
+        issue.create_comment(f"Testing the game response, {newImagePrompt}")
+
 
     if imageLocation is None or gifLocation is None or gifBgrmLocation is None:
         return
