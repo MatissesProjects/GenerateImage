@@ -7,10 +7,10 @@ ISSUE_NUMBER = int(os.getenv("ISSUE_NUMBER"))
 GITHUB_REPO = os.getenv("GITHUB_REPOSITORY")
 GITHUB_TOKEN = os.getenv("GITHUB_TOKEN")
 
-def parseGameString(text):
+def parseCheckBoxData(text):
     choose_multiple_matches = re.findall(r'- \[X\] (.+)', text)
-    result = f"{', '.join(choose_multiple_matches)}"
-    return result
+    #f"{', '.join(choose_multiple_matches)}"
+    return choose_multiple_matches
 
 def main():
     print("ISSUE_NUMBER: ", ISSUE_NUMBER)
@@ -22,12 +22,23 @@ def main():
     user = issue.user.login
     print(user)
     print(title)
-    if "Game" in title:
-        print(parseGameString(issue.body))
-    elif "DeleteEntry" in title:
-        print(parseGameString(issue.body))
-    with open("./PlayGame/currentEntries.json", "r+") as f:
-        jsonData = json.load(f)
+    # if "Game" in title:
+    #     print(parseGameString(issue.body))
+    # el
+    if "DeleteEntry" in title:
+        removeThese = parseCheckBoxData(issue.body)
+        print(removeThese)
+        with open("./PlayGame/currentEntries.json", "r+") as f:
+            jsonData = json.load(f)
+            for level in removeThese:
+                if user in jsonData[level]:
+                    # remove the user from the list if in the list
+                    jsonData[level].remove(user)
+        print(f"jsonData: {jsonData}")
+        with open("./PlayGame/currentEntries.json", "w") as f:
+            f.write(json.dumps(jsonData))
+    # with open("./PlayGame/currentEntries.json", "r+") as f:
+    #     jsonData = json.load(f)
     
     print(jsonData)
     print(user in jsonData)
