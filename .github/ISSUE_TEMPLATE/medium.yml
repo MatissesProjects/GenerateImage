@@ -1,6 +1,6 @@
 name: Transform the image (medium)
+title: Transform medium - do not change the title just fill out the form
 description: A form to select the options available for transforming your current image.
-title: "Transform medium"
 
 body:
   - type: markdown
@@ -12,17 +12,17 @@ body:
     attributes:
       label: Choose multiple
       options:
-        - label: Thoroughfare
-          required: false
-        - label: Veranda
-          required: false
-        - label: Bicycle
-          required: false
-        - label: Rainforest
-          required: false
-        - label: Statue
-          required: false
-        - label: Archipelago
+        - label: Tundra
           required: false
         - label: Gulf
+          required: false
+        - label: Rainbow
+          required: false
+        - label: Mosque
+          required: false
+        - label: Thoroughfare
+          required: false
+        - label: Pier
+          required: false
+        - label: Tree
           required: false
