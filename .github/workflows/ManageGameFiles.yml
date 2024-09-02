@@ -33,7 +33,9 @@ jobs:
           REPOSITORY_OWNER: ${{ github.repository_owner }}
         run: |
           pip install -r ./PlayGame/requirements.txt
+          echo "starting manageGameState.py"
           python ./PlayGame/manageGameState.py
+          echo "ran manageGameState.py"
 
       # Create new commit with the changed files and push it to GitHub
       # - name: Commit and push changes
