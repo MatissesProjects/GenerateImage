@@ -14,11 +14,14 @@ def main():
     issue = repo.get_issue(number=ISSUE_NUMBER)
 
     title = issue.title
+    user = issue.user.login
+
     print(title)    
     with open("./PlayGame/currentEntries.json", "r+") as f:
         jsonData = json.load(f)
     
     print(jsonData)
+    print(user in jsonData)
     issue.edit(state="close")
 
 if __name__ == "__main__":
