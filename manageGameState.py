@@ -8,6 +8,7 @@ GITHUB_TOKEN = os.getenv("GITHUB_TOKEN")
 
 
 def main():
+    print("ISSUE_NUMBER: ", ISSUE_NUMBER)
     client = github.Github(GITHUB_TOKEN)
     repo = client.get_repo(GITHUB_REPO)
     issue = repo.get_issue(number=ISSUE_NUMBER)
