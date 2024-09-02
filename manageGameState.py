@@ -13,8 +13,7 @@ def main():
     issue = repo.get_issue(number=ISSUE_NUMBER)
 
     title = issue.title
-
-    
+    print(title)    
     with open("./PlayGame/currentEntries.json", "r+") as f:
         jsonData = json.load(f)
     
