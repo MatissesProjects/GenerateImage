@@ -20,3 +20,7 @@ def main():
     
     print(jsonData)
     issue.edit(state="close")
+
+if __name__ == "__main__":
+    print("RUNNING SCRIPT")
+    main()
