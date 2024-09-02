@@ -1,4 +1,4 @@
-name: Update Game
+name: Start New Game
 
 on:
   schedule:
@@ -6,7 +6,7 @@ on:
   workflow_dispatch:
 
 jobs:
-  UpdateGame:
+  NewGameCreation:
     runs-on: ubuntu-latest
 
     permissions:
