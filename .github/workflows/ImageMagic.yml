@@ -12,7 +12,8 @@ jobs:
       startsWith(github.event.issue.title, 'Transform') ||
       startsWith(github.event.issue.title, 'CreateImage') ||
       startsWith(github.event.issue.title, 'ImageToGif') ||
-      startsWith(github.event.issue.title, 'GifBackgroundRemoval')
+      startsWith(github.event.issue.title, 'GifBackgroundRemoval') ||
+      startsWith(github.event.issue.title, 'Game')
 
     permissions:
       contents: write
