@@ -12,23 +12,23 @@ body:
     attributes:
       label: Choose multiple
       options:
-        - label: Monument
+        - label: Pagoda
           required: false
-        - label: Star
+        - label: Ship
           required: false
-        - label: Savannah
+        - label: Tundra
           required: false
-        - label: Square
+        - label: Butterfly
           required: false
-        - label: Tree
+        - label: Reef
           required: false
-        - label: Meadow
+        - label: Deck
           required: false
-        - label: Lagoon
+        - label: Synagogue
           required: false
-        - label: Jungle
+        - label: Gazebo
           required: false
-        - label: Alley
+        - label: House
           required: false
-        - label: Volcano
+        - label: Coral
           required: false
