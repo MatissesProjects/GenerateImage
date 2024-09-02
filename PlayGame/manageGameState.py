@@ -15,7 +15,7 @@ def main():
 
     title = issue.title
     user = issue.user.login
-
+    print(user)
     print(title)    
     with open("./PlayGame/currentEntries.json", "r+") as f:
         jsonData = json.load(f)
