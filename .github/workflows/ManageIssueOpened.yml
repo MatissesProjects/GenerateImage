@@ -1,4 +1,4 @@
-name: ImageMagic
+name: Image Magic or Manage Game Files
 
 on:
   issues:
@@ -39,6 +39,48 @@ jobs:
         run: |
           pip install -r requirements.txt
           python main.py
+
+      # Create new commit with the changed files and push it to GitHub
+      - name: Commit and push changes
+        env:
+          ISSUE_TITLE: ${{ github.event.issue.title }}
+          ISSUE_AUTHOR: ${{ github.event.issue.user.login }}
+        run: |
+          git config --global user.name "github-actions[bot]"
+          git config --global user.email "github-actions[bot]@users.noreply.github.com"
+          git add .
+          git commit -m "${ISSUE_TITLE} by ${ISSUE_AUTHOR}"
+          git push
+  ManageGameFiles:
+    name: Manage Game Files
+    runs-on: ubuntu-latest
+    if: |
+      startsWith(github.event.issue.title, 'DeleteEntry') ||
+      startsWith(github.event.issue.title, 'Game')
+
+    permissions:
+      contents: write
+      issues: write
+
+    steps:
+      - uses: actions/checkout@v4
+
+      # Set up a Python 3.12 (64-bit) instance
+      - name: Setting up Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: "3.12"
+          architecture: "x64"
+
+      # Use pip to install the dependencies and then run the script
+      - name: Manage game state
+        env:
+          ISSUE_NUMBER: ${{ github.event.issue.number }}
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          REPOSITORY_OWNER: ${{ github.repository_owner }}
+        run: |
+          pip install -r ./PlayGame/requirements.txt
+          python ./PlayGame/manageGameState.py
 
       # Create new commit with the changed files and push it to GitHub
       - name: Commit and push changes
