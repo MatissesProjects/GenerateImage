@@ -12,23 +12,23 @@ body:
     attributes:
       label: Choose multiple
       options:
-        - label: Pagoda
-          required: false
-        - label: Ship
-          required: false
         - label: Tundra
           required: false
-        - label: Butterfly
+        - label: Rainforest
           required: false
-        - label: Reef
+        - label: Star
           required: false
-        - label: Deck
+        - label: Amusement Park
           required: false
-        - label: Synagogue
+        - label: Geyser
           required: false
-        - label: Gazebo
+        - label: Monument
           required: false
-        - label: House
+        - label: Temple
           required: false
-        - label: Coral
+        - label: Cityscape
+          required: false
+        - label: Zoo
+          required: false
+        - label: Courtyard
           required: false

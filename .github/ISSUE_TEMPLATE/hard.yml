@@ -12,13 +12,13 @@ body:
     attributes:
       label: Choose multiple
       options:
-        - label: Swamp
+        - label: Parkway
           required: false
-        - label: Rainbow
+        - label: Reef
           required: false
-        - label: Fortress
+        - label: Tower
           required: false
-        - label: Bicycle
+        - label: Coral
           required: false
-        - label: Vineyard
+        - label: Cityscape
           required: false
