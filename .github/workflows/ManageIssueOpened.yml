@@ -21,12 +21,28 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
+      # Cache Python dependencies (write to cache if missing)
+      - name: Cache Python dependencies
+        id: cache-python-deps
+        uses: actions/cache@v3
+        with:
+          path: ~/.cache/pip
+          key: ${{ runner.os }}-pip-${{ hashFiles('requirements.txt') }}
+          restore-keys: |
+            ${{ runner.os }}-pip-
+
       # Set up a Python 3.12 (64-bit) instance
       - name: Setting up Python
         uses: actions/setup-python@v4
         with:
           python-version: "3.12"
           architecture: "x64"
+
+      # Install Python dependencies (only if not restored from cache)
+      - name: Install Python dependencies
+        if: steps.cache-python-deps.outputs.cache-hit != 'true'
+        run: |
+          pip install -r requirements.txt
 
       # Use pip to install the dependencies and then run the script
       - name: Start image transform
@@ -37,7 +53,6 @@ jobs:
           DISCORD_TOKEN: ${{ secrets.DISCORD_TOKEN }}
           DISALLOWED_WORDS: ${{ vars.DISALLOWED_WORDS }}
         run: |
-          pip install -r requirements.txt
           python main.py
 
       # Create new commit with the changed files and push it to GitHub
@@ -51,6 +66,7 @@ jobs:
           git add .
           git commit -m "${ISSUE_TITLE} by ${ISSUE_AUTHOR}"
           git push
+
   ManageGameFiles:
     name: Manage Game Files
     runs-on: ubuntu-latest
@@ -65,12 +81,28 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
+      # Cache Python dependencies (write to cache if missing)
+      - name: Cache Python dependencies
+        id: cache-python-deps
+        uses: actions/cache@v3
+        with:
+          path: ~/.cache/pip
+          key: ${{ runner.os }}-pip-${{ hashFiles('./PlayGame/requirements.txt') }}
+          restore-keys: |
+            ${{ runner.os }}-pip-
+
       # Set up a Python 3.12 (64-bit) instance
       - name: Setting up Python
         uses: actions/setup-python@v4
         with:
           python-version: "3.12"
           architecture: "x64"
+
+      # Install Python dependencies (only if not restored from cache)
+      - name: Install Python dependencies
+        if: steps.cache-python-deps.outputs.cache-hit != 'true'
+        run: |
+          pip install -r ./PlayGame/requirements.txt
 
       # Use pip to install the dependencies and then run the script
       - name: Manage game state
@@ -79,7 +111,6 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           REPOSITORY_OWNER: ${{ github.repository_owner }}
         run: |
-          pip install -r ./PlayGame/requirements.txt
           python ./PlayGame/manageGameState.py
 
       # Create new commit with the changed files and push it to GitHub
