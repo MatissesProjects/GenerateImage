@@ -116,6 +116,10 @@ def voteForImage(voterName, userToVoteFor, level):
         return
     with open("./PlayGame/currentVotes.json", "r") as f:
         votes = json.load(f)
+    # Remove the voter from all other votes in the same level
+    for user, votesForUser in votes[level].items():
+        if voterName in votesForUser:
+            votesForUser.remove(voterName)
     if userToVoteFor not in votes[level]:
         votes[level][userToVoteFor] = [voterName]
     else:
