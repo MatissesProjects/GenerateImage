@@ -70,7 +70,7 @@ def deleteEntry(issue):
         return
 
 def playGame(issue):
-    textToRiffWith = parseCheckBoxData(issue.body)
+    textToRiffWith = parseCheckBoxData(', '.join(issue.body))
     print(f"text we are trying to use: {textToRiffWith}")
     with open("./PlayGame/startingImage.txt", "r") as f:
         targetLocalImage = f.read()
