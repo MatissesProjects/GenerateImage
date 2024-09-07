@@ -104,7 +104,7 @@ def modifyVotePageReadme(jsonData):
             f.write(f"<details><summary>Click to {level}</summary>\n\n")
             for user, image in jsonData[level].items():
                 # Wrap the image with a link to make it clickable
-                f.write(f"[![Vote for {user}]({image})](https://github.com/MatissesProjects/GenerateImage/issues/new?title=Vote%20for%20{user})\n")
+                f.write(f"[![Vote for {user}]({image})](https://github.com/MatissesProjects/GenerateImage/issues/new?title=Vote%20for%20{user}%20{level}&body=Good%20luck%20to%20{user}%20thank%20you%20for%20voting.%20One%20vote%20per%20difficulty)\n")
             f.write("</details>\n\n")
 
 
