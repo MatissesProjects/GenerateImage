@@ -104,7 +104,7 @@ def modifyVotePageReadme(jsonData):
             f.write(f"\n<details><summary>Click to {level}</summary>\n\n")
             for user, image in jsonData[level].items():
                 f.write(f"![https://github.com/MatissesProjects/GenerateImage/issues/new?title=Vote%20for%20{user}]({image})")
-            f.write("</details>\n")
+            f.write("</details>\n\n")
 
 def main():
     print("ISSUE_NUMBER:", ISSUE_NUMBER)
