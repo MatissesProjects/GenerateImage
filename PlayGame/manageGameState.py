@@ -58,7 +58,7 @@ def deleteEntry(issue):
         return
     for level in removeThese:
         if user in jsonData[level]:
-            jsonData[level].remove(user)
+            del jsonData[level][user]
     print(jsonData)
     try:
         with open("./PlayGame/currentEntries.json", "w") as f:
