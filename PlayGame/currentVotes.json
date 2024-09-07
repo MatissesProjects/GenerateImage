@@ -1,7 +1,13 @@
 {
     "easy": {
-        "MatissesProjects": ["MatissesProjects"]
+        "MatissesProjects": [
+            "MatissesProjects"
+        ]
     },
-    "medium": {},
+    "medium": {
+        "MatissesProjects": [
+            "MatissesProjects"
+        ]
+    },
     "hard": {}
 }
