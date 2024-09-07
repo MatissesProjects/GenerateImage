@@ -12,5 +12,9 @@
             "MatissesProjects"
         ]
     },
-    "hard": {}
+    "hard": {
+        "MatissesProjects": [
+            "MatissesProjects"
+        ]
+    }
 }

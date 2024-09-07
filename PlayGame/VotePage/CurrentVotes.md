@@ -1,28 +1,29 @@
 # Votes
 The current votes we have for this competition
-
-<details><summary>Easy</summary>
+<details><summary>easy</summary>
 
 | name | score |
-| --- | --- |
-| Eskeminha | 2 |
+| --- | --- || Eskeminha | 1 |
 | MatissesProjects | 1 |
 
+
 </details>
 
-<details><summary>Medium</summary>
+
+<details><summary>medium</summary>
 
 | name | score |
-| --- | --- |
-| Eskeminha | 2 |
+| --- | --- || MatissesProjects | 1 |
+
 
 </details>
 
-<details><summary>Hard</summary>
+
+<details><summary>hard</summary>
 
 | name | score |
-| --- | --- |
-| Eskeminha | 1 |
-| MatissesProjects | 2 |
+| --- | --- || MatissesProjects | 1 |
+
 
 </details>
+
