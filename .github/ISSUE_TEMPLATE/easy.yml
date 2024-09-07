@@ -12,23 +12,23 @@ body:
     attributes:
       label: Choose multiple
       options:
-        - label: Tundra
-          required: false
-        - label: Rainforest
-          required: false
-        - label: Star
+        - label: Island
           required: false
         - label: Amusement Park
           required: false
+        - label: Crosswalk
+          required: false
+        - label: Thoroughfare
+          required: false
+        - label: Garden
+          required: false
+        - label: Mosque
+          required: false
         - label: Geyser
           required: false
-        - label: Monument
+        - label: Field
           required: false
-        - label: Temple
+        - label: Wharf
           required: false
-        - label: Cityscape
-          required: false
-        - label: Zoo
-          required: false
-        - label: Courtyard
+        - label: Alley
           required: false
