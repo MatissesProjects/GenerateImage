@@ -13,4 +13,4 @@ body:
       options:
         - Add to current game
         - Dont use current image
-      default: Add to current game
+      default: 0
