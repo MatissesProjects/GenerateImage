@@ -107,6 +107,17 @@ def modifyVotePageReadme(jsonData):
                 f.write(f"[![Vote for {user}]({image})](https://github.com/MatissesProjects/GenerateImage/issues/new?title=Vote%20for%20{user}%20{level}&body=Good%20luck%20to%20{user}%20thank%20you%20for%20voting.%20One%20vote%20per%20difficulty)\n")
             f.write("</details>\n\n")
 
+def voteForImage(voterName, userToVoteFor, level):
+    if level not in ["easy", "medium", "hard"]:
+        return
+    with open("./PlayGame/currentVotes.json", "r") as f:
+        votes = json.load(f)
+    if userToVoteFor not in votes[level]:
+        votes[level][userToVoteFor] = [voterName]
+    else:
+        votes[level][userToVoteFor].append(voterName)
+    with open("./PlayGame/currentVotes.json", "w") as f:
+        json.dump(votes, f, indent=4)
 
 def main():
     print("ISSUE_NUMBER:", ISSUE_NUMBER)
@@ -123,6 +134,8 @@ def main():
         deleteEntry(issue)
     elif "Game" in title:
         playGame(issue)
+    elif "Vote" in title:
+        voteForImage(user, title.split(" ")[2], title.split(" ")[3])
 
     issue.edit(state="closed")
 
