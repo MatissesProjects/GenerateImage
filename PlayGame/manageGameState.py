@@ -50,6 +50,8 @@ def deleteEntry(issue):
     try:
         with open("./PlayGame/currentEntries.json", "r") as f:
             jsonData = json.load(f)
+        with open("./PlayGame/currentVotes.json", "r") as f:
+            voteData = json.load(f)
     except FileNotFoundError:
         print("Error: JSON file not found.")
         return
@@ -59,6 +61,8 @@ def deleteEntry(issue):
     for level in removeThese:
         if user in jsonData[level]:
             del jsonData[level][user]
+        if user in voteData[level]:
+            del voteData[level][user]
     print(jsonData)
     try:
         with open("./PlayGame/currentEntries.json", "w") as f:
