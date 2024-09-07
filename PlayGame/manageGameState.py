@@ -93,7 +93,18 @@ def playGame(issue):
             jsonData[gameMode][issue.user.login] = imageLocation
         f.write(json.dumps(jsonData, indent=4))
     print(jsonData)
+    modifyVotePageReadme(jsonData)
 
+def modifyVotePageReadme(jsonData):
+    with open("./PlayGame/votePageReadme.md", "w") as f:
+        f.write("# To vote")
+        f.write("click on the image and submit the issue\n\n")
+        for level in jsonData:
+            f.write(f"## {level}")
+            f.write(f"\n<details><summary>Click to {level}</summary>\n\n")
+            for user, image in jsonData[level].items():
+                f.write(f"![https://github.com/MatissesProjects/GenerateImage/issues/new?title=Vote%20for%20{user}]({image})")
+            f.write("</details>\n")
 
 def main():
     print("ISSUE_NUMBER:", ISSUE_NUMBER)
