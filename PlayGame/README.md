@@ -13,3 +13,6 @@ You can select from multiple different levels to play this game
 You can only have a single entry in each mode
 
 If you would like to start over you can [delete your entry](https://github.com/MatissesProjects/GenerateImage/issues/new?title=DeleteEntry%20Dont%20modify%20the%20title%20just%20use%20the%20form&template=deleteEntry.yml)
+
+# To Vote
+You can go to the [vote page](https://github.com/MatissesProjects/GenerateImage/tree/main/PlayGame/VotePage)
