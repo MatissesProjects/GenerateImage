@@ -132,7 +132,7 @@ def voteForImage(voterName, userToVoteFor, level):
         f.write("# Votes\nThe current votes we have for this competition")
         for level in votes:
             f.write(f"\n<details><summary>{level}</summary>\n\n")
-            f.write(f"| name | score |\n| --- | --- |")
+            f.write(f"| name | score |\n| --- | --- |\n")
             for user, votesForUser in votes[level].items():
                 f.write(f"| {user} | {len(votesForUser)} |\n")
             f.write("\n\n</details>\n\n")
