@@ -57,7 +57,7 @@ jobs:
     if: |
       startsWith(github.event.issue.title, 'DeleteEntry') ||
       startsWith(github.event.issue.title, 'Game') ||
-      startsWith(github.event.issue.title, 'Vote') ||
+      startsWith(github.event.issue.title, 'Vote')
 
     permissions:
       contents: write
