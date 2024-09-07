@@ -1,11 +1,8 @@
 {
     "easy": {
-        "MatissesProjects": [
-            "MatissesProjects",
-            "Eskeminha"
-        ],
         "Eskeminha": [
-            "Eskeminha"
+            "Eskeminha",
+            "MatissesProjects"
         ]
     },
     "medium": {
