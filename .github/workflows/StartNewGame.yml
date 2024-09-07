@@ -66,4 +66,5 @@ jobs:
           git config --global user.email "github-actions[bot]@users.noreply.github.com"
           git add .github/ISSUE_TEMPLATE/*.yml
           git commit -m "Creating new game setup for all difficulties"
+          git pull --rebase origin main
           git push

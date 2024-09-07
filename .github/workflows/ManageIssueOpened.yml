@@ -50,6 +50,7 @@ jobs:
           git config --global user.email "github-actions[bot]@users.noreply.github.com"
           git add .
           git commit -m "${ISSUE_TITLE} by ${ISSUE_AUTHOR}"
+          git pull --rebase origin main
           git push
   ManageGameFiles:
     name: Manage Game Files
@@ -94,4 +95,5 @@ jobs:
           git config --global user.email "github-actions[bot]@users.noreply.github.com"
           git add .
           git commit -m "${ISSUE_TITLE} by ${ISSUE_AUTHOR}"
+          git pull --rebase origin main
           git push
