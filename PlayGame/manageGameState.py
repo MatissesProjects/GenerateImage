@@ -89,7 +89,7 @@ def playGame(issue):
         jsonData = json.load(f)
     with open("./PlayGame/currentEntries.json", "w") as f:
         # get the game mode from the title
-        gameMode = issue.title.split(" ")[0]
+        gameMode = issue.title.split(" ")[1]
         if gameMode == "easy":
             # add to jsonData["easy"] a entry need to be qniue
             print(jsonData[gameMode].add([issue.user.login, imageLocation]))
