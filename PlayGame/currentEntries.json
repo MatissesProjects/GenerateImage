@@ -2,7 +2,9 @@
     "easy": {
         "MatissesProjects": "https://fileserver.matissetec.dev/output/similarImages/630649313860780043/6813629348/6813629348/png"
     },
-    "medium": {},
+    "medium": {
+        "MatissesProjects": "https://fileserver.matissetec.dev/output/similarImages/630649313860780043/7106336551/7106336551/png"
+    },
     "hard": {
         "MatissesProjects": "https://fileserver.matissetec.dev/output/similarImages/630649313860780043/8621850719/8621850719/png"
     }
