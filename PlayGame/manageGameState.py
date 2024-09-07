@@ -96,7 +96,7 @@ def playGame(issue):
     modifyVotePageReadme(jsonData)
 
 def modifyVotePageReadme(jsonData):
-    with open("./PlayGame/votePageReadme.md", "w") as f:
+    with open("./PlayGame/VotePage/README.md", "w+") as f:
         f.write("# To vote")
         f.write("click on the image and submit the issue\n\n")
         for level in jsonData:
