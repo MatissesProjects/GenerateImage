@@ -85,8 +85,9 @@ def playGame(issue):
     print("resulting image location: ", imageLocation)
     issue.create_comment(f"Here is your image: ![{imageLocation}]({imageLocation})\nDo you want to enter this for your current difficulty level? (one entry per difficulty level)\n\n- [Yes](https://github.com/MatissesProjects/GenerateImage/issues/new?template=enterCurrentImage.yml)\nif no you are done, or optionally you can answer the form no.")
 
-    with open("./PlayGame/currentEntries.json", "rw") as f:
+    with open("./PlayGame/currentEntries.json", "r") as f:
         jsonData = json.load(f)
+    with open("./PlayGame/currentEntries.json", "w") as f:
         # get the game mode from the title
         gameMode = issue.title.split(" ")[0]
         if gameMode == "easy":
@@ -98,6 +99,9 @@ def playGame(issue):
             jsonData[gameMode].append([issue.user.login, imageLocation])
         elif gameMode == "hard":
             jsonData[gameMode].append([issue.user.login, imageLocation])
+        f.write(json.dumps(jsonData, indent=4))
+    print(jsonData)
+
 
 def main():
     print("ISSUE_NUMBER:", ISSUE_NUMBER)
