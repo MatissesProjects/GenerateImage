@@ -97,14 +97,16 @@ def playGame(issue):
 
 def modifyVotePageReadme(jsonData):
     with open("./PlayGame/VotePage/README.md", "w+") as f:
-        f.write("# To vote")
-        f.write("click on the image and submit the issue\n\n")
+        f.write("# To vote\n")
+        f.write("Click on the image and submit the issue\n\n")
         for level in jsonData:
-            f.write(f"## {level}")
-            f.write(f"\n<details><summary>Click to {level}</summary>\n\n")
+            f.write(f"## {level}\n")
+            f.write(f"<details><summary>Click to {level}</summary>\n\n")
             for user, image in jsonData[level].items():
-                f.write(f"![https://github.com/MatissesProjects/GenerateImage/issues/new?title=Vote%20for%20{user}]({image})")
+                # Wrap the image with a link to make it clickable
+                f.write(f"[![Vote for {user}]({image})](https://github.com/MatissesProjects/GenerateImage/issues/new?title=Vote%20for%20{user})\n")
             f.write("</details>\n\n")
+
 
 def main():
     print("ISSUE_NUMBER:", ISSUE_NUMBER)
