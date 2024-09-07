@@ -57,9 +57,8 @@ def deleteEntry(issue):
         print("Error: JSON file is not valid.")
         return
     for level in removeThese:
-        for userData in jsonData[level]:
-            if userData[0] == user:
-                jsonData[level].remove(userData)
+        if user in jsonData[level]:
+            jsonData[level].remove(user)
     print(jsonData)
     try:
         with open("./PlayGame/currentEntries.json", "w") as f:
@@ -90,15 +89,8 @@ def playGame(issue):
     with open("./PlayGame/currentEntries.json", "w") as f:
         # get the game mode from the title
         gameMode = issue.title.split(" ")[1]
-        if gameMode == "easy":
-            # add to jsonData["easy"] a entry need to be qniue
-            print(jsonData[gameMode].add([issue.user.login, imageLocation]))
-            print(set(jsonData[gameMode].add([issue.user.login, imageLocation])))
-            jsonData[gameMode].append([issue.user.login, imageLocation])
-        elif gameMode == "medium":
-            jsonData[gameMode].append([issue.user.login, imageLocation])
-        elif gameMode == "hard":
-            jsonData[gameMode].append([issue.user.login, imageLocation])
+        if gameMode in ["easy", "medium", "hard"]:
+            jsonData[gameMode][issue.user.login] = imageLocation
         f.write(json.dumps(jsonData, indent=4))
     print(jsonData)
 
