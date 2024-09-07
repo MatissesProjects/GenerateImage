@@ -1,0 +1,15 @@
+name: Add My Image Entry
+description: Choose if the image will be added to your profile
+
+body:
+  - type: markdown
+    attributes:
+      value: |
+        ### You can select as many of these as you want:
+  - type: dropdown
+    id: single-selection
+    attributes:
+      label: Choose one
+      options:
+        - Add to current game
+        - Dont use current image

@@ -81,6 +81,8 @@ def playGame(issue):
     if len(imageLocation) > 300:
         close_with_error(issue, "Error generating image, the response was wrong")
         return
+    print("resulting image location: ", imageLocation)
+    issue.create_comment(f"Here is your image: {imageLocation}\nDo you want to enter this for your current difficulty level? (one entry per difficulty level)\n\n- ![Yes](https://github.com/MatissesProjects/GenerateImage/issues/new?template=enterCurrentImage.yml)")
 
 def main():
     print("ISSUE_NUMBER:", ISSUE_NUMBER)
