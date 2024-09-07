@@ -265,7 +265,7 @@ def main():
     time.sleep(15)
 
     if currentImageNew:
-        issue.create_comment(f"Your photo is here! \n![new image]({imageLocation}) \n\nif the image doesnt populate refresh in a few seconds\nNext steps are to ![transform the image](https://github.com/{GITHUB_REPO}/issues/new?title=Transform:%20&body=No%20need%20to%20modify%20the%20body,%20just%20add%20your%20transformation%20to%20the%20photo%20in%20the%20title) or ![create a gif]('https://github.com/MatissesProjects/GenerateImage/issues/new?title=ImageToGif%20Dont%20modify%20the%20title&body=No%20need%20to%20modify%20the%20body%20or%20the%20title')") 
+        issue.create_comment(f"Your photo is here! \n![new image]({imageLocation}) \n\nif the image doesnt populate refresh in a few seconds\nNext steps are to [transform the image](https://github.com/{GITHUB_REPO}/issues/new?title=Transform:%20&body=No%20need%20to%20modify%20the%20body,%20just%20add%20your%20transformation%20to%20the%20photo%20in%20the%20title) or [create a gif](https://github.com/MatissesProjects/GenerateImage/issues/new?title=ImageToGif%20Dont%20modify%20the%20title&body=No%20need%20to%20modify%20the%20body%20or%20the%20title)") 
     if currentGifNew:
         time.sleep(25)
         issue.create_comment(f"Your gif is here! \n![new gif]({gifLocation}) \n\nif the gif doesnt populate refresh in a few seconds")
