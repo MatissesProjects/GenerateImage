@@ -126,6 +126,16 @@ def voteForImage(voterName, userToVoteFor, level):
         votes[level][userToVoteFor].append(voterName)
     with open("./PlayGame/currentVotes.json", "w") as f:
         json.dump(votes, f, indent=4)
+    
+    # Update the CurrentVotes.md
+    with open("./PlayGame/VotePage/CurrentVotes.md", "w") as f:
+        f.write("# Votes\nThe current votes we have for this competition")
+        for level in votes:
+            f.write(f"\n<details><summary>{level}</summary>\n\n")
+            f.write(f"| name | score |\n| --- | --- |")
+            for user, votesForUser in votes[level].items():
+                f.write(f"| {user} | {len(votesForUser)} |\n")
+            f.write("\n\n</details>\n\n")
 
 def main():
     print("ISSUE_NUMBER:", ISSUE_NUMBER)
