@@ -1,5 +1,11 @@
 # Game Information
-Your goal is to take a picture and transform it into another image based on a specific topic using only the transform in the mode you are playing
+Your goal is to take the picture
+
+![CurrentImage](https://fileserver.matissetec.dev/output/similarImages/630649313860780043/6166500929/6166500929/png)
+
+and transform it into another image based on a specific topic using only the transforms in the mode you are playing
+
+for example we could try to make this a picture of a tree on the beach.
 
 # To Play
 You can select from multiple different levels to play this game
