@@ -3,11 +3,11 @@
 
 Your goal is to take the picture
 
-![CurrentImage]( https://fileserver.matissetec.dev/output/createImage/630649313860780043/6010377614/6010377614/png )
+![CurrentImage]( https://fileserver.matissetec.dev/output/createImage/630649313860780043/6067157619/6067157619/png )
 
 and transform it to the following topic 
 
-<h3> Dogs eating at a ocean </h3>
+<h3> Super dog coming to the rescue </h3>
 
 # To Play
 

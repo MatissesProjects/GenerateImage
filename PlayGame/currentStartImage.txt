@@ -1,1 +1,1 @@
-inputs.targetURL
+https://fileserver.matissetec.dev/output/createImage/630649313860780043/6067157619/6067157619/png

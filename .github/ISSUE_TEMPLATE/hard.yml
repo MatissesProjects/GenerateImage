@@ -12,13 +12,13 @@ body:
     attributes:
       label: Choose multiple
       options:
-        - label: Volcano
+        - label: Basin
           required: false
-        - label: Underpass
+        - label: Crossroads
           required: false
-        - label: Porch
+        - label: Factory
           required: false
-        - label: Grove
+        - label: Escalator
           required: false
-        - label: Coral
+        - label: Rainforest
           required: false

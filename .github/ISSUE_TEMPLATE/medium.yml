@@ -12,17 +12,17 @@ body:
     attributes:
       label: Choose multiple
       options:
+        - label: Escalator
+          required: false
+        - label: Statue
+          required: false
+        - label: Temple
+          required: false
+        - label: Street
+          required: false
+        - label: Parkway
+          required: false
         - label: Rainbow
           required: false
-        - label: Monument
-          required: false
-        - label: Thoroughfare
-          required: false
-        - label: Fireplace
-          required: false
-        - label: Church
-          required: false
-        - label: Gazebo
-          required: false
-        - label: Wharf
+        - label: Volcano
           required: false
