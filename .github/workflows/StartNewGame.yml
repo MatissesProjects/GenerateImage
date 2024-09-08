@@ -27,7 +27,7 @@ jobs:
         uses: actions/checkout@v4
 
       - name: Generate Word Lists with Difficulty-Based Probability
-        run: ./workflowScripts/generate_word_list.sh
+        run: ./workflowScripts/generate-word-list.sh
         env:
           WORD_LIST: ${{ vars.WORD_LIST }}
 
