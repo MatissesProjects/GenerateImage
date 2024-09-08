@@ -1,5 +1,7 @@
 {
-    "easy": {},
+    "easy": {
+        "MatissesProjects": "https://fileserver.matissetec.dev/output/similarImages/630649313860780043/7734864383/7734864383/png"
+    },
     "medium": {},
     "hard": {
         "MatissesProjects": "https://fileserver.matissetec.dev/output/similarImages/630649313860780043/8903093699/8903093699/png"
