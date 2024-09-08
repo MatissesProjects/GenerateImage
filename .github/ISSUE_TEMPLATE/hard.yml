@@ -12,13 +12,13 @@ body:
     attributes:
       label: Choose multiple
       options:
-        - label: Wharf
+        - label: Reef
           required: false
-        - label: Lane
+        - label: Monument
           required: false
-        - label: Court
+        - label: Crossroads
           required: false
-        - label: Grove
+        - label: Bridge
           required: false
-        - label: Fountain
+        - label: Vineyard
           required: false

@@ -12,17 +12,17 @@ body:
     attributes:
       label: Choose multiple
       options:
-        - label: Rainforest
-          required: false
-        - label: Canyon
+        - label: Patio
           required: false
         - label: Esplanade
           required: false
-        - label: Gulf
+        - label: Tower
           required: false
-        - label: Parkway
+        - label: Escalator
           required: false
-        - label: Road
+        - label: Cityscape
           required: false
-        - label: Garden
+        - label: Mosque
+          required: false
+        - label: Ship
           required: false

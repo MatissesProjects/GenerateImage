@@ -3,9 +3,9 @@
 
 Your goal is to take the picture
 
-![CurrentImage]( https://fileserver.matissetec.dev/output/createImage/630649313860780043/8128685783/8128685783/png )
+![CurrentImage]( https://fileserver.matissetec.dev/output/similarImages/630649313860780043/7209117104/7209117104/png )
 
-and transform it A beautiful landscape with a river using only the transforms in the mode you are playing.
+and transform it Aliens taking cows using only the transforms in the mode you are playing.
 
 # To Play
 
