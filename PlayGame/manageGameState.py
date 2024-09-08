@@ -102,7 +102,9 @@ def playGame(issue):
 def modifyVotePageReadme(jsonData):
     with open("./PlayGame/VotePage/README.md", "w+") as f:
         f.write("# To vote\n")
-        f.write("Click on the image and submit the issue\n\n")
+        f.write("Click on the image and submit the issue\n")
+        topic = "tree on the beach" # put into env variable
+        f.write(f"Topic is to create a {topic}\n\n")
         for level in jsonData:
             f.write(f"## {level}\n")
             f.write(f"<details><summary>Click to {level}</summary>\n\n")
