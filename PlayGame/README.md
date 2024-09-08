@@ -3,9 +3,11 @@
 
 Your goal is to take the picture
 
-![CurrentImage]( https://fileserver.matissetec.dev/output/similarImages/630649313860780043/7209117104/7209117104/png )
+![CurrentImage]( https://fileserver.matissetec.dev/output/createImage/630649313860780043/6010377614/6010377614/png )
 
-and transform it Aliens taking cows using only the transforms in the mode you are playing.
+and transform it to the following topic 
+
+<h3> Dogs eating at a ocean </h3>
 
 # To Play
 

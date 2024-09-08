@@ -12,13 +12,13 @@ body:
     attributes:
       label: Choose multiple
       options:
-        - label: Bicycle
+        - label: Volcano
           required: false
-        - label: Beach
+        - label: Underpass
           required: false
-        - label: Pier
+        - label: Porch
           required: false
-        - label: Arena
+        - label: Grove
           required: false
-        - label: Escalator
+        - label: Coral
           required: false
