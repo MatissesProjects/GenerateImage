@@ -78,32 +78,32 @@ jobs:
       - name: Set Game Information Readme
         run: |
           echo "
-# Game Information
+            # Game Information
 
-Your goal is to take the picture
+            Your goal is to take the picture
 
-![CurrentImage]( ${{ inputs.targetURL }} )
+            ![CurrentImage]( ${{ inputs.targetURL }} )
 
-and transform it ${{ inputs.topic }} using only the transforms in the mode you are playing.
+            and transform it ${{ inputs.topic }} using only the transforms in the mode you are playing.
 
-# To Play
+            # To Play
 
-You can select from multiple levels to play this game:
+            You can select from multiple levels to play this game:
 
-[Easy](https://github.com/MatissesProjects/GenerateImage/issues/new?title=Game%20easy%20Dont%20modify%20the%20title%20just%20use%20the%20form&template=easy.yml)
+            [Easy](https://github.com/MatissesProjects/GenerateImage/issues/new?title=Game%20easy%20Dont%20modify%20the%20title%20just%20use%20the%20form&template=easy.yml)
 
-[Medium](https://github.com/MatissesProjects/GenerateImage/issues/new?title=Game%20medium%20Dont%20modify%20the%20title%20just%20use%20the%20form&template=medium.yml)
+            [Medium](https://github.com/MatissesProjects/GenerateImage/issues/new?title=Game%20medium%20Dont%20modify%20the%20title%20just%20use%20the%20form&template=medium.yml)
 
-[Hard](https://github.com/MatissesProjects/GenerateImage/issues/new?title=Game%20hard%20Dont%20modify%20the%20title%20just%20use%20the%20form&template=hard.yml)
+            [Hard](https://github.com/MatissesProjects/GenerateImage/issues/new?title=Game%20hard%20Dont%20modify%20the%20title%20just%20use%20the%20form&template=hard.yml)
 
-You can only have a single entry in each mode.
+            You can only have a single entry in each mode.
 
-If you would like to start over, you can [delete your entry](https://github.com/MatissesProjects/GenerateImage/issues/new?title=DeleteEntry%20Dont%20modify%20the%20title%20just%20use%20the%20form&template=deleteEntry.yml).
+            If you would like to start over, you can [delete your entry](https://github.com/MatissesProjects/GenerateImage/issues/new?title=DeleteEntry%20Dont%20modify%20the%20title%20just%20use%20the%20form&template=deleteEntry.yml).
 
-# To Vote
+            # To Vote
 
-You can go to the [vote page](https://github.com/MatissesProjects/GenerateImage/tree/main/PlayGame/VotePage).
-"
+            You can go to the [vote page](https://github.com/MatissesProjects/GenerateImage/tree/main/PlayGame/VotePage).
+            "
           > PlayGame/README.md
 
       - name: Commit changes
