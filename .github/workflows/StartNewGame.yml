@@ -60,6 +60,11 @@ jobs:
             }' difficulty="$difficulty" > .github/ISSUE_TEMPLATE/${difficulty,,}.yml
           done
 
+      - name: Clear the current votes
+        run: |
+          echo "# Votes\nnew competition started empty votes\n" > PlayGame/VotePage/CurrentVotes.md
+          echo '{"easy":{},"medium":{},"hard":{}}' > PlayGame/currentVotes.json
+
       - name: Commit changes
         run: |
           git config --global user.name "github-actions[bot]"
