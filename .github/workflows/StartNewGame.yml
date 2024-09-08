@@ -52,9 +52,6 @@ jobs:
         run: echo ${{ inputs.topic }} > PlayGame/currentTopic.txt
 
       - name: Commit changes
-        env:
-          ISSUE_TITLE: ${{ github.event.issue.title }}
-          ISSUE_AUTHOR: ${{ github.event.issue.user.login }}
         run: |
           chmod +x ./workflowScripts/pull-then-push.sh
           ./workflowScripts/pull-then-push.sh   
