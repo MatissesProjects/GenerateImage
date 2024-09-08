@@ -4,6 +4,15 @@ on:
   schedule:
     - cron: '0 0 * * 0' # every Sunday at 00:00
   workflow_dispatch:
+    inputs:
+      targetURL:
+        description: 'The URL of the image to be targing for transformation'
+        required: true
+        default: 'https://fileserver.matissetec.dev/output/similarImages/630649313860780043/6166500929/6166500929/png'
+      topic:
+        description: 'The topic of the target image'
+        required: true
+        default: 'A beautiful landscape with a river'
 
 jobs:
   NewGameCreation:
