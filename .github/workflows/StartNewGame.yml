@@ -27,17 +27,23 @@ jobs:
         uses: actions/checkout@v4
 
       - name: Generate Word Lists with Difficulty-Based Probability
-        run: ./workflowScripts/generate-word-list.sh
+        run: |
+          chmod +x ./workflowScripts/generate-word-list.sh
+          ./workflowScripts/generate-word-list.sh
         env:
           WORD_LIST: ${{ vars.WORD_LIST }}
 
       - name: Clear the current votes
-        run: ./workflowScripts/reset-game-values.sh
+        run: |
+          chmod +x ./workflowScripts/reset-game-values.sh
+          ./workflowScripts/reset-game-values.sh
         env:
           TARGET_URL: ${{ inputs.targetURL }}
 
       - name: Set Game Information Readme
-        run: ./workflowScripts/generate-game-info.sh
+        run: |
+          chmod +x ./workflowScripts/generate-game-info.sh
+          ./workflowScripts/generate-game-info.sh
         env:
           TARGET_URL: ${{ inputs.targetURL }}
           TOPIC: ${{ inputs.topic }}
