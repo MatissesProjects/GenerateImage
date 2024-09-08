@@ -2,6 +2,8 @@
     "easy": {
         "MatissesProjects": "https://fileserver.matissetec.dev/output/similarImages/630649313860780043/7885129588/7885129588/png"
     },
-    "medium": {},
+    "medium": {
+        "sockheadrps": "https://fileserver.matissetec.dev/output/similarImages/630649313860780043/6783853736/6783853736/png"
+    },
     "hard": {}
 }
