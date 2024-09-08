@@ -103,8 +103,7 @@ jobs:
             # To Vote
 
             You can go to the [vote page](https://github.com/MatissesProjects/GenerateImage/tree/main/PlayGame/VotePage).
-            "
-          > PlayGame/README.md
+            " | sed 's/^[ \t]*//' > PlayGame/README.md
 
       - name: Commit changes
         run: |
