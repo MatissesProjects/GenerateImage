@@ -12,23 +12,23 @@ body:
     attributes:
       label: Choose multiple
       options:
-        - label: Bird
+        - label: Butterfly
           required: false
-        - label: Square
+        - label: Dock
+          required: false
+        - label: Fountain
+          required: false
+        - label: Crossroads
+          required: false
+        - label: Boulevard
           required: false
         - label: Tunnel
           required: false
-        - label: Tundra
+        - label: Canyon
           required: false
-        - label: Lift
+        - label: Aquarium
           required: false
-        - label: Reef
+        - label: Garden
           required: false
-        - label: Archipelago
-          required: false
-        - label: Labyrinth
-          required: false
-        - label: Village
-          required: false
-        - label: Fireplace
+        - label: Bluff
           required: false

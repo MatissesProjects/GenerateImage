@@ -12,17 +12,17 @@ body:
     attributes:
       label: Choose multiple
       options:
-        - label: Vineyard
+        - label: Archipelago
           required: false
-        - label: Plane
+        - label: Arena
           required: false
-        - label: Underpass
+        - label: Tundra
           required: false
-        - label: Bridge
+        - label: Elevator
           required: false
-        - label: Boulevard
+        - label: Geyser
           required: false
-        - label: Wharf
+        - label: Temple
           required: false
-        - label: Lift
+        - label: Pier
           required: false

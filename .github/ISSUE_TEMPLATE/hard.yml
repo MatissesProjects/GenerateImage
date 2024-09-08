@@ -12,13 +12,13 @@ body:
     attributes:
       label: Choose multiple
       options:
-        - label: Crossroads
+        - label: Rainbow
           required: false
-        - label: Basin
+        - label: Plain
           required: false
-        - label: Bird
+        - label: Savannah
           required: false
-        - label: Church
+        - label: Wharf
           required: false
-        - label: Tower
+        - label: Volcano
           required: false
