@@ -1,10 +1,1 @@
-{
-    "easy": {
-        "Eskeminha": "https://fileserver.matissetec.dev/output/similarImages/630649313860780043/7840753182/7840753182/png",
-        "MatissesProjects": "https://fileserver.matissetec.dev/output/similarImages/630649313860780043/6961775820/6961775820/png"
-    },
-    "medium": {
-        "MatissesProjects": "https://fileserver.matissetec.dev/output/similarImages/630649313860780043/8082835582/8082835582/png"
-    },
-    "hard": {}
-}
+{"easy":{},"medium":{},"hard":{}}
