@@ -3,11 +3,11 @@
 
 Your goal is to take the picture
 
-![CurrentImage]( https://fileserver.matissetec.dev/output/similarImages/630649313860780043/7209117104/7209117104/png )
+![CurrentImage]( https://fileserver.matissetec.dev/output/similarImages/630649313860780043/6166500929/6166500929/png )
 
 and transform it to the following topic 
 
-<h3> Strange view of animals at a river </h3>
+<h3> Many animals at the beach </h3>
 
 # To Play
 
