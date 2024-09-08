@@ -86,7 +86,7 @@ def playGame(issue):
         close_with_error(issue, "Error generating image, the response was wrong")
         return
     print("resulting image location: ", imageLocation)
-    issue.create_comment(f"Here is your image:\n![{imageLocation}]({imageLocation})\nDo you want to enter this for your current difficulty level? (one entry per difficulty level)\n\n- [Yes](https://github.com/MatissesProjects/GenerateImage/issues/new?template=enterCurrentImage.yml)\nif no you are done, or optionally you can answer the form no.")
+    issue.create_comment(f"Here is your image:\n![{imageLocation}]({imageLocation})\nEntered into the competition, good luck!")
 
     with open("./PlayGame/currentEntries.json", "r") as f:
         jsonData = json.load(f)
