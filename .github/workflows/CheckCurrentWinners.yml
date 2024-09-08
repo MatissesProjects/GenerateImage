@@ -21,3 +21,11 @@ jobs:
         run: |
           chmod +x ./workflowScripts/check-winners.sh
           ./workflowScripts/check-winners.sh
+
+      - name: Commit and push changes
+        env:
+          ISSUE_TITLE: ${{ github.event.issue.title }}
+          ISSUE_AUTHOR: ${{ github.event.issue.user.login }}
+        run: |
+          chmod +x pull-then-push.sh
+          ./workflowScripts/pull-then-push.sh
