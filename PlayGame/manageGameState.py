@@ -100,9 +100,12 @@ def playGame(issue):
     modifyVotePageReadme(jsonData)
 
 def modifyVotePageReadme(jsonData):
+    with open("./PlayGame/currentStartImage.txt", "r") as f:
+        imageLoc = f.read()
     with open("./PlayGame/VotePage/README.md", "w+") as f:
         f.write("# To vote\n")
         f.write("Click on the image and submit the issue\n")
+        f.write("These are based on the image\n![img]({imageLoc})\n")
         topic = "tree on the beach" # put into env variable
         f.write(f"Topic is to create a {topic}\n\n")
         for level in jsonData:
