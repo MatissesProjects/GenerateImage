@@ -2,6 +2,10 @@
 
 # Define the path to your JSON file
 JSON_FILE="PlayGame/currentVotes.json"
+OUTPUT_FILE="PlayGame/winners.txt"
+
+# Clear the output file before writing new data
+echo "" > "$OUTPUT_FILE"
 
 # Function to find the key (entry) with the max votes for a given difficulty level
 find_max_votes_entry() {
@@ -14,7 +18,7 @@ find_max_votes_entry() {
 
   if [ -z "$entries" ]; then
     echo "No entries found for $difficulty level."
-    echo "" > PlayGame/"$difficulty-winner.txt"
+    echo "$difficulty - had no entries" >> "$OUTPUT_FILE"
     return
   fi
 
@@ -28,7 +32,7 @@ find_max_votes_entry() {
       url_of_max=$entry
     fi
   done
-  echo "$url_of_max" > PlayGame/"$difficulty-winner.txt"
+  echo "$difficulty - $url_of_max" >> "$OUTPUT_FILE"
 }
 
 # Process each difficulty level
