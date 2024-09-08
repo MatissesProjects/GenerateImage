@@ -6,7 +6,7 @@ on:
   workflow_dispatch:
     inputs:
       targetURL:
-        description: 'The URL of the image to be targing for transformation'
+        description: 'The URL of the image to be targeting for transformation'
         required: true
         default: 'https://fileserver.matissetec.dev/output/similarImages/630649313860780043/6166500929/6166500929/png'
       topic:
@@ -27,14 +27,14 @@ jobs:
         uses: actions/checkout@v4
 
       - name: Generate Word Lists with Difficulty-Based Probability
-        run: ./workflowScripts/generate_word_lists.sh
+        run: ./workflowScripts/generate_word_list.sh
         env:
           WORD_LIST: ${{ vars.WORD_LIST }}
 
       - name: Clear the current votes
         run: ./workflowScripts/reset-game-values.sh
         env:
-          targetURL: ${{ inputs.targetURL }}
+          TARGET_URL: ${{ inputs.targetURL }}
 
       - name: Set Game Information Readme
         run: ./workflowScripts/generate-game-info.sh
