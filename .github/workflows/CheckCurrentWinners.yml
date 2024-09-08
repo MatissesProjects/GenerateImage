@@ -1,0 +1,23 @@
+name: Check Current Winners
+
+on:
+  schedule:
+    - cron: '0 0 * * 0' # every Sunday at 00:00
+  workflow_dispatch:
+
+jobs:
+  CheckWinners:
+    runs-on: ubuntu-latest
+
+    permissions:
+      contents: write
+      issues: write
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Check for winners
+        run: |
+          chmod +x ./workflowScripts/check-winners.sh
+          ./workflowScripts/check-winners.sh
