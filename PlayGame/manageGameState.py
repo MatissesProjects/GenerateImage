@@ -76,7 +76,7 @@ def playGame(issue):
     # print(issue.body)
     textToRiffWith = ', '.join(parseCheckBoxData(issue.body))
     print(f"text we are trying to use: {textToRiffWith}")
-    with open("./PlayGame/startingImage.txt", "r") as f:
+    with open("./PlayGame/currentStartImage.txt", "r") as f:
         targetLocalImage = f.read()
     data1 = {"discordId":matisseId,"discordUsername":"matisse","targetPicture":targetLocalImage,"prompt":textToRiffWith,"id":random.randint(1000,9999), "accessToken": DISCORD_TOKEN}
     print("starting request to backend")
