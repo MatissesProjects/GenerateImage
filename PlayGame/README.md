@@ -3,9 +3,9 @@
 
 Your goal is to take the picture
 
-![CurrentImage](https://fileserver.matissetec.dev/output/similarImages/630649313860780043/6166500929/6166500929/png)
+![CurrentImage]( https://fileserver.matissetec.dev/output/similarImages/630649313860780043/7196198107/7196198107/png )
 
-and transform it TESTING using only the transforms in the mode you are playing.
+and transform it A beautiful landscape with a river using only the transforms in the mode you are playing.
 
 # To Play
 
