@@ -12,17 +12,17 @@ body:
     attributes:
       label: Choose multiple
       options:
-        - label: Labyrinth
+        - label: Cityscape
           required: false
-        - label: Temple
+        - label: Prairie
           required: false
-        - label: Road
+        - label: Patio
           required: false
-        - label: Arena
+        - label: Boulevard
           required: false
-        - label: Field
+        - label: Pier
           required: false
-        - label: Fireplace
+        - label: Canyon
           required: false
-        - label: Tree
+        - label: Factory
           required: false

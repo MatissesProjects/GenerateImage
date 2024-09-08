@@ -1,1 +1,3 @@
-# Votes\nnew competition started empty votes\n
+# Votes
+new competition started empty votes
+

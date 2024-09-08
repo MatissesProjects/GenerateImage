@@ -12,13 +12,13 @@ body:
     attributes:
       label: Choose multiple
       options:
-        - label: Gulf
+        - label: Cityscape
           required: false
-        - label: Tower
+        - label: Geyser
           required: false
-        - label: Patio
+        - label: Church
           required: false
-        - label: Bicycle
+        - label: Monument
           required: false
-        - label: Plaza
+        - label: Alley
           required: false
