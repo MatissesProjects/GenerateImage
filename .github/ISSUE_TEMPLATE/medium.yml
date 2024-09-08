@@ -12,17 +12,17 @@ body:
     attributes:
       label: Choose multiple
       options:
-        - label: Cityscape
+        - label: Vineyard
           required: false
-        - label: Prairie
+        - label: Plane
           required: false
-        - label: Patio
+        - label: Underpass
+          required: false
+        - label: Bridge
           required: false
         - label: Boulevard
           required: false
-        - label: Pier
+        - label: Wharf
           required: false
-        - label: Canyon
-          required: false
-        - label: Factory
+        - label: Lift
           required: false
