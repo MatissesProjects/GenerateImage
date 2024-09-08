@@ -12,17 +12,17 @@ body:
     attributes:
       label: Choose multiple
       options:
-        - label: Ocean
+        - label: Bridge
           required: false
-        - label: Cityscape
+        - label: Rainforest
           required: false
-        - label: Alley
+        - label: Street
           required: false
-        - label: Monument
+        - label: Geyser
           required: false
-        - label: Escalator
+        - label: Factory
           required: false
-        - label: Lift
+        - label: Vineyard
           required: false
-        - label: Bluff
+        - label: Palace
           required: false
