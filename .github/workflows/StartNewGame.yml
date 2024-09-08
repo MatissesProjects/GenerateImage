@@ -75,6 +75,7 @@ jobs:
           echo '{"easy":{},"medium":{},"hard":{}}' > PlayGame/currentEntries.json
           echo -e "# Votes\nnew competition started empty votes\n" > PlayGame/VotePage/CurrentVotes.md
           echo -e '# To vote\nNo current entries\n\n## easy\nNo current entries\n\n## medium\nNo current entries\n\n## hard\nNo current entries\n' > PlayGame/VotePage/README.md
+          echo inputs.targetURL > PlayGame/currentStartImage.txt
 
       - name: Set Game Information Readme
         run: |
@@ -85,8 +86,10 @@ jobs:
 
             ![CurrentImage]( ${{ inputs.targetURL }} )
 
-            and transform it ${{ inputs.topic }} using only the transforms in the mode you are playing.
-
+            and transform it to the following topic 
+            
+            <h3> ${{ inputs.topic }} </h3>
+            
             # To Play
 
             You can select from multiple levels to play this game:
@@ -105,6 +108,9 @@ jobs:
 
             You can go to the [vote page](https://github.com/MatissesProjects/GenerateImage/tree/main/PlayGame/VotePage).
             " | sed 's/^[ \t]*//' > PlayGame/README.md
+      
+      - name: Save topic for later use
+        run: echo ${{ inputs.topic }} > PlayGame/currentTopic.txt
 
       - name: Commit changes
         run: |
