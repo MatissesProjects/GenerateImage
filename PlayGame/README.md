@@ -3,11 +3,11 @@
 
 Your goal is to take the picture
 
-![CurrentImage]( https://fileserver.matissetec.dev/output/combineImage/630649313860780043/6218117122/6218117122/png )
+![CurrentImage](https://fileserver.matissetec.dev/output/similarImages/630649313860780043/6166500929/6166500929/png)
 
 and transform it to the following topic 
 
-<h3> amazing person a the ball </h3>
+<h3> A beautiful landscape with a river </h3>
 
 # To Play
 
