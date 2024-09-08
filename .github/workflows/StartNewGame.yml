@@ -62,8 +62,9 @@ jobs:
 
       - name: Clear the current votes
         run: |
-          echo "# Votes\nnew competition started empty votes\n" > PlayGame/VotePage/CurrentVotes.md
+          echo -e "# Votes\nnew competition started empty votes\n" > PlayGame/VotePage/CurrentVotes.md
           echo '{"easy":{},"medium":{},"hard":{}}' > PlayGame/currentVotes.json
+          echo -e '# To vote\nClick on the image and submit the issue\n\n## easy\nNo current entries\n\n## medium\nNo current entries\n\n## hard\nNo current entries\n' > PlayGame/VotePage/README.md
 
       - name: Commit changes
         run: |
