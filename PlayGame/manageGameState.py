@@ -4,6 +4,7 @@ import json
 import re
 import requests
 import random
+import time
 
 ISSUE_NUMBER = int(os.getenv("ISSUE_NUMBER"))
 GITHUB_REPO = os.getenv("GITHUB_REPOSITORY")
@@ -85,6 +86,8 @@ def playGame(issue):
     if len(imageLocation) > 300:
         close_with_error(issue, "Error generating image, the response was wrong")
         return
+    
+    time.sleep(25)
     print("resulting image location: ", imageLocation)
     issue.create_comment(f"Here is your image:\n![{imageLocation}]({imageLocation})\nEntered into the competition, good luck!")
 
