@@ -268,10 +268,10 @@ def main():
         issue.create_comment(f"Your photo is here! \n![new image]({imageLocation}) \n\nif the image doesnt populate refresh in a few seconds\nNext steps are to [transform the image](https://github.com/{GITHUB_REPO}/issues/new?title=Transform:%20&body=No%20need%20to%20modify%20the%20body,%20just%20add%20your%20transformation%20to%20the%20photo%20in%20the%20title) or [create a gif](https://github.com/MatissesProjects/GenerateImage/issues/new?title=ImageToGif%20Dont%20modify%20the%20title&body=No%20need%20to%20modify%20the%20body%20or%20the%20title)") 
     if currentGifNew:
         time.sleep(25)
-        issue.create_comment(f"Your gif is here! \n![new gif]({gifLocation}) \n\nif the gif doesnt populate refresh in a few seconds")
+        issue.create_comment(f"Your gif is here! \n![new gif]({gifLocation}) \n\nif the gif doesnt populate refresh in a few seconds\nNext step is to [remove the gif background](https://github.com/{GITHUB_REPO}/issues/new?title=GifBackgroundRemoval%20Dont%20modify%20the%20title&body=No%20need%20to%20modify%20the%20body%20or%20the%20title)")
     if currentBgrmNew:
         time.sleep(20)
-        issue.create_comment(f"Your background removed gif is here! \n![new gif]({gifBgrmLocation}) \n\nif the gif doesnt populate refresh in a few seconds")
+        issue.create_comment(f"Your background removed gif is here! \n![new gif]({gifBgrmLocation}) \n\nif the gif doesnt populate refresh in a few seconds\nIf I am streaming this will show up on the stream")
     issue.edit(state="closed")
 
 if __name__ == "__main__":
