@@ -12,13 +12,13 @@ body:
     attributes:
       label: Choose multiple
       options:
-        - label: Basin
-          required: false
-        - label: Crossroads
-          required: false
-        - label: Factory
-          required: false
         - label: Escalator
           required: false
-        - label: Rainforest
+        - label: Ocean
+          required: false
+        - label: Parkway
+          required: false
+        - label: Rainbow
+          required: false
+        - label: Cityscape
           required: false

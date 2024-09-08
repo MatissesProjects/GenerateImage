@@ -12,23 +12,23 @@ body:
     attributes:
       label: Choose multiple
       options:
-        - label: Jungle
+        - label: Village
           required: false
-        - label: Bridge
+        - label: Ship
           required: false
-        - label: Tree
+        - label: Pier
           required: false
-        - label: Bicycle
+        - label: Plaza
           required: false
-        - label: Arcade
+        - label: Fireplace
           required: false
-        - label: Gazebo
+        - label: Reef
           required: false
-        - label: Synagogue
+        - label: Pergola
           required: false
-        - label: Swamp
+        - label: Orchard
+          required: false
+        - label: Arena
           required: false
         - label: Grove
-          required: false
-        - label: Bay
           required: false

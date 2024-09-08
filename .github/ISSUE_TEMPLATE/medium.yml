@@ -14,15 +14,15 @@ body:
       options:
         - label: Escalator
           required: false
-        - label: Statue
-          required: false
-        - label: Temple
-          required: false
-        - label: Street
-          required: false
-        - label: Parkway
-          required: false
         - label: Rainbow
           required: false
-        - label: Volcano
+        - label: Statue
+          required: false
+        - label: Canyon
+          required: false
+        - label: Veranda
+          required: false
+        - label: Reef
+          required: false
+        - label: Archipelago
           required: false
