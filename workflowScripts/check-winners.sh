@@ -15,6 +15,7 @@ find_max_votes_entry() {
   if [ -z "$entries" ]; then
     echo "No entries found for $difficulty level."
     echo "" > ./PlayGame/"$difficulty-winner.txt"
+    echo "wrote to $difficulty-winner.txt"
     return
   fi
 
@@ -28,8 +29,11 @@ find_max_votes_entry() {
       url_of_max=$entry
     fi
   done
-
+  ls -l
+  echo "writing to $difficulty-winner.txt $url_of_max"
   echo "$url_of_max" > ./PlayGame/"$difficulty-winner.txt"
+  echo "wrote to $difficulty-winner.txt"
+
 }
 
 # Process each difficulty level
