@@ -5,5 +5,9 @@
         ]
     },
     "medium": {},
-    "hard": {}
+    "hard": {
+        "MatissesProjects": [
+            "MatissesProjects"
+        ]
+    }
 }
