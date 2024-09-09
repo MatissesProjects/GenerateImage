@@ -108,7 +108,7 @@ def modifyVotePageReadme(jsonData):
     with open("./PlayGame/VotePage/README.md", "w+") as f:
         f.write("# To vote\n")
         f.write("Click on the image and submit the issue\n")
-        f.write(f"These are based on the image\n![img]({imageLoc})\n")
+        f.write(f"These are based on the image\n\n![img]({imageLoc})\n")
         with open("./PlayGame/currentTopic.txt", "r") as currentTopicFile:
             topic = currentTopicFile.read()
         f.write(f"\nTopic you are aiming for is\n<h3>{topic}</h3>\n\n")
