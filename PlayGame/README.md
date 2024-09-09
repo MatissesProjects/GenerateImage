@@ -3,11 +3,11 @@
 
 Your goal is to take the picture
 
-![CurrentImage](https://fileserver.matissetec.dev/output/similarImages/630649313860780043/6166500929/6166500929/png)
+![CurrentImage](https://static-cdn.jtvnw.net/jtv_user_pictures/676ea9f6-f205-4c8d-a935-734736dc680c-profile_image-300x300.png)
 
 and transform it to the following topic 
 
-<h3> A beautiful landscape with a river </h3>
+<h3> Strange scene </h3>
 
 # To Play
 

@@ -12,23 +12,23 @@ body:
     attributes:
       label: Choose multiple
       options:
-        - label: Street
+        - label: Watermill
           required: false
-        - label: Colosseum
+        - label: Plane
+          required: false
+        - label: Bridge
+          required: false
+        - label: Underpass
           required: false
         - label: Square
           required: false
-        - label: Field
+        - label: Rainforest
           required: false
-        - label: Aquarium
+        - label: Prairie
           required: false
-        - label: Swamp
+        - label: Synagogue
           required: false
-        - label: Reef
+        - label: Church
           required: false
-        - label: Court
-          required: false
-        - label: Castle
-          required: false
-        - label: Escalator
+        - label: River
           required: false
