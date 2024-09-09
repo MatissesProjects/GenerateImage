@@ -48,13 +48,13 @@ find_max_votes_entry() {
     # Retrieve the URL for the winning entry from the currentEntries.json file
     url_of_max=$(jq -r --arg level "$difficulty" --arg name "$name_of_person" '.[$level][$name]' "$ENTRIES_JSON_FILE")
 
-    # Format the entry for this difficulty in Markdown
+    # Format the entry for this difficulty in Markdown with name and image
     if [ "$difficulty" = "easy" ]; then
-      easy_result="<img src=\"$url_of_max\" alt=\"$name_of_person\" width=\"250\" height=\"250\">"
+      easy_result="$name_of_person <br> <img src=\"$url_of_max\" alt=\"$name_of_person\" width=\"250\" height=\"250\">"
     elif [ "$difficulty" = "medium" ]; then
-      medium_result="<img src=\"$url_of_max\" alt=\"$name_of_person\" width=\"250\" height=\"250\">"
+      medium_result="$name_of_person <br> <img src=\"$url_of_max\" alt=\"$name_of_person\" width=\"250\" height=\"250\">"
     elif [ "$difficulty" = "hard" ]; then
-      hard_result="<img src=\"$url_of_max\" alt=\"$name_of_person\" width=\"250\" height=\"250\">"
+      hard_result="$name_of_person <br> <img src=\"$url_of_max\" alt=\"$name_of_person\" width=\"250\" height=\"250\">"
     fi
   else
     # If no winner, output no winner text
