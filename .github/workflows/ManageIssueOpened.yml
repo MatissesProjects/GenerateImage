@@ -92,4 +92,4 @@ jobs:
 
       - name: Push new Vote if vote
         if: startsWith(github.event.issue.title, 'Vote')
-        uses: ./.github/workflows/CheckCurrentWinners.yml@main
+        uses: ./.github/workflows/CheckCurrentWinners.yml
