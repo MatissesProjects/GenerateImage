@@ -3,10 +3,13 @@
 # Define the path to your JSON files
 VOTES_JSON_FILE="PlayGame/currentVotes.json"
 ENTRIES_JSON_FILE="PlayGame/currentEntries.json"
-OUTPUT_FILE="PlayGame/winners.txt"
+OUTPUT_FILE="PlayGame/winners.md"
 
 # Clear the output file before writing new data
-echo "Current competition winners" > "$OUTPUT_FILE"
+echo "# Current competition winners" > "$OUTPUT_FILE"
+echo "" >> "$OUTPUT_FILE"
+echo "| Easy | Medium | Hard |" >> "$OUTPUT_FILE"
+echo "| --- | --- | --- |" >> "$OUTPUT_FILE"
 
 # Function to find the key (entry) with the max votes for a given difficulty level
 find_max_votes_entry() {
@@ -19,8 +22,14 @@ find_max_votes_entry() {
   entries=$(jq -r --arg level "$difficulty" '.[$level] | keys[]?' "$VOTES_JSON_FILE")
 
   if [ -z "$entries" ]; then
-    echo "No entries found for $difficulty level."
-    echo "$difficulty - had no entries" >> "$OUTPUT_FILE"
+    # Add "had no entries" to the corresponding column for this difficulty
+    if [ "$difficulty" = "easy" ]; then
+      easy_result="had no entries"
+    elif [ "$difficulty" = "medium" ]; then
+      medium_result="had no entries"
+    elif [ "$difficulty" = "hard" ]; then
+      hard_result="had no entries"
+    fi
     return
   fi
 
@@ -39,14 +48,35 @@ find_max_votes_entry() {
     # Retrieve the URL for the winning entry from the currentEntries.json file
     url_of_max=$(jq -r --arg level "$difficulty" --arg name "$name_of_person" '.[$level][$name]' "$ENTRIES_JSON_FILE")
 
-    # Output the winner's name and URL
-    echo "$difficulty - $name_of_person - $url_of_max" >> "$OUTPUT_FILE"
+    # Format the entry for this difficulty in Markdown
+    if [ "$difficulty" = "easy" ]; then
+      easy_result="<img src=\"$url_of_max\" alt=\"$name_of_person\" width=\"250\" height=\"250\">"
+    elif [ "$difficulty" = "medium" ]; then
+      medium_result="<img src=\"$url_of_max\" alt=\"$name_of_person\" width=\"250\" height=\"250\">"
+    elif [ "$difficulty" = "hard" ]; then
+      hard_result="<img src=\"$url_of_max\" alt=\"$name_of_person\" width=\"250\" height=\"250\">"
+    fi
   else
-    echo "$difficulty - no winner" >> "$OUTPUT_FILE"
+    # If no winner, output no winner text
+    if [ "$difficulty" = "easy" ]; then
+      easy_result="had no winner"
+    elif [ "$difficulty" = "medium" ]; then
+      medium_result="had no winner"
+    elif [ "$difficulty" = "hard" ]; then
+      hard_result="had no winner"
+    fi
   fi
 }
+
+# Initialize variables for each difficulty
+easy_result="had no entries"
+medium_result="had no entries"
+hard_result="had no entries"
 
 # Process each difficulty level
 for difficulty in "easy" "medium" "hard"; do
   find_max_votes_entry "$difficulty"
 done
+
+# Output the results to the Markdown table
+echo "| $easy_result | $medium_result | $hard_result |" >> "$OUTPUT_FILE"
