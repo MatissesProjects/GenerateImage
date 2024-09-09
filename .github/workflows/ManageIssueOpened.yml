@@ -80,6 +80,15 @@ jobs:
         run: |
           pip install -r ./PlayGame/requirements.txt
           python ./PlayGame/manageGameState.py
+        
+      - name: Push new Vote if vote
+        if: startsWith(github.event.issue.title, 'Vote')
+        run: |
+        curl -X POST \
+          -H "Accept: application/vnd.github+json" \
+          -H "Authorization: token ${{ secrets.GITHUB_TOKEN }}" \
+          https://api.github.com/repos/${{ github.repository }}/dispatches \
+          -d '{"event_type":"check-winners"}'
 
       # Create new commit with the changed files and push it to GitHub
       - name: Commit and push changes
