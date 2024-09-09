@@ -14,15 +14,15 @@ body:
       options:
         - label: Patio
           required: false
-        - label: Bay
-          required: false
-        - label: Deck
-          required: false
         - label: Lift
           required: false
-        - label: Pier
+        - label: Savannah
           required: false
-        - label: Elevator
+        - label: Labyrinth
           required: false
-        - label: Arena
+        - label: Monument
+          required: false
+        - label: Canyon
+          required: false
+        - label: Dock
           required: false

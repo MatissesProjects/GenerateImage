@@ -1,11 +1,1 @@
-{
-    "easy": {
-        "MatissesProjects": "https://fileserver.matissetec.dev/output/similarImages/630649313860780043/8057830737/8057830737/png"
-    },
-    "medium": {
-        "MatissesProjects": "https://fileserver.matissetec.dev/output/similarImages/630649313860780043/6290101655/6290101655/png"
-    },
-    "hard": {
-        "MatissesProjects": "https://fileserver.matissetec.dev/output/similarImages/630649313860780043/8557910489/8557910489/png"
-    }
-}
+{"easy":{},"medium":{},"hard":{}}
