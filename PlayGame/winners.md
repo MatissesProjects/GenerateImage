@@ -1,23 +1,5 @@
-<h1>Current Competition Winners</h1>
+# Current competition winners
 
-<table>
-  <thead>
-    <tr>
-      <th>Easy</th>
-      <th>Medium</th>
-      <th>Hard</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td>MatissesProjects</td>
-      <td>had no entries</td>
-      <td>had no entries</td>
-    </tr>
-    <tr>
-      <td><img src="https://fileserver.matissetec.dev/output/similarImages/630649313860780043/7694870942/7694870942/png" alt="test image" width="250" height="250"></td>
-      <td>had no entries</td>
-      <td>had no entries</td>
-    </tr>
-  </tbody>
-</table>
+| Easy | Medium | Hard |
+| --- | --- | --- |
+| <img src="https://fileserver.matissetec.dev/output/similarImages/630649313860780043/8827094617/8827094617/png" alt="MatissesProjects" width="250" height="250"> | <img src="https://fileserver.matissetec.dev/output/similarImages/630649313860780043/7430033841/7430033841/png" alt="MatissesProjects" width="250" height="250"> | <img src="https://fileserver.matissetec.dev/output/similarImages/630649313860780043/7002650281/7002650281/png" alt="MatissesProjects" width="250" height="250"> |
