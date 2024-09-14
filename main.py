@@ -208,6 +208,7 @@ def main():
         return
     if "Transform" in issue.title:
         print("starting Transform")
+        originalImageLocation = imageLocation
         imageLocation = transformFunction(issue)
     elif "CreateImage" in issue.title:
         print("starting CreateImage")
@@ -259,7 +260,7 @@ def main():
         f.write(gifBgrmLocation)
     if currentImageNew:
         if isTransform:
-            issue.create_comment(f"The creation of images is about 30 second, if the image come back blank refresh in a few seconds\nThis is based on the image\n[<img src='{imageLocation}'>]('{imageLocation}')")
+            issue.create_comment(f"The creation of images is about 30 second, if the image come back blank refresh in a few seconds\nThis is based on the image\n[<img src='{originalImageLocation}'>]('{originalImageLocation}')")
         else:
             issue.create_comment(f"The creation of images is about 30 second, if the image come back blank refresh in a few seconds")
     if currentGifNew:
