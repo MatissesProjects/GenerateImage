@@ -201,6 +201,7 @@ def main():
     gifLocation = ""
     gifBgrmLocation = ""
     checkLang = issue.title
+    isTransform = "Transform" in issue.title
     print(checkLang)
     if len(checkLang) < 2 or not detectLanguageEnglish(checkLang):
         close_with_error(issue, "Only english is supported")
@@ -257,7 +258,10 @@ def main():
     with open("currentBgrmGifURL.txt", "w+") as f:
         f.write(gifBgrmLocation)
     if currentImageNew:
-        issue.create_comment(f"The creation of images is about 30 second, if the image come back blank refresh in a few seconds")
+        if isTransform:
+            issue.create_comment(f"The creation of images is about 30 second, if the image come back blank refresh in a few seconds\nThis is based on the image\n[<img src='{imageLocation}'>]('{imageLocation}')")
+        else:
+            issue.create_comment(f"The creation of images is about 30 second, if the image come back blank refresh in a few seconds")
     if currentGifNew:
         issue.create_comment(f"The creation of gifs is about 50 second, if the image come back blank refresh in a few seconds\nThis is based on the image\n[<img src='{imageLocation}'>]('{imageLocation}')")
     if currentBgrmNew:
