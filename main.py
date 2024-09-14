@@ -208,7 +208,6 @@ def main():
         return
     if "Transform" in issue.title:
         print("starting Transform")
-        originalImageLocation = imageLocation
         imageLocation = transformFunction(issue)
     elif "CreateImage" in issue.title:
         print("starting CreateImage")
@@ -245,6 +244,9 @@ def main():
             gifLocation = f.read()
         with open("currentBgrmGifURL.txt", "r+") as f:
             gifBgrmLocation = f.read()
+        # we are doing a transform possibly set the original
+        with open("currentImageURL.txt", "r+") as f:
+            originalImageLocation = f.read()
         currentImageNew = True
 
     readme = render_readme(imageLocation, gifLocation, gifBgrmLocation)
