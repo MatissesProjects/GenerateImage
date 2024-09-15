@@ -176,7 +176,9 @@ def getImageFromJson(issue):
     # index based on the title image#
     title = issue.title
     try:
-        imageIndex = int(title.split(" ")[1][-1])
+        # Image#: example- Transform Image3:
+        # turn into regex?
+        imageIndex = int(title.split(" ")[1][-2])
     except:
         close_with_error(issue, "Second word in title must be Image# where # is a number from 1-4")
         return
