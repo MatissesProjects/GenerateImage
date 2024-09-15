@@ -92,5 +92,8 @@ jobs:
 
   CheckCurrentWinners:
     name: Start Manage Game Files
+    needs: ManageGameFiles
     if: startsWith(github.event.issue.title, 'Vote')
     uses: ./.github/workflows/CheckCurrentWinners.yml
+    secrets:
+      GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
