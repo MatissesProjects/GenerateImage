@@ -12,23 +12,23 @@ body:
     attributes:
       label: Choose multiple
       options:
-        - label: Bluff
-          required: false
         - label: Swamp
           required: false
-        - label: Street
+        - label: Porch
           required: false
-        - label: Esplanade
+        - label: Escalator
           required: false
-        - label: Road
+        - label: Tundra
           required: false
-        - label: Volcano
+        - label: Bicycle
           required: false
-        - label: Pergola
+        - label: Monument
           required: false
-        - label: Cottage
+        - label: Jungle
           required: false
-        - label: Courtyard
+        - label: Boulevard
           required: false
-        - label: Wharf
+        - label: Monastery
+          required: false
+        - label: Colosseum
           required: false
