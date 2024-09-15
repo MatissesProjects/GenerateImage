@@ -31,17 +31,14 @@ Click the image below to generate a new image.
   <li>Optional, <a href='https://github.com/MatissesProjects/GenerateImage/tree/main/PlayGame'>play the game!</a></li>
 </ol>
 
-## Generated Images
-
-| image1 | image2 | image3 | image4 |
-| --- | --- | --- | --- |
-| [<img src='https://fileserver.matissetec.dev/output/similarImages/630649313860780043/6511007617/6511007617/png'>](https://github.com/MatissesProjects/GenerateImage/issues/new?title=Transform:%20&body=No%20need%20to%20modify%20the%20body,%20just%20add%20your%20transformation%20to%20the%20photo%20in%20the%20title) | [<img src='https://fileserver.matissetec.dev/output/similarImages/630649313860780043/6511007617/6511007617/png'>](https://github.com/MatissesProjects/GenerateImage/issues/new?title=Transform:%20&body=No%20need%20to%20modify%20the%20body,%20just%20add%20your%20transformation%20to%20the%20photo%20in%20the%20title) | [<img src='https://fileserver.matissetec.dev/output/similarImages/630649313860780043/6511007617/6511007617/png'>](https://github.com/MatissesProjects/GenerateImage/issues/new?title=Transform:%20&body=No%20need%20to%20modify%20the%20body,%20just%20add%20your%20transformation%20to%20the%20photo%20in%20the%20title) | [<img src='https://fileserver.matissetec.dev/output/similarImages/630649313860780043/6511007617/6511007617/png'>](https://github.com/MatissesProjects/GenerateImage/issues/new?title=Transform:%20&body=No%20need%20to%20modify%20the%20body,%20just%20add%20your%20transformation%20to%20the%20photo%20in%20the%20title) |
+## Current Generated Image
+[<img src='https://fileserver.matissetec.dev/output/similarImages/630649313860780043/6460959850/6460959850/png'>](https://github.com/MatissesProjects/GenerateImage/issues/new?title=Transform:%20&body=No%20need%20to%20modify%20the%20body,%20just%20add%20your%20transformation%20to%20the%20photo%20in%20the%20title)
 
 ## Current Generated Gif
-<img src='https://fileserver.matissetec.dev/output/backgroundExtenderGif/630649313860780043/8012544664/apiOut/gif' width='256' height='256' alt='gif'>
+<img src='https://fileserver.matissetec.dev/output/backgroundExtenderGif/630649313860780043/8012544664/apiOut/gif' width='512' height='512' alt='gif'>
 
 ## Current Generated Background Removed Gif
-<img src='https://fileserver.matissetec.dev/output/videoBackgroundRemoval/630649313860780043/7067440081/apiOut/gif' width='256' height='256' alt='gif'>
+<img src='https://fileserver.matissetec.dev/output/videoBackgroundRemoval/630649313860780043/7067440081/apiOut/gif' width='512' height='512' alt='gif'>
 
 ## Want faster results?
 Try the page these APIs are based on: [Maitisse](https://deepnarration.matissetec.dev/)
