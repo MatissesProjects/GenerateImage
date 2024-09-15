@@ -4,6 +4,7 @@ import requests
 import random
 import time
 import re
+import json
 from better_profanity import profanity
 
 ISSUE_NUMBER = int(os.getenv("ISSUE_NUMBER"))
