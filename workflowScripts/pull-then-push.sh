@@ -9,5 +9,11 @@ if [[ -n "$ISSUE_TITLE" && -n "$ISSUE_AUTHOR" ]]; then
 else
   git commit -m "Creating new game setup for all difficulties"
 fi
-git pull --rebase origin main
+
+git pull origin main -X ours || {
+  echo "Automatic merge failed, aborting."
+  git merge --abort
+  exit 1
+}
+
 git push

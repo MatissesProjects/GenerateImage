@@ -182,7 +182,7 @@ def getImageFromJson(issue):
         # turn into regex?
         imageIndex = int(title.split(" ")[1][-2])
     except:
-        close_with_error(issue, "Second word in title must be Image# where # is a number from 1-4")
+        close_with_error(issue, "Exception second word in title must be Image# where # is a number from 1-4")
         return
     if imageIndex < 1 or imageIndex > 4:
         close_with_error(issue, "Second word in title must be Image# where # is a number from 1-4")
