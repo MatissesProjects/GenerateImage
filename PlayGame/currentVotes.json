@@ -4,14 +4,6 @@
             "MatissesProjects"
         ]
     },
-    "medium": {
-        "MatissesProjects": [
-            "MatissesProjects"
-        ]
-    },
-    "hard": {
-        "MatissesProjects": [
-            "MatissesProjects"
-        ]
-    }
+    "medium": {},
+    "hard": {}
 }
