@@ -253,13 +253,6 @@ def main():
             originalImageLocation = f.read()
         currentImageNew = True
 
-    with open("currentImageURLs.json", "r") as f:
-        imageLocations = json.load(f)['currentImageURLs']
-    readme = render_readme(imageLocations, gifLocation, gifBgrmLocation)
-    # issue.create_comment(readme)
-    with open("README.md", "w+") as f:
-        f.write(readme)
-
     with open("currentImageURL.txt", "w+") as f:
         f.write(imageLocation)
     with open("currentGifURL.txt", "w+") as f:
@@ -292,6 +285,14 @@ def main():
     if currentBgrmNew:
         time.sleep(20)
         issue.create_comment(f"Your background removed gif is here! \n![new gif]({gifBgrmLocation}) \n\nif the gif doesnt populate refresh in a few seconds\nIf I am streaming this will show up on the stream")
+    
+    with open("currentImageURLs.json", "r") as f:
+        imageLocations = json.load(f)['currentImageURLs']
+    readme = render_readme(imageLocations, gifLocation, gifBgrmLocation)
+    # issue.create_comment(readme)
+    with open("README.md", "w+") as f:
+        f.write(readme)
+
     issue.edit(state="closed")
 
 if __name__ == "__main__":
