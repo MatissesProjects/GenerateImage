@@ -253,7 +253,7 @@ def main():
             originalImageLocation = f.read()
         currentImageNew = True
 
-    with open("currentImageURL.json", "r") as f:
+    with open("currentImageURLs.json", "r") as f:
         imageLocations = json.load(f)['currentImageURLs']
     readme = render_readme(imageLocations, gifLocation, gifBgrmLocation)
     # issue.create_comment(readme)
