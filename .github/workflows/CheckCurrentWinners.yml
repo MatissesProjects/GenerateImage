@@ -27,3 +27,8 @@ jobs:
         run: |
           chmod +x ./workflowScripts/pull-then-push.sh
           ./workflowScripts/pull-then-push.sh
+
+```   - name: Print out for validation
+        run: |
+          echo "The winners have been checked and the changes have been pushed to the repository."
+          echo "Please check the repository to verify the changes."
