@@ -92,8 +92,11 @@ def render_readme(imageLocations, gifLocation, bgrmGifLocation):
     return "\n".join(lines)
 
 def transformFunction(issue):
-    with open("currentImageURL.txt", "r+") as f:
-        targetLocalImage = f.read()
+    # with open("currentImageURL.txt", "r+") as f:
+    #     targetLocalImage = f.read()
+    targetLocalImage = getImageFromJson(issue)
+    if targetLocalImage is None:
+        return
 
     title = issue.title
     allowedStart = "Transform"
@@ -166,10 +169,7 @@ def createImageFunction(issue):
 
     return imageLocation
 
-def imageToGif(issue):
-    # with open("currentImageURL.txt", "r+") as f:
-    #     targetLocalImage = f.read()
-    # choose which image from currentImageUrls.json to use
+def getImageFromJson(issue):
     with open("currentImageURLs.json", "r") as f:
         currentImageUrls = json.load(f)
     imageLocations = currentImageUrls['currentImageURLs']
@@ -187,7 +187,17 @@ def imageToGif(issue):
     print("image index", imageIndex)
     targetLocalImage = imageLocations[imageIndex - 1]
     print("targetLocalImage", targetLocalImage)
+    return targetLocalImage
+
+def imageToGif(issue):
+    # with open("currentImageURL.txt", "r+") as f:
+    #     targetLocalImage = f.read()
+    # choose which image from currentImageUrls.json to use
     
+    targetLocalImage = getImageFromJson(issue)
+    if targetLocalImage is None:
+        return
+
     data1 = {"discordId":matisseId,"targetPicture":targetLocalImage,"discordUsername":"matisse","id":random.randint(1000,9999), "width":128,"height":128, "accessToken": DISCORD_TOKEN}
     response1 = requests.post('https://deepnarrationapi.matissetec.dev/startBackgroundExtenderGif', headers=headers, json=data1)
     gifLocation = response1.text
