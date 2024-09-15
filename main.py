@@ -37,7 +37,8 @@ def close_with_error(issue, msg):
     issue.create_comment(f"ERROR: {msg}")
     issue.edit(state="closed", labels=["Invalid"])
 
-def render_readme(imageLocation, gifLocation, bgrmGifLocation):
+def render_readme(imageLocations, gifLocation, bgrmGifLocation):
+    imageLocation1, imageLocation2, imageLocation3, imageLocation4 = imageLocations
     lines = [
                 "# GenerateImage",
                 "Click the image below to generate a new image.",
@@ -57,7 +58,7 @@ def render_readme(imageLocation, gifLocation, bgrmGifLocation):
                 "      <li>Add your transformation text to the title</li>",
                 "      <li>Submit the issue</li>",
                 "    </ul>",
-                "  <li>Take the current image and make it into a gif</li>",
+                "  <li>Take the selected image and make it into a gif</li>",
                 "    <ul>",
                 "      <li>Select the link <a href='https://github.com/MatissesProjects/GenerateImage/issues/new?title=ImageToGif%20Dont%20modify%20the%20title&body=No%20need%20to%20modify%20the%20body%20or%20the%20title'>Create gif from current image</a></li>",
                 "      <li>Submit the issue</li>",
@@ -72,14 +73,16 @@ def render_readme(imageLocation, gifLocation, bgrmGifLocation):
                 "  <li>Optional, <a href='https://github.com/MatissesProjects/GenerateImage/tree/main/PlayGame'>play the game!</a></li>",
                 "</ol>",
                 "",
-                "## Current Generated Image",
-                f"[<img src='{imageLocation}'>](https://github.com/{GITHUB_REPO}/issues/new?title=Transform:%20&body=No%20need%20to%20modify%20the%20body,%20just%20add%20your%20transformation%20to%20the%20photo%20in%20the%20title)",
+                "## Generated Images",
+                "| image1 | image2 | image3 | image4 |",
+                "| --- | --- | --- | --- |",
+                f"| [<img src='{imageLocation1}'>](https://github.com/{GITHUB_REPO}/issues/new?title=Transform Image 1:%20&body=No%20need%20to%20modify%20the%20body,%20just%20add%20your%20transformation%20to%20the%20photo%20in%20the%20title) | [<img src='{imageLocation2}'>](https://github.com/{GITHUB_REPO}/issues/new?title=Transform Image 2:%20&body=No%20need%20to%20modify%20the%20body,%20just%20add%20your%20transformation%20to%20the%20photo%20in%20the%20title) | [<img src='{imageLocation3}'>](https://github.com/{GITHUB_REPO}/issues/new?title=Transform Image 3:%20&body=No%20need%20to%20modify%20the%20body,%20just%20add%20your%20transformation%20to%20the%20photo%20in%20the%20title) | [<img src='{imageLocation4}'>](https://github.com/{GITHUB_REPO}/issues/new?title=Transform Image 4:%20&body=No%20need%20to%20modify%20the%20body,%20just%20add%20your%20transformation%20to%20the%20photo%20in%20the%20title) ",
                 "",
                 "## Current Generated Gif",
-                f"<img src='{gifLocation}' width='512' height='512' alt='gif'>",
+                f"<img src='{gifLocation}' width='256' height='256' alt='gif'>",
                 "",
                 "## Current Generated Background Removed Gif",
-                f"<img src='{bgrmGifLocation}' width='512' height='512' alt='gif'>",
+                f"<img src='{bgrmGifLocation}' width='256' height='256' alt='gif'>",
                 "",
                 "## Want faster results?",
                 "Try the page these APIs are based on: [Maitisse](https://deepnarration.matissetec.dev/)",
@@ -94,7 +97,7 @@ def transformFunction(issue):
     title = issue.title
     allowedStart = "Transform"
     if allowedStart not in title:
-        close_with_error(issue, "Invalid input format, include Transform:")
+        close_with_error(issue, "Invalid input format, include Transform Image #:")
         return
 
     if len(title) == len(allowedStart):
@@ -249,7 +252,9 @@ def main():
             originalImageLocation = f.read()
         currentImageNew = True
 
-    readme = render_readme(imageLocation, gifLocation, gifBgrmLocation)
+    with open("currentImageURL.json", "r") as f:
+        imageLocations = json.load(f)['currentImageURLs']
+    readme = render_readme(imageLocations, gifLocation, gifBgrmLocation)
     # issue.create_comment(readme)
     with open("README.md", "w+") as f:
         f.write(readme)
@@ -272,7 +277,14 @@ def main():
     time.sleep(15)
 
     if currentImageNew:
-        issue.create_comment(f"Your photo is here! \n![new image]({imageLocation}) \n\nif the image doesnt populate refresh in a few seconds\nNext steps are to [transform the image](https://github.com/{GITHUB_REPO}/issues/new?title=Transform:%20&body=No%20need%20to%20modify%20the%20body,%20just%20add%20your%20transformation%20to%20the%20photo%20in%20the%20title) or [create a gif](https://github.com/MatissesProjects/GenerateImage/issues/new?title=ImageToGif%20Dont%20modify%20the%20title&body=No%20need%20to%20modify%20the%20body%20or%20the%20title)") 
+        issue.create_comment(f"Your photo is here! \n![new image]({imageLocation}) \n\nif the image doesnt populate refresh in a few seconds\nNext steps are to [transform the image](https://github.com/{GITHUB_REPO}/issues/new?title=Transform Image 1:%20&body=No%20need%20to%20modify%20the%20body,%20just%20add%20your%20transformation%20to%20the%20photo%20in%20the%20title) or [create a gif](https://github.com/MatissesProjects/GenerateImage/issues/new?title=ImageToGif%20Dont%20modify%20the%20title&body=No%20need%20to%20modify%20the%20body%20or%20the%20title)") 
+        with open("currentImageURL.json", "r") as f:
+            currentImageUrls = json.load(f)
+        imageLocations = currentImageUrls['currentImageURLs']
+        imageLocations.pop()
+        imageLocations.insert(0, imageLocation)
+        with open("currentImageURL.json", "w+") as f:
+            f.write(imageLocation)
     if currentGifNew:
         time.sleep(25)
         issue.create_comment(f"Your gif is here! \n![new gif]({gifLocation}) \n\nif the gif doesnt populate refresh in a few seconds\nNext step is to [remove the gif background](https://github.com/{GITHUB_REPO}/issues/new?title=GifBackgroundRemoval%20Dont%20modify%20the%20title&body=No%20need%20to%20modify%20the%20body%20or%20the%20title)")
