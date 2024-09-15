@@ -92,7 +92,5 @@ jobs:
 
   CheckCurrentWinners:
     name: Start Manage Game Files
-    runs-on: ubuntu-latest
     if: startsWith(github.event.issue.title, 'Vote')
-    needs: ManageGameFiles
     uses: ./.github/workflows/CheckCurrentWinners.yml
