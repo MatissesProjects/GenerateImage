@@ -83,4 +83,5 @@ for difficulty in "easy" "medium" "hard"; do
 done
 
 # Output the results to the Markdown table
+echo "| $easy_result | $medium_result | $hard_result |"
 echo "| $easy_result | $medium_result | $hard_result |" >> "$OUTPUT_FILE"
