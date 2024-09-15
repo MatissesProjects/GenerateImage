@@ -98,5 +98,3 @@ jobs:
     permissions:
       contents: write
       issues: write
-    secrets:
-      GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
