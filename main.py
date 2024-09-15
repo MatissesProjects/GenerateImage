@@ -290,14 +290,15 @@ def main():
     with open("currentBgrmGifURL.txt", "w+") as f:
         f.write(gifBgrmLocation)
 
-    currentImage = getImageFromJson(issue)
     
     if currentImageNew:
+        currentImage = getImageFromJson(issue)
         if isTransform:
             issue.create_comment(f"The creation of images is about 30 second, if the image come back blank refresh in a few seconds\nThis is based on the image\n[<img src='{currentImage}'>]('{currentImage}')")
         else:
             issue.create_comment(f"The creation of images is about 30 second, if the image come back blank refresh in a few seconds")
     if currentGifNew:
+        currentImage = getImageFromJson(issue)
         issue.create_comment(f"The creation of gifs is about 50 second, if the image come back blank refresh in a few seconds\nThis is based on the image\n[<img src='{currentImage}'>]('{currentImage}')")
     if currentBgrmNew:
         issue.create_comment(f"The creation of background removed gifs about 40 second, if the image come back blank refresh in a few seconds\nThis is based on the gif\n[<img src='{gifLocation}'>]('{gifLocation}')")
