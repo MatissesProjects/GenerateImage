@@ -167,8 +167,27 @@ def createImageFunction(issue):
     return imageLocation
 
 def imageToGif(issue):
-    with open("currentImageURL.txt", "r+") as f:
-        targetLocalImage = f.read()
+    # with open("currentImageURL.txt", "r+") as f:
+    #     targetLocalImage = f.read()
+    # choose which image from currentImageUrls.json to use
+    with open("currentImageURLs.json", "r") as f:
+        currentImageUrls = json.load(f)
+    imageLocations = currentImageUrls['currentImageURLs']
+    # index based on the title image#
+    title = issue.title
+    try:
+        imageIndex = int(title.split(" ")[1][-1])
+    except:
+        close_with_error(issue, "Second word in title must be Image# where # is a number from 1-4")
+        return
+    if imageIndex < 1 or imageIndex > 4:
+        close_with_error(issue, "Second word in title must be Image# where # is a number from 1-4")
+        return
+
+    print("image index", imageIndex)
+    targetLocalImage = imageLocations[imageIndex - 1]
+    print("targetLocalImage", targetLocalImage)
+    
     data1 = {"discordId":matisseId,"targetPicture":targetLocalImage,"discordUsername":"matisse","id":random.randint(1000,9999), "width":128,"height":128, "accessToken": DISCORD_TOKEN}
     response1 = requests.post('https://deepnarrationapi.matissetec.dev/startBackgroundExtenderGif', headers=headers, json=data1)
     gifLocation = response1.text
