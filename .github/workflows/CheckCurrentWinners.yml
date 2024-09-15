@@ -15,9 +15,6 @@ jobs:
       issues: write
 
     steps:
-      - name: Checkout repository
-        uses: actions/checkout@v4
-
       - name: Check for winners
         run: |
           chmod +x ./workflowScripts/check-winners.sh

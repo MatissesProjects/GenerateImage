@@ -1,5 +1,8 @@
 #!/bin/bash
 
+# Grab latest
+git pull
+
 # Define the path to your JSON files
 VOTES_JSON_FILE="PlayGame/currentVotes.json"
 ENTRIES_JSON_FILE="PlayGame/currentEntries.json"
