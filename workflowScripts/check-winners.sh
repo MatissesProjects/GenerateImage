@@ -4,9 +4,13 @@
 VOTES_JSON_FILE="PlayGame/currentVotes.json"
 ENTRIES_JSON_FILE="PlayGame/currentEntries.json"
 OUTPUT_FILE="PlayGame/winners.md"
+CURRENT_TOPIC="PlayGame/currentTopic.txt"
 
 # Clear the output file before writing new data
-echo "# Current competition winners" > "$OUTPUT_FILE"
+echo "# Current competition" > "$OUTPUT_FILE"
+echo "" >> "$OUTPUT_FILE"
+echo "Goal is to get as clost to the topic: " >> "$OUTPUT_FILE"
+echo "### $CURRENT_TOPIC" >> "$OUTPUT_FILE"
 echo "" >> "$OUTPUT_FILE"
 echo "| Easy | Medium | Hard |" >> "$OUTPUT_FILE"
 echo "| --- | --- | --- |" >> "$OUTPUT_FILE"
