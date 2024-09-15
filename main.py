@@ -77,7 +77,7 @@ def render_readme(imageLocations, gifLocation, bgrmGifLocation):
                 "## Generated Images",
                 "| image1 | image2 | image3 | image4 |",
                 "| --- | --- | --- | --- |",
-                f"| [<img src='{imageLocation1}'>](https://github.com/{GITHUB_REPO}/issues/new?title=Transform Image 1:%20&body=No%20need%20to%20modify%20the%20body,%20just%20add%20your%20transformation%20to%20the%20photo%20in%20the%20title) | [<img src='{imageLocation2}'>](https://github.com/{GITHUB_REPO}/issues/new?title=Transform Image 2:%20&body=No%20need%20to%20modify%20the%20body,%20just%20add%20your%20transformation%20to%20the%20photo%20in%20the%20title) | [<img src='{imageLocation3}'>](https://github.com/{GITHUB_REPO}/issues/new?title=Transform Image 3:%20&body=No%20need%20to%20modify%20the%20body,%20just%20add%20your%20transformation%20to%20the%20photo%20in%20the%20title) | [<img src='{imageLocation4}'>](https://github.com/{GITHUB_REPO}/issues/new?title=Transform Image 4:%20&body=No%20need%20to%20modify%20the%20body,%20just%20add%20your%20transformation%20to%20the%20photo%20in%20the%20title) ",
+                f"| [<img src='{imageLocation1}'>](https://github.com/{GITHUB_REPO}/issues/new?title=Transform%20Image1:%20&body=No%20need%20to%20modify%20the%20body,%20just%20add%20your%20transformation%20to%20the%20photo%20in%20the%20title) | [<img src='{imageLocation2}'>](https://github.com/{GITHUB_REPO}/issues/new?title=Transform%20Image2:%20&body=No%20need%20to%20modify%20the%20body,%20just%20add%20your%20transformation%20to%20the%20photo%20in%20the%20title) | [<img src='{imageLocation3}'>](https://github.com/{GITHUB_REPO}/issues/new?title=Transform%20Image3:%20&body=No%20need%20to%20modify%20the%20body,%20just%20add%20your%20transformation%20to%20the%20photo%20in%20the%20title) | [<img src='{imageLocation4}'>](https://github.com/{GITHUB_REPO}/issues/new?title=Transform%20Image4:%20&body=No%20need%20to%20modify%20the%20body,%20just%20add%20your%20transformation%20to%20the%20photo%20in%20the%20title) ",
                 "",
                 "## Current Generated Gif",
                 f"<img src='{gifLocation}' width='256' height='256' alt='gif'>",
@@ -98,7 +98,7 @@ def transformFunction(issue):
     title = issue.title
     allowedStart = "Transform"
     if allowedStart not in title:
-        close_with_error(issue, "Invalid input format, include Transform Image #:")
+        close_with_error(issue, "Invalid input format, include Transform Image#:")
         return
 
     if len(title) == len(allowedStart):
@@ -278,13 +278,13 @@ def main():
     time.sleep(15)
 
     if currentImageNew:
-        issue.create_comment(f"Your photo is here! \n![new image]({imageLocation}) \n\nif the image doesnt populate refresh in a few seconds\nNext steps are to [transform the image](https://github.com/{GITHUB_REPO}/issues/new?title=Transform Image 1:%20&body=No%20need%20to%20modify%20the%20body,%20just%20add%20your%20transformation%20to%20the%20photo%20in%20the%20title) or [create a gif](https://github.com/MatissesProjects/GenerateImage/issues/new?title=ImageToGif%20Dont%20modify%20the%20title&body=No%20need%20to%20modify%20the%20body%20or%20the%20title)") 
-        with open("currentImageURL.json", "r") as f:
+        issue.create_comment(f"Your photo is here! \n![new image]({imageLocation}) \n\nif the image doesnt populate refresh in a few seconds\nNext steps are to [transform the image](https://github.com/{GITHUB_REPO}/issues/new?title=Transform%20Image1:%20&body=No%20need%20to%20modify%20the%20body,%20just%20add%20your%20transformation%20to%20the%20photo%20in%20the%20title) or [create a gif](https://github.com/MatissesProjects/GenerateImage/issues/new?title=ImageToGif%20Dont%20modify%20the%20title&body=No%20need%20to%20modify%20the%20body%20or%20the%20title)") 
+        with open("currentImageURLs.json", "r") as f:
             currentImageUrls = json.load(f)
         imageLocations = currentImageUrls['currentImageURLs']
         imageLocations.pop()
         imageLocations.insert(0, imageLocation)
-        with open("currentImageURL.json", "w+") as f:
+        with open("currentImageURLs.json", "w+") as f:
             f.write(imageLocation)
     if currentGifNew:
         time.sleep(25)
