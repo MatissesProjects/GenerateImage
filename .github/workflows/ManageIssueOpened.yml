@@ -90,6 +90,7 @@ jobs:
           chmod +x ./workflowScripts/pull-then-push.sh
           ./workflowScripts/pull-then-push.sh
 
-      - name: Push new Vote if vote
-        if: startsWith(github.event.issue.title, 'Vote')
-        uses: ./.github/workflows/CheckCurrentWinners.yml
+  CheckCurrentWinners:
+    if: startsWith(github.event.issue.title, 'Vote')
+    needs: ManageGameFiles
+    uses: ./.github/workflows/CheckCurrentWinners.yml
