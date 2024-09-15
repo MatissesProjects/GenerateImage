@@ -16,7 +16,7 @@ Click the image below to generate a new image.
       <li>Add your transformation text to the title</li>
       <li>Submit the issue</li>
     </ul>
-  <li>Take the current image and make it into a gif</li>
+  <li>Take the selected image and make it into a gif</li>
     <ul>
       <li>Select the link <a href='https://github.com/MatissesProjects/GenerateImage/issues/new?title=ImageToGif%20Dont%20modify%20the%20title&body=No%20need%20to%20modify%20the%20body%20or%20the%20title'>Create gif from current image</a></li>
       <li>Submit the issue</li>
@@ -31,14 +31,16 @@ Click the image below to generate a new image.
   <li>Optional, <a href='https://github.com/MatissesProjects/GenerateImage/tree/main/PlayGame'>play the game!</a></li>
 </ol>
 
-## Current Generated Image
-[<img src='https://fileserver.matissetec.dev/output/similarImages/630649313860780043/7510780477/7510780477/png'>](https://github.com/MatissesProjects/GenerateImage/issues/new?title=Transform:%20&body=No%20need%20to%20modify%20the%20body,%20just%20add%20your%20transformation%20to%20the%20photo%20in%20the%20title)
+## Generated Images
+| image1 | image2 | image3 | image4 |
+| --- | --- | --- | --- |
+| [<img src='https://fileserver.matissetec.dev/output/similarImages/630649313860780043/6511007617/6511007617/png'>](https://github.com/MatissesProjects/GenerateImage/issues/new?title=Transform Image 1:%20&body=No%20need%20to%20modify%20the%20body,%20just%20add%20your%20transformation%20to%20the%20photo%20in%20the%20title) | [<img src='https://fileserver.matissetec.dev/output/similarImages/630649313860780043/6511007617/6511007617/png'>](https://github.com/MatissesProjects/GenerateImage/issues/new?title=Transform Image 2:%20&body=No%20need%20to%20modify%20the%20body,%20just%20add%20your%20transformation%20to%20the%20photo%20in%20the%20title) | [<img src='https://fileserver.matissetec.dev/output/similarImages/630649313860780043/6511007617/6511007617/png'>](https://github.com/MatissesProjects/GenerateImage/issues/new?title=Transform Image 3:%20&body=No%20need%20to%20modify%20the%20body,%20just%20add%20your%20transformation%20to%20the%20photo%20in%20the%20title) | [<img src='https://fileserver.matissetec.dev/output/similarImages/630649313860780043/6511007617/6511007617/png'>](https://github.com/MatissesProjects/GenerateImage/issues/new?title=Transform Image 4:%20&body=No%20need%20to%20modify%20the%20body,%20just%20add%20your%20transformation%20to%20the%20photo%20in%20the%20title) 
 
 ## Current Generated Gif
-<img src='https://fileserver.matissetec.dev/output/backgroundExtenderGif/630649313860780043/8266086878/apiOut/gif' width='512' height='512' alt='gif'>
+<img src='https://fileserver.matissetec.dev/output/backgroundExtenderGif/630649313860780043/8266086878/apiOut/gif' width='256' height='256' alt='gif'>
 
 ## Current Generated Background Removed Gif
-<img src='https://fileserver.matissetec.dev/output/videoBackgroundRemoval/630649313860780043/7067440081/apiOut/gif' width='512' height='512' alt='gif'>
+<img src='https://fileserver.matissetec.dev/output/videoBackgroundRemoval/630649313860780043/7067440081/apiOut/gif' width='256' height='256' alt='gif'>
 
 ## Want faster results?
 Try the page these APIs are based on: [Maitisse](https://deepnarration.matissetec.dev/)
