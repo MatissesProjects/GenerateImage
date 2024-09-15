@@ -292,8 +292,8 @@ def main():
 
     
     if currentImageNew:
-        currentImage = getImageFromJson(issue)
         if isTransform:
+            currentImage = getImageFromJson(issue)
             issue.create_comment(f"The creation of images is about 30 second, if the image come back blank refresh in a few seconds\nThis is based on the image\n[<img src='{currentImage}'>]('{currentImage}')")
         else:
             issue.create_comment(f"The creation of images is about 30 second, if the image come back blank refresh in a few seconds")
