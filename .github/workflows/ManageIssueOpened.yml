@@ -95,5 +95,8 @@ jobs:
     needs: ManageGameFiles
     if: startsWith(github.event.issue.title, 'Vote')
     uses: ./.github/workflows/CheckCurrentWinners.yml
+    permissions:
+      contents: write
+      issues: write
     secrets:
       GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
