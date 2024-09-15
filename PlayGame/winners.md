@@ -1,4 +1,7 @@
-# Current competition winners
+# Current competition
+
+Goal is to get as clost to the topic: 
+### PlayGame/currentTopic.txt
 
 | Easy | Medium | Hard |
 | --- | --- | --- |
