@@ -285,7 +285,7 @@ def main():
         imageLocations.pop()
         imageLocations.insert(0, imageLocation)
         with open("currentImageURLs.json", "w+") as f:
-            f.write({"currentImageURLs": imageLocations})
+            f.write(json.dumps({"currentImageURLs": imageLocations}))
     if currentGifNew:
         time.sleep(25)
         issue.create_comment(f"Your gif is here! \n![new gif]({gifLocation}) \n\nif the gif doesnt populate refresh in a few seconds\nNext step is to [remove the gif background](https://github.com/{GITHUB_REPO}/issues/new?title=GifBackgroundRemoval%20Dont%20modify%20the%20title&body=No%20need%20to%20modify%20the%20body%20or%20the%20title)")
