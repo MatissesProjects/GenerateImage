@@ -18,7 +18,7 @@ Click the image below to generate a new image.
     </ul>
   <li>Take the selected image and make it into a gif</li>
     <ul>
-      <li>Select the link <a href='https://github.com/MatissesProjects/GenerateImage/issues/new?title=ImageToGif%20Dont%20modify%20the%20title&body=No%20need%20to%20modify%20the%20body%20or%20the%20title'>Create gif from current image</a></li>
+      <li>Select the link <a href='https://github.com/MatissesProjects/GenerateImage/issues/new?title=ImageToGif%20Image1%20Dont%20modify%20the%20title&body=No%20need%20to%20modify%20the%20body%20or%20the%20title'>Create gif from current image</a></li>
       <li>Submit the issue</li>
     </ul>
   <li>Take the current gif and remove the background</li>
@@ -39,7 +39,7 @@ Click the image below to generate a new image.
 | [image 1 to gif](https://github.com/MatissesProjects/GenerateImage/issues/new?title=ImageToGif%20Image1:%20Dont%20modify%20the%20title&body=No%20need%20to%20modify%20the%20body%20or%20the%20title) | [image 2 to gif](https://github.com/MatissesProjects/GenerateImage/issues/new?title=ImageToGif%20Image2:%20Dont%20modify%20the%20title&body=No%20need%20to%20modify%20the%20body%20or%20the%20title) | [image 3 to gif](https://github.com/MatissesProjects/GenerateImage/issues/new?title=ImageToGif%20Image3:%20Dont%20modify%20the%20title&body=No%20need%20to%20modify%20the%20body%20or%20the%20title) | [image 4 to gif](https://github.com/MatissesProjects/GenerateImage/issues/new?title=ImageToGif%20Image4:%20Dont%20modify%20the%20title&body=No%20need%20to%20modify%20the%20body%20or%20the%20title) |
 
 ## Current Generated Gif
-<img src='https://fileserver.matissetec.dev/output/backgroundExtenderGif/630649313860780043/6437889119/apiOut/gif' width='256' height='256' alt='gif'>
+<img src='https://fileserver.matissetec.dev/output/backgroundExtenderGif/630649313860780043/8518985918/apiOut/gif' width='256' height='256' alt='gif'>
 
 ## Current Generated Background Removed Gif
 <img src='https://fileserver.matissetec.dev/output/videoBackgroundRemoval/630649313860780043/8391393447/apiOut/gif' width='256' height='256' alt='gif'>
