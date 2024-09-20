@@ -10,15 +10,15 @@ Click the image below to generate a new image.
       <li>Follow the issue creation steps</li>
       <li>Submit the issue</li>
     </ul>
-  <li>You can transform the image below</li>
+  <li>You can transform any of the images below</li>
     <ul>
-      <li>Click the image below</li>
+      <li>Click the link below the image you want to transform</li>
       <li>Add your transformation text to the title</li>
       <li>Submit the issue</li>
     </ul>
   <li>Take the selected image and make it into a gif</li>
     <ul>
-      <li>Select the link <a href='https://github.com/MatissesProjects/GenerateImage/issues/new?title=ImageToGif%20Image1%20Dont%20modify%20the%20title&body=No%20need%20to%20modify%20the%20body%20or%20the%20title'>Create gif from current image</a></li>
+      <li>Select the link to make the image into a gif below the image</li>
       <li>Submit the issue</li>
     </ul>
   <li>Take the current gif and remove the background</li>
@@ -34,7 +34,7 @@ Click the image below to generate a new image.
 ## Generated Images
 | image1 | image2 | image3 | image4 |
 | --- | --- | --- | --- |
-| ![image1](https://fileserver.matissetec.dev/output/similarImages/630649313860780043/7681754320/7681754320/png) | ![image2](https://fileserver.matissetec.dev/output/createImage/630649313860780043/7382677776/7382677776/png) | ![image3](https://fileserver.matissetec.dev/output/createImage/630649313860780043/8335696305/8335696305/png) | ![image4](https://fileserver.matissetec.dev/output/createImage/630649313860780043/7730083969/7730083969/png) 
+| ![image1](https://fileserver.matissetec.dev/output/similarImages/630649313860780043/8288176225/8288176225/png) | ![image2](https://fileserver.matissetec.dev/output/similarImages/630649313860780043/7681754320/7681754320/png) | ![image3](https://fileserver.matissetec.dev/output/createImage/630649313860780043/7382677776/7382677776/png) | ![image4](https://fileserver.matissetec.dev/output/createImage/630649313860780043/8335696305/8335696305/png) 
 | [transform image 1](https://github.com/MatissesProjects/GenerateImage/issues/new?title=Transform%20Image1:%20&body=No%20need%20to%20modify%20the%20body,%20just%20add%20your%20transformation%20to%20the%20photo%20in%20the%20title) | [transform image 2](https://github.com/MatissesProjects/GenerateImage/issues/new?title=Transform%20Image2:%20&body=No%20need%20to%20modify%20the%20body,%20just%20add%20your%20transformation%20to%20the%20photo%20in%20the%20title) | [transform image 3](https://github.com/MatissesProjects/GenerateImage/issues/new?title=Transform%20Image3:%20&body=No%20need%20to%20modify%20the%20body,%20just%20add%20your%20transformation%20to%20the%20photo%20in%20the%20title) | [transform image 4](https://github.com/MatissesProjects/GenerateImage/issues/new?title=Transform%20Image4:%20&body=No%20need%20to%20modify%20the%20body,%20just%20add%20your%20transformation%20to%20the%20photo%20in%20the%20title) |
 | [image 1 to gif](https://github.com/MatissesProjects/GenerateImage/issues/new?title=ImageToGif%20Image1:%20Dont%20modify%20the%20title&body=No%20need%20to%20modify%20the%20body%20or%20the%20title) | [image 2 to gif](https://github.com/MatissesProjects/GenerateImage/issues/new?title=ImageToGif%20Image2:%20Dont%20modify%20the%20title&body=No%20need%20to%20modify%20the%20body%20or%20the%20title) | [image 3 to gif](https://github.com/MatissesProjects/GenerateImage/issues/new?title=ImageToGif%20Image3:%20Dont%20modify%20the%20title&body=No%20need%20to%20modify%20the%20body%20or%20the%20title) | [image 4 to gif](https://github.com/MatissesProjects/GenerateImage/issues/new?title=ImageToGif%20Image4:%20Dont%20modify%20the%20title&body=No%20need%20to%20modify%20the%20body%20or%20the%20title) |
 
