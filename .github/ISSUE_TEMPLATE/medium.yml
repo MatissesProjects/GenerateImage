@@ -12,17 +12,17 @@ body:
     attributes:
       label: Choose multiple
       options:
-        - label: Bird
+        - label: Gulf
           required: false
-        - label: Field
+        - label: Basin
           required: false
-        - label: Swamp
+        - label: Bluff
           required: false
-        - label: Star
+        - label: Volcano
           required: false
-        - label: Canyon
+        - label: Street
           required: false
-        - label: Courtyard
+        - label: Dock
           required: false
-        - label: Patio
+        - label: Factory
           required: false

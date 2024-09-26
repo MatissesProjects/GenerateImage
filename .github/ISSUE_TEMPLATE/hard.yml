@@ -12,13 +12,13 @@ body:
     attributes:
       label: Choose multiple
       options:
-        - label: Cityscape
-          required: false
         - label: Bridge
           required: false
-        - label: Church
+        - label: Archipelago
           required: false
-        - label: Beach
+        - label: Bird
           required: false
-        - label: Pier
+        - label: Mosque
+          required: false
+        - label: Bicycle
           required: false

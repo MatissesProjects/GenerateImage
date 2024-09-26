@@ -12,23 +12,23 @@ body:
     attributes:
       label: Choose multiple
       options:
-        - label: Swamp
+        - label: Prairie
           required: false
-        - label: Porch
+        - label: Cloud
           required: false
-        - label: Escalator
+        - label: Arena
           required: false
-        - label: Tundra
+        - label: Palace
+          required: false
+        - label: Pagoda
           required: false
         - label: Bicycle
           required: false
-        - label: Monument
+        - label: Deck
           required: false
-        - label: Jungle
+        - label: Street
           required: false
-        - label: Boulevard
+        - label: Plain
           required: false
-        - label: Monastery
-          required: false
-        - label: Colosseum
+        - label: Labyrinth
           required: false
