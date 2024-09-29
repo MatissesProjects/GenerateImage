@@ -5,4 +5,4 @@ Goal is to get as clost to the topic:
 
 | Easy | Medium | Hard |
 | --- | --- | --- |
-| no current votes | no current votes | no current votes |
+| had no entries | had no entries | had no entries |
