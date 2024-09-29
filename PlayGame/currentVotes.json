@@ -1,1 +1,9 @@
-{"easy":{},"medium":{},"hard":{}}
+{
+    "easy": {},
+    "medium": {
+        "MatissesProjects": [
+            "MatissesProjects"
+        ]
+    },
+    "hard": {}
+}
