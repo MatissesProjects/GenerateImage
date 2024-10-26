@@ -42,12 +42,7 @@ Click the image below to generate a new image.
 <img src='https://fileserver.matissetec.dev/output/backgroundExtenderGif/630649313860780043/7342509585/apiOut/gif' width='256' height='256' alt='gif'>
 
 ## Current Generated Background Removed Gif
-<img src='<!doctype html>
-<html lang=en>
-<title>500 Internal Server Error</title>
-<h1>Internal Server Error</h1>
-<p>The server encountered an internal error and was unable to complete your request. Either the server is overloaded or there is an error in the application.</p>
-' width='256' height='256' alt='gif'>
+<img src='https://fileserver.matissetec.dev/output/videoBackgroundRemoval/630649313860780043/7001328111/apiOut/gif' width='256' height='256' alt='gif'>
 
 ## Want faster results?
 Try the page these APIs are based on: [Maitisse](https://deepnarration.matissetec.dev/)
